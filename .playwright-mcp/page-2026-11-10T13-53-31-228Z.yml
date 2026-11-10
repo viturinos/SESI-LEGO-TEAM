@@ -1,0 +1,796 @@
+- generic [ref=f24e1]:
+  - link "Pular para o conteúdo" [ref=f24e2] [cursor=pointer]:
+    - /url: "#conteudo"
+  - banner [ref=f24e3]:
+    - navigation "Navegação principal" [ref=f24e4]:
+      - link "SESI LEGO Team" [ref=f24e5] [cursor=pointer]:
+        - /url: "#inicio"
+      - list [ref=f24e7]:
+        - listitem [ref=f24e8]:
+          - link "Início" [ref=f24e9] [cursor=pointer]:
+            - /url: "#inicio"
+        - listitem [ref=f24e10]:
+          - link "Equipe" [ref=f24e11] [cursor=pointer]:
+            - /url: "#equipe"
+        - listitem [ref=f24e12]:
+          - link "Projeto" [ref=f24e13] [cursor=pointer]:
+            - /url: "#projeto"
+        - listitem [ref=f24e14]:
+          - link "Robô" [ref=f24e15] [cursor=pointer]:
+            - /url: "#robo"
+        - listitem [ref=f24e16]:
+          - link "Diário" [ref=f24e17] [cursor=pointer]:
+            - /url: "#diario"
+        - listitem [ref=f24e18]:
+          - link "Valores" [ref=f24e19] [cursor=pointer]:
+            - /url: "#valores"
+        - listitem [ref=f24e20]:
+          - link "Galeria" [ref=f24e21] [cursor=pointer]:
+            - /url: "#galeria"
+        - listitem [ref=f24e22]:
+          - link "Contato" [ref=f24e23] [cursor=pointer]:
+            - /url: "#contato"
+  - main [ref=f24e24]:
+    - generic [ref=f24e26]:
+      - generic [ref=f24e27]:
+        - paragraph [ref=f24e28]: FIRST LEGO League 2026 · Temporada BIOGLOW
+        - heading [level=1] [ref=f24e29]:
+          - text: Robótica com espírito de
+          - emphasis [ref=f24e30]: colmeia
+        - paragraph [ref=f24e31]: "De Picos, a Capital do Mel, para a FIRST LEGO League: um robô preto e amarelo, um projeto pelas abelhas do semiárido e uma equipe que trabalha junto."
+        - generic [ref=f24e32]:
+          - link "Conheça o projeto" [ref=f24e33] [cursor=pointer]:
+            - /url: "#projeto"
+          - link "Veja o robô" [ref=f24e34] [cursor=pointer]:
+            - /url: "#robo"
+      - figure "O modelo final do nosso robô, construído em preto e amarelo como uma abelha." [ref=f24e35]:
+        - img "Robô LEGO preto e amarelo da equipe segurado pelas mãos de um integrante, visto de frente, com as duas rodas pretas grandes e o hub SPIKE central" [ref=f24e37]
+    - region "Números da temporada" [ref=f24e39]:
+      - generic [ref=f24e40]:
+        - generic [ref=f24e41]:
+          - generic [ref=f24e42]: "5"
+          - generic [ref=f24e43]: versões do robô construídas
+        - generic [ref=f24e44]:
+          - generic [ref=f24e45]: "15"
+          - generic [ref=f24e46]: missões avaliadas na estratégia
+        - generic [ref=f24e47]:
+          - generic [ref=f24e48]: "4"
+          - generic [ref=f24e49]: motores grandes no robô final
+        - generic [ref=f24e50]:
+          - generic [ref=f24e51]: "2"
+          - generic [ref=f24e52]: sensores de cor para alinhamento
+        - generic [ref=f24e53]:
+          - generic [ref=f24e54]: "6"
+          - generic [ref=f24e55]: especialistas ouvidos no projeto
+        - generic [ref=f24e56]:
+          - generic [ref=f24e57]: "15"
+          - generic [ref=f24e58]: dias registrados no diário de bordo
+    - generic [ref=f24e60]:
+      - heading "Uma equipe que funciona como uma colmeia" [level=2] [ref=f24e61]
+      - generic [ref=f24e62]:
+        - generic [ref=f24e63]:
+          - paragraph [ref=f24e64]:
+            - text: Somos a
+            - strong [ref=f24e65]: SESI LEGO Team
+            - text: ", equipe de robótica da"
+            - strong [ref=f24e66]: Escola SESI Wilma Catão Araújo
+            - text: ", em Picos, no interior do Piauí. Competimos na"
+            - strong [ref=f24e67]: FIRST LEGO League
+            - text: ", que desafia equipes de estudantes a resolver problemas reais com ciência, tecnologia e trabalho em equipe."
+          - paragraph [ref=f24e68]:
+            - text: "Nossa identidade nasceu da nossa terra: o preto e o amarelo do robô representam uma abelha, em referência à apicultura de Picos, conhecida como a"
+            - strong [ref=f24e69]: Capital do Mel
+            - text: ". Como numa colmeia, cada integrante tem uma função e as decisões são tomadas em conjunto: montagem, programação, testes, pesquisa e apresentação divididos entre todos."
+          - paragraph [ref=f24e70]:
+            - text: Na abertura da temporada, a escola organizou as frentes operacionais em duas equipes,
+            - strong [ref=f24e71]: EC Bots
+            - text: e
+            - strong [ref=f24e72]: SESI LEGO Team
+            - text: "— e desde então documentamos tudo: as cinco versões do robô, as visitas, as entrevistas com especialistas e cada ajuste de programação. Este site é o nosso caderno de engenharia aberto para juízes, família e comunidade."
+        - complementary "Ficha da equipe" [ref=f24e73]:
+          - heading "Ficha da equipe" [level=3] [ref=f24e74]
+          - generic [ref=f24e75]:
+            - generic [ref=f24e76]:
+              - term [ref=f24e77]: Equipe
+              - definition [ref=f24e78]: SESI LEGO Team
+            - generic [ref=f24e79]:
+              - term [ref=f24e80]: Escola
+              - definition [ref=f24e81]: SESI Wilma Catão Araújo
+            - generic [ref=f24e82]:
+              - term [ref=f24e83]: Cidade
+              - definition [ref=f24e84]: Picos, Piauí, Brasil
+            - generic [ref=f24e85]:
+              - term [ref=f24e86]: Liga
+              - definition [ref=f24e87]: FIRST LEGO League
+            - generic [ref=f24e88]:
+              - term [ref=f24e89]: Temporada
+              - definition [ref=f24e90]: 2026, BIOGLOW
+            - generic [ref=f24e91]:
+              - term [ref=f24e92]: Integrantes
+              - definition [ref=f24e93]: 5 competidores + técnica, professor e mentor
+            - generic [ref=f24e94]:
+              - term [ref=f24e95]: Diário de bordo
+              - definition [ref=f24e96]: 15 dias registrados
+            - generic [ref=f24e97]:
+              - term [ref=f24e98]: Identidade
+              - definition [ref=f24e99]: Abelha (preto e amarelo)
+      - heading "Membros e funções" [level=3] [ref=f24e100]
+      - generic [ref=f24e101]:
+        - paragraph [ref=f24e102]: Competidores
+        - list [ref=f24e103]:
+          - listitem [ref=f24e104]:
+            - img "Ana Loanny de jaqueta azul da escola, sorrindo e fazendo sinal de positivo com a mão, em ambiente escolar" [ref=f24e106]
+            - heading "Ana Loanny" [level=4] [ref=f24e107]
+            - paragraph [ref=f24e108]: Competidora
+          - listitem [ref=f24e109]:
+            - img "Ítalo Gabriel de camiseta azul e branca, sorrindo com os dois polegares para cima, em ambiente escolar" [ref=f24e111]
+            - heading "Ítalo Gabriel" [level=4] [ref=f24e112]
+            - paragraph [ref=f24e113]: Competidor
+          - listitem [ref=f24e114]:
+            - img "Cesar Henrique de jaqueta azul da escola, sorrindo com os polegares para cima, em ambiente escolar" [ref=f24e116]
+            - heading "Cesar Henrique" [level=4] [ref=f24e117]
+            - paragraph [ref=f24e118]: Competidor
+          - listitem [ref=f24e119]:
+            - img "Pedro Ítalo de camiseta branca com mangas verde-água e o logotipo do SESI, sorrindo com o polegar para cima" [ref=f24e121]
+            - heading "Pedro Ítalo" [level=4] [ref=f24e122]
+            - paragraph [ref=f24e123]: Competidor
+          - listitem [ref=f24e124]:
+            - img "Paulo José de jaqueta azul com o logotipo do SESI, sorrindo com o polegar para cima, próximo a plantas" [ref=f24e126]
+            - heading "Paulo José" [level=4] [ref=f24e127]
+            - paragraph [ref=f24e128]: Competidor
+      - generic [ref=f24e129]:
+        - paragraph [ref=f24e130]: Comissão técnica e mentoria
+        - list [ref=f24e131]:
+          - listitem [ref=f24e132]:
+            - img "Alex, técnico da equipe, de camiseta preta do SESI, óculos e barba, de braços cruzados em ambiente escolar" [ref=f24e134]
+            - heading "Alex" [level=4] [ref=f24e135]
+            - paragraph [ref=f24e136]: Técnico · Professor
+          - listitem [ref=f24e137]:
+            - img "Regiane, técnica da equipe, sorrindo, de blusa verde-azulada e colar" [ref=f24e139]
+            - heading "Regiane" [level=4] [ref=f24e140]
+            - paragraph [ref=f24e141]: Técnica · Professora
+          - listitem [ref=f24e142]:
+            - img "Gabriel Evêncio, mentor da equipe, de camiseta preta, olhando para a câmera diante de uma parede clara" [ref=f24e144]
+            - heading "Gabriel Evêncio" [level=4] [ref=f24e145]
+            - paragraph [ref=f24e146]: Mentor
+    - generic [ref=f24e148]:
+      - paragraph [ref=f24e149]: Innovation Project
+      - heading "Sombreamento inteligente de colmeias no semiárido nordestino" [level=2] [ref=f24e150]
+      - paragraph [ref=f24e151]: Quando as árvores do apiário perdem as folhas, as caixas das abelhas ficam expostas ao sol da estiagem. Foi desse problema real, observado em Picos, que nasceu o nosso projeto de pesquisa.
+      - list [ref=f24e152]:
+        - listitem [ref=f24e153]:
+          - generic [aria-hidden] [ref=f24e155]: "1"
+          - generic [ref=f24e156]:
+            - heading "O problema" [level=3] [ref=f24e157]
+            - paragraph [ref=f24e158]: No semiárido nordestino, dias muito quentes e longos períodos sem chuva castigam as colmeias. Durante a estiagem, algumas árvores da Caatinga perdem as folhas e deixam as caixas expostas à radiação solar direta. As abelhas precisam manter a temperatura interna entre 34 °C e 35 °C para o desenvolvimento das crias, e o calor excessivo exige mais esforço de termorregulação, com movimento de asas e uso de água. Quando falta sombra e falta água, a colônia sofre.
+            - blockquote [ref=f24e159]:
+              - paragraph [ref=f24e160]: Como podemos complementar a sombra natural das colmeias e oferecer uma alternativa prática para enfrentar o calor e a escassez de água durante a estiagem, mantendo a segurança das abelhas e facilitando o trabalho do apicultor?
+        - listitem [ref=f24e161]:
+          - generic [aria-hidden] [ref=f24e163]: "2"
+          - generic [ref=f24e164]:
+            - 'heading "Do problema amplo ao foco: o nosso pivô" [level=3] [ref=f24e165]'
+            - paragraph [ref=f24e166]:
+              - text: Nosso primeiro ponto de partida foi a
+              - strong [ref=f24e167]: "\"seca verde\""
+              - text: ": os impactos gerais da seca na vegetação e no alimento das abelhas. Percebemos, porém, que tentar resolver um problema tão amplo era inviável para um protótipo de engenharia — e registramos no diário de bordo uma"
+              - strong [ref=f24e168]: mudança estratégica de rota
+              - text: .
+            - paragraph [ref=f24e169]:
+              - text: "Especificamos o problema para um gargalo pontual e prático: o"
+              - strong [ref=f24e170]: estresse térmico das colmeias
+              - text: pela falta de sombra natural quando as árvores perdem as folhas no semiárido. De um problema grande demais, chegamos a um que conseguimos atacar de verdade.
+        - listitem [ref=f24e171]:
+          - generic [aria-hidden] [ref=f24e173]: "3"
+          - generic [ref=f24e174]:
+            - heading "A pesquisa científica" [level=3] [ref=f24e175]
+            - paragraph [ref=f24e176]: "Procuramos fontes confiáveis, como a Embrapa e universidades, para entender o que realmente acontece com as colmeias no calor. Dois estudos guiaram o projeto:"
+            - list [ref=f24e177]:
+              - listitem [ref=f24e178]:
+                - strong [ref=f24e179]: Alternativas de sombreamento para apiários
+                - text: "(Embrapa Meio-Norte, 2011): pesquisa realizada em Castelo do Piauí que comparou árvores, cobertura de palha, tela sombrite e exposição direta ao sol. Os resultados destacaram a importância do sombreamento adequado para o desenvolvimento das crias."
+              - listitem [ref=f24e180]:
+                - strong [ref=f24e181]: Internal water supply in Africanized beehives during the dry season in the Brazilian semiarid
+                - text: "(2020): estudo que registrou consumo médio de 74,6 mL de água por colmeia ao dia durante a estiagem, mostrando que a água não pode ficar de fora de nenhuma solução."
+        - listitem [ref=f24e182]:
+          - generic [aria-hidden] [ref=f24e184]: "4"
+          - generic [ref=f24e185]:
+            - heading "O trabalho de campo" [level=3] [ref=f24e186]
+            - paragraph [ref=f24e187]:
+              - text: Visitamos o apiário de
+              - strong [ref=f24e188]: Jonildo Monteiro Luz
+              - text: ", em Picos, no 15/10/2026, para conhecer de perto a criação de abelhas. Acompanhamos o manejo com o fumigador, usado para liberar fumaça e facilitar o trabalho com as colmeias, e conversamos sobre as dificuldades reais do apicultor na estiagem: calor e escassez de água."
+            - generic [ref=f24e189]:
+              - figure "A equipe diante das colmeias no apiário de Jonildo." [ref=f24e190]:
+                - link [ref=f24e191] [cursor=pointer]:
+                  - /url: assets/img/temporada-dia12-apiario.webp
+                  - img "Grupo da equipe posando ao ar livre no apiário, com caixas de colmeias azuis à frente e árvores ao fundo" [ref=f24e192]
+              - figure "O manejo das colmeias mostrado pelo apicultor." [ref=f24e194]:
+                - link [ref=f24e195] [cursor=pointer]:
+                  - /url: assets/img/temporada-dia12-jonildo.webp
+                  - img "Apicultor de macacão de proteção amarelo manuseando equipamento junto às colmeias durante a visita da equipe" [ref=f24e196]
+        - listitem [ref=f24e198]:
+          - generic [aria-hidden] [ref=f24e200]: "5"
+          - generic [ref=f24e201]:
+            - heading "Os especialistas que ouvimos" [level=3] [ref=f24e202]
+            - paragraph [ref=f24e203]: "Buscamos pessoas com experiência em biologia, engenharia agronômica e apicultura para aproximar a proposta da realidade dos apiários:"
+            - list [ref=f24e204]:
+              - listitem [ref=f24e205]:
+                - strong [ref=f24e206]: Jonildo Monteiro Luz
+                - text: apicultor em Picos, PI. Recebeu nossa visita no apiário, confirmou a viabilidade do sombrite para amenizar o calor das colmeias e aprovou a alternativa de estrutura fixa no lugar da sombra retrátil.
+              - listitem [ref=f24e207]:
+                - strong [ref=f24e208]: Darcet Costa Souza
+                - text: "engenheiro agrônomo e professor de Apicultura da UFPI, Campus Ministro Petrônio Portela, em Teresina, PI. Orientou as mudanças que simplificaram a solução: sem monitor elétrico no apiário e fim da sombra retrátil, em favor de uma estrutura fixa e prática."
+              - listitem [ref=f24e209]:
+                - strong [ref=f24e210]: Isabel Francisca da Luz Guaraná
+                - text: bióloga e professora do Colégio Santa Maria, em Recife, PE. Acompanhou o desenvolvimento do projeto com conhecimentos e sugestões para o aperfeiçoamento.
+              - listitem [ref=f24e211]:
+                - strong [ref=f24e212]: José Carlos de Carvalho Arraes
+                - text: biólogo, mestre em Biodiversidade, Ambiente e Saúde, atua em ecologia vegetal. Ajudou na definição da problemática, apresentando vantagens e desvantagens das ideias propostas.
+              - listitem [ref=f24e213]:
+                - strong [ref=f24e214]: Carlos Fernando Rodrigues Guaraná
+                - text: professor universitário, biólogo e pesquisador da UFRPE, em Recife, PE. Mestre e doutor pela UFPE, atua há mais de 30 anos em microbiologia, controle biológico de pragas e conservação ambiental, com pesquisas e publicações científicas.
+              - listitem [ref=f24e215]:
+                - strong [ref=f24e216]: José Breno da Cruz
+                - text: trabalhou na Fundação Liberato, no Rio Grande do Sul, e atualmente está aposentado. Dividiu experiência técnica com a equipe.
+        - listitem [ref=f24e217]:
+          - generic [aria-hidden] [ref=f24e219]: "6"
+          - generic [ref=f24e220]:
+            - heading "As estratégias de investigação" [level=3] [ref=f24e221]
+            - paragraph [ref=f24e222]:
+              - text: "Organizamos o raciocínio com ferramentas que aprendemos na FLL:"
+              - strong [ref=f24e223]: brainstorming
+              - text: para reunir ideias de todos,
+              - strong [ref=f24e224]: análise SWOT
+              - text: para mapear forças, fraquezas, oportunidades e ameaças,
+              - strong [ref=f24e225]: benchmarking
+              - text: de práticas de manejo térmico e o
+              - strong [ref=f24e226]: Lean Canvas
+              - text: para estruturar o projeto. E usamos a
+              - strong [ref=f24e227]: técnica dos 5 porquês
+              - text: "para chegar à raiz do problema:"
+            - group [ref=f24e228]:
+              - generic "+ Ver a cadeia completa dos 5 porquês" [ref=f24e229] [cursor=pointer]
+        - listitem [ref=f24e230]:
+          - generic [aria-hidden] [ref=f24e232]: "7"
+          - generic [ref=f24e233]:
+            - heading "A solução" [level=3] [ref=f24e234]
+            - paragraph [ref=f24e235]:
+              - text: Criamos uma
+              - strong [ref=f24e236]: estrutura leve e modular
+              - text: para complementar a sombra natural das colmeias. A cobertura usa
+              - strong [ref=f24e237]: sombrite
+              - text: como sombreamento artificial, formando um teto com
+              - strong [ref=f24e238]: laterais inclinadas
+              - text: para reduzir a incidência direta do sol, melhorar as condições térmicas e preservar a circulação de ar. Junto da cobertura, o projeto integra um sistema de água pensado para a estiagem.
+            - list [ref=f24e239]:
+              - listitem [ref=f24e240]:
+                - strong [ref=f24e241]: Sombrite
+                - text: cria sombra artificial e reduz a incidência direta do sol sobre as colmeias.
+              - listitem [ref=f24e242]:
+                - strong [ref=f24e243]: Galão de grande capacidade
+                - text: reservatório que armazena água para os períodos de escassez.
+              - listitem [ref=f24e244]:
+                - strong [ref=f24e245]: Canos
+                - text: compoem a estrutura de circulação e o direcionamento da água.
+              - listitem [ref=f24e246]:
+                - strong [ref=f24e247]: Bomba de água
+                - text: movimenta a água pelo sistema durante os testes.
+              - listitem [ref=f24e248]:
+                - strong [ref=f24e249]: Pedras
+                - text: pontos de apoio para as abelhas alcançarem a água com segurança, sem risco de afogamento.
+              - listitem [ref=f24e250]:
+                - strong [ref=f24e251]: Estrutura de suporte
+                - text: sustenta o sombrite e os demais componentes com resistência e praticidade.
+        - listitem [ref=f24e252]:
+          - generic [aria-hidden] [ref=f24e254]: "8"
+          - generic [ref=f24e255]:
+            - heading "Protótipo, testes e próximos passos" [level=3] [ref=f24e256]
+            - paragraph [ref=f24e257]:
+              - text: O protótipo reúne sombrite, canos, bomba, galão e pedras. Os próximos passos são os
+              - strong [ref=f24e258]: testes seguros
+              - text: ": verificar a estabilidade do suporte, a tensão do sombrite, a área de sombra em diferentes horários, o funcionamento da bomba e a segurança do ponto de água, sempre sem expor uma colônia ativa a riscos e com orientação de um profissional de apicultura. Cada observação será registrada para comparar versões e melhorar a solução."
+            - paragraph [ref=f24e259]: "Compartilhamos a proposta com os especialistas durante todo o desenvolvimento e apresentamos o projeto à comunidade escolar. O feedback já mudou o desenho da solução: graças às orientações, abandonamos a ideia inicial de sombra retrátil e de monitor elétrico no apiário."
+            - figure "O banner oficial do nosso Projeto de Inovação, apresentado aos juízes da FLL." [ref=f24e260]:
+              - link [ref=f24e261] [cursor=pointer]:
+                - /url: assets/img/banner-projeto.webp
+                - img "Banner oficial do Projeto de Inovação da SESI LEGO Team, com as etapas de identificação do problema, design, solução, prototipação, comunicação e iteração, com fotos de colmeias, especialistas e materiais" [ref=f24e262]
+      - group [ref=f24e264]:
+        - generic "+ Referências bibliográficas" [ref=f24e265] [cursor=pointer]
+    - generic [ref=f24e267]:
+      - paragraph [ref=f24e268]: Robot Design
+      - heading "Uma abelha de LEGO programada para acertar" [level=2] [ref=f24e269]
+      - generic [ref=f24e270]:
+        - generic [ref=f24e271]:
+          - paragraph [ref=f24e272]:
+            - text: Nosso robô foi pensado para executar as missões com
+            - strong [ref=f24e273]: consistência
+            - text: ": alinhar, percorrer e agir com precisão, repetidamente. O visual preto e amarelo representa a abelha, símbolo da equipe, e faz referência a Picos, a Capital do Mel."
+          - paragraph [ref=f24e274]:
+            - text: O processo foi marcado por montagem, testes, identificação de limitações e mudanças na estrutura, buscando sempre mais compactação, estabilidade e precisão. Construímos
+            - strong [ref=f24e275]: cinco versões
+            - text: até chegar ao modelo final.
+        - 'figure "O modelo final visto de cima: hub SPIKE no centro, laterais elevadas em preto e amarelo." [ref=f24e276]':
+          - img "Robô LEGO visto de cima sobre piso de concreto, com o hub SPIKE branco central, laterais elevadas em peças pretas e amarelas e dois sensores de cor na frente" [ref=f24e278]
+      - heading "Ficha técnica do modelo final" [level=3] [ref=f24e280]
+      - generic [ref=f24e281]:
+        - generic [ref=f24e282]:
+          - generic [ref=f24e283]: "4"
+          - generic [ref=f24e284]: "motores grandes: 2 de locomoção (portas A e E) e 2 da garra"
+        - generic [ref=f24e285]:
+          - generic [ref=f24e286]: "2"
+          - generic [ref=f24e287]: sensores de cor, usados no alinhamento antes de movimentos específicos
+        - img "Robô visto em ângulo lateral sobre piso de concreto, com parede de azulejos ao fundo, mostrando a estrutura preta com placas amarelas perfuradas" [ref=f24e289]
+        - generic [ref=f24e290]:
+          - generic [ref=f24e291]: EV3
+          - generic [ref=f24e292]: "rodas técnicas de borracha: menos derrapagem e mais estabilidade"
+        - generic [ref=f24e293]:
+          - generic [ref=f24e294]: PID
+          - generic [ref=f24e295]: controle de giro TURN ON com correção proporcional, integral e derivativa
+        - generic [ref=f24e296]:
+          - generic [ref=f24e297]: SPIKE
+          - generic [ref=f24e298]: hub SPIKE Prime, programado em Word Blocks
+        - generic [ref=f24e299]:
+          - generic [ref=f24e300]: frontal
+          - generic [ref=f24e301]: tração dianteira, com foco em estabilidade no percurso
+        - img "Robô de lado mostrando o hub branco central e a lateral em placa amarela perfurada, com a luz do sensor acesa embaixo" [ref=f24e303]
+      - heading "Estratégia de missões" [level=3] [ref=f24e304]
+      - generic [ref=f24e305]:
+        - paragraph [ref=f24e306]:
+          - text: "Definimos o percurso com ferramentas de decisão:"
+          - strong [ref=f24e307]: Score Ponderado
+          - text: ", matrizes"
+          - strong [ref=f24e308]: Esforço x Benefício
+          - text: e
+          - strong [ref=f24e309]: Custo x Benefício
+          - text: e a matriz
+          - strong [ref=f24e310]: GUT
+          - text: "(Gravidade, Urgência e Tendência), avaliando pontuação, dificuldade, tempo, distância e espaço na mesa. Nossa ordem de execução das missões foi:"
+        - list "Ordem das missões no percurso" [ref=f24e311]:
+          - listitem [ref=f24e312]: "1"
+          - listitem [ref=f24e313]: "2"
+          - listitem [ref=f24e314]: "3"
+          - listitem [ref=f24e315]: "5"
+          - listitem [ref=f24e316]: "4"
+          - listitem [ref=f24e317]: "8"
+          - listitem [ref=f24e318]: "9"
+          - listitem [ref=f24e319]: "15"
+          - listitem [ref=f24e320]: "6"
+          - listitem [ref=f24e321]: "11"
+          - listitem [ref=f24e322]: "12"
+          - listitem [ref=f24e323]: "14"
+          - listitem [ref=f24e324]: "13"
+          - listitem [ref=f24e325]: "7"
+          - listitem [ref=f24e326]: "10"
+        - paragraph [ref=f24e327]: "Na missão 10, o objetivo é apenas não encostar. E o posicionamento das missões 13, 14 e 15 foi escolhido a dedo: a 15 aproveita a frente reta do robô, a 14 fica próxima à base por exigir mais precisão e a 13 se encaixa melhor na trajetória, por ser uma das mais fáceis de executar para a nossa equipe."
+        - figure "O tapete oficial de missões chegou em 13/10/2026 — e foi direto para os testes." [ref=f24e328]:
+          - link [ref=f24e329] [cursor=pointer]:
+            - /url: assets/img/temporada-dia11-tapete.webp
+            - img "Mesa com o tapete de competições da FIRST LEGO League montado, com o robô da equipe e integrantes ao redor" [ref=f24e330]
+      - heading "As cinco versões do robô" [level=3] [ref=f24e332]
+      - generic [ref=f24e333]:
+        - generic [ref=f24e334]:
+          - generic [ref=f24e335]:
+            - generic [ref=f24e336]: Robô inicial
+            - generic [ref=f24e337]: DIA 03 · 24/08/2026
+          - list [ref=f24e338]:
+            - listitem [ref=f24e339]: + Compacto, ágil e leve
+            - listitem [ref=f24e340]: − Instável durante as missões
+            - listitem [ref=f24e341]: − Espaço limitado para acessórios
+          - paragraph [ref=f24e342]:
+            - text: "Conclusão registrada no diário: inviável para a nossa estratégia de missão —"
+            - strong [ref=f24e343]: mudamos completamente o robô
+            - text: .
+        - generic [ref=f24e344]:
+          - generic [ref=f24e345]:
+            - generic [ref=f24e346]: Estrutura baixa e estável
+            - generic [ref=f24e347]: DIA 04 · 03/09/2026
+          - list [ref=f24e348]:
+            - listitem [ref=f24e349]: "+ Estabilidade máxima: centro de gravidade baixo, quase zero risco de tombar em curvas rápidas"
+            - listitem [ref=f24e350]: + Passagem livre por baixo de estruturas e barras baixas do tapete
+            - listitem [ref=f24e351]: − Área horizontal ampla, que dificulta passagens estreitas
+            - listitem [ref=f24e352]: "− Alcance limitado: missões no alto pedem mecanismos complexos"
+          - paragraph [ref=f24e353]: Foi com essa análise de prós e contras que equilibramos tamanho, estabilidade e funcionalidade no modelo final.
+      - list [ref=f24e354]:
+        - listitem [ref=f24e355]:
+          - img "Primeiro protótipo do robô visto de cima sobre uma mesa, ainda sem as laterais, com peças azuis e brancas, hub central e uma roda grande preta" [ref=f24e357]
+          - generic [ref=f24e358]:
+            - heading "Primeiro protótipo" [level=4] [ref=f24e359]
+            - paragraph [ref=f24e360]: A base para experimentar a estrutura e entender como as peças se comportavam nos movimentos. Nos testes, as rodas do NXT não se encaixavam nas dimensões planejadas e foram substituídas por rodas do SPIKE, deixando o conjunto mais compacto e adequado às missões.
+        - listitem [ref=f24e361]:
+          - img "Segundo protótipo do robô visto de lado sobre o tapete de missão, com hub branco central, peças azuis e roda preta grande" [ref=f24e363]
+          - generic [ref=f24e364]:
+            - heading "Segundo protótipo" [level=4] [ref=f24e365]
+            - paragraph [ref=f24e366]: Estrutura organizada com os dois sensores de cor e os motores de locomoção, planejados para o alinhamento antes de cada movimento. Depois vieram os motores da garra, as laterais elevadas em preto e amarelo e o hub SPIKE para executar a programação.
+        - listitem [ref=f24e367]:
+          - generic [ref=f24e368]:
+            - heading "Terceiro protótipo" [level=4] [ref=f24e369]
+            - paragraph [ref=f24e370]: Testamos uma proposta de robô mais largo, de estrutura baixa e centro de gravidade rebaixado. Nos testes, percebemos problemas de equilíbrio e um conjunto grande demais para as missões — e a área horizontal ampla dificultava as passagens estreitas. Foi um aprendizado importante sobre equilibrar o tamanho e a funcionalidade, que orientou o modelo final.
+        - listitem [ref=f24e371]:
+          - generic [ref=f24e372]:
+            - heading "Quarta versão" [level=4] [ref=f24e373]
+            - paragraph [ref=f24e374]: Reiniciamos a construção usando os aprendizados anteriores. Reposicionamos o hub, trocamos as rodas novamente, desta vez pelas EV3 técnicas de borracha, que derrapam menos e deram mais estabilidade, e ajustamos a estrutura em busca de um percurso mais consistente.
+        - listitem [ref=f24e375]:
+          - img "Robô final segurado pelas mãos de um integrante, visto de frente, com as duas rodas pretas grandes e as luzes dos sensores acesas" [ref=f24e377]
+          - generic [ref=f24e378]:
+            - heading "Modelo final" [level=4] [ref=f24e379]
+            - paragraph [ref=f24e380]: Estrutura preta e amarela com tração dianteira, quatro motores grandes no conjunto, dois de locomoção e dois da garra, dois sensores de cor e o hub SPIKE. A montagem equilibra espaço, estabilidade e funcionalidade para alinhar e cumprir as missões com consistência.
+      - 'heading "Programação: giro preciso com PID" [level=3] [ref=f24e381]'
+      - generic [ref=f24e382]:
+        - paragraph [ref=f24e383]:
+          - text: Programamos o hub SPIKE em
+          - strong [ref=f24e384]: Word Blocks
+          - text: . O núcleo da programação é o
+          - strong [ref=f24e385]: TURN ON
+          - text: ", nosso sistema de controle de giro baseado em"
+          - strong [ref=f24e386]: PID
+          - text: ": ele compara o comportamento esperado com o real e corrige os desvios durante o movimento. Ao programar um giro de 90°, por exemplo, o sistema monitora a rotação e faz ajustes até atingir exatamente o ângulo desejado, reduzindo oscilações nas missões."
+        - list "Termos do controle PID" [ref=f24e387]:
+          - listitem [ref=f24e388]: "P proporcional: responde ao erro atual"
+          - listitem [ref=f24e389]: "I integral: considera os erros acumulados"
+          - listitem [ref=f24e390]: "D derivativo: reduz as oscilações"
+        - paragraph [ref=f24e391]: "O procedimento PID com distância é reutilizado pelas rotinas de missão, com as variáveis reais do nosso programa:"
+        - list "Variáveis do programa" [ref=f24e392]:
+          - listitem [ref=f24e393]: erro
+          - listitem [ref=f24e394]: erro anterior
+          - listitem [ref=f24e395]: integral
+          - listitem [ref=f24e396]: derivada
+          - listitem [ref=f24e397]: Kp
+          - listitem [ref=f24e398]: Ki
+          - listitem [ref=f24e399]: Kd
+          - listitem [ref=f24e400]: correção
+          - listitem [ref=f24e401]: ângulo alvo
+          - listitem [ref=f24e402]: guinada
+          - listitem [ref=f24e403]: motor power
+        - paragraph [ref=f24e404]: "As rotinas de missão no programa levam os nomes que demos às missões: Árvore, Drone, Rocha, Sorte, Casinha de João e Se. Explosiva."
+        - paragraph [ref=f24e405]:
+          - text: Os testes repetitivos concentraram-se na
+          - strong [ref=f24e406]: missão da Árvore
+          - text: ", em que enfrentamos dificuldades de posicionamento e alinhamento: com ajustes na programação e nos movimentos, buscamos mais precisão e eficiência até o percurso ficar consistente. Os registros dessa evolução estão nos dias 13, 14 e 15 do nosso diário de bordo."
+      - figure "Nosso programa completo em Word Blocks, como salvo no hub SPIKE. Arraste para os lados e para baixo para explorar os blocos." [ref=f24e407]:
+        - region "Programa do robô em Word Blocks. Role horizontalmente para ver o conteúdo completo." [ref=f24e409]:
+          - img "Captura do programa Word Blocks da equipe exibindo os blocos de eventos, os procedimentos definidos, incluindo o PID com distância, e as rotinas de missão" [ref=f24e410]
+      - figure "O banner oficial do Design do Robô, apresentado aos juízes da FLL." [ref=f24e411]:
+        - link [ref=f24e412] [cursor=pointer]:
+          - /url: assets/img/banner-robo.webp
+          - img "Banner oficial do Design do Robô da SESI LEGO Team, com as seções de identificação das missões, design e planejamento, criação do TURN ON com PID, comunicação, iteração dos cinco protótipos e prototipação" [ref=f24e413]
+    - generic [ref=f24e416]:
+      - paragraph [ref=f24e417]: Diário de bordo
+      - heading "A temporada, dia a dia" [level=2] [ref=f24e418]
+      - paragraph [ref=f24e419]: "O nosso caderno de engenharia registrado em datas reais: decisões, testes, visitas e aprendizados de cada dia de trabalho da temporada, entre agosto e outubro de 2026."
+      - list [ref=f24e420]:
+        - listitem [ref=f24e421]:
+          - generic [aria-hidden] [ref=f24e423]: "01"
+          - generic [ref=f24e424]:
+            - generic [ref=f24e425]:
+              - generic [ref=f24e426]: 11/08/2026
+              - generic [ref=f24e427]: Temporada
+            - heading "Abertura oficial da temporada" [level=3] [ref=f24e428]
+            - paragraph [ref=f24e429]:
+              - text: "Alinhamento de diretrizes, planejamento estratégico e divisão oficial das frentes operacionais da escola em duas equipes:"
+              - strong [ref=f24e430]: EC Bots
+              - text: e
+              - strong [ref=f24e431]: SESI LEGO Team
+              - text: ". Próximos passos registrados: mapeamento de funções, pesquisa para inovação e inventário de peças."
+            - figure [ref=f24e433]:
+              - link [ref=f24e434] [cursor=pointer]:
+                - /url: assets/img/temporada-dia01.webp
+                - img "Integrantes da equipe reunidos em sala de aula com computadores, de camisetas do SESI, durante o planejamento" [ref=f24e435]
+        - listitem [ref=f24e436]:
+          - generic [aria-hidden] [ref=f24e438]: "02"
+          - generic [ref=f24e439]:
+            - generic [ref=f24e440]:
+              - generic [ref=f24e441]: 22/08/2026
+              - generic [ref=f24e442]: Projeto de Pesquisa
+            - heading "Investigação teórica e de campo" [level=3] [ref=f24e443]
+            - paragraph [ref=f24e444]: "Nas semanas seguintes ao pontapé inicial, o grupo mergulhou na fase de investigação do problema: leitura de fontes científicas, conversas e primeiros registros, com aplicação e validação do que foi aprendido."
+        - listitem [ref=f24e445]:
+          - generic [aria-hidden] [ref=f24e447]: "03"
+          - generic [ref=f24e448]:
+            - generic [ref=f24e449]:
+              - generic [ref=f24e450]: 24/08/2026
+              - generic [ref=f24e451]: Design do Robô
+            - heading "O robô inicial" [level=3] [ref=f24e452]
+            - paragraph [ref=f24e453]:
+              - text: "Primeira estrutura construída: compacta, ágil e leve — mas instável e com espaço limitado para acessórios. O registro do dia é direto:"
+              - strong [ref=f24e454]: inviável para a nossa estratégia de missão, então mudamos completamente o robô
+              - text: .
+            - generic [ref=f24e455]:
+              - figure [ref=f24e456]:
+                - link [ref=f24e457] [cursor=pointer]:
+                  - /url: assets/img/temporada-dia03-robo.webp
+                  - img "Robô amarelo e preto sobre a mesa de trabalho, ao lado de troféus da FIRST LEGO League" [ref=f24e458]
+              - figure [ref=f24e459]:
+                - link [ref=f24e460] [cursor=pointer]:
+                  - /url: assets/img/temporada-dia03-roda.webp
+                  - img "Close da roda azul com peças pretas de LEGO sobre fundo branco, detalhe da estrutura do robô" [ref=f24e461]
+        - listitem [ref=f24e462]:
+          - generic [aria-hidden] [ref=f24e464]: "04"
+          - generic [ref=f24e465]:
+            - generic [ref=f24e466]:
+              - generic [ref=f24e467]: 03/09/2026
+              - generic [ref=f24e468]: Design do Robô
+            - heading "A estrutura do robô final" [level=3] [ref=f24e469]
+            - paragraph [ref=f24e470]: "Definição da filosofia da estrutura final: baixa e estável, com centro de gravidade rebaixado e passagem livre por baixo de barras do tapete. As contrapartidas registradas: área horizontal ampla e alcance limitado nas missões altas."
+        - listitem [ref=f24e471]:
+          - generic [aria-hidden] [ref=f24e473]: "05"
+          - generic [ref=f24e474]:
+            - generic [ref=f24e475]:
+              - generic [ref=f24e476]: 07/09 a 14/09/2026
+              - generic [ref=f24e477]: Projeto de Pesquisa
+            - heading "A \"seca verde\" e o pivô" [level=3] [ref=f24e478]
+            - paragraph [ref=f24e479]:
+              - text: "Ponto de partida da pesquisa: os impactos gerais da seca na vegetação e no alimento das abelhas. A conclusão do período mudou o projeto: resolver a \"seca verde\" era amplo demais para um protótipo de engenharia —"
+              - strong [ref=f24e480]: pivô para um foco específico
+              - text: .
+        - listitem [ref=f24e481]:
+          - generic [aria-hidden] [ref=f24e483]: "06"
+          - generic [ref=f24e484]:
+            - generic [ref=f24e485]:
+              - generic [ref=f24e486]: 11/09/2026
+              - generic [ref=f24e487]: Design do Robô
+            - heading "Estratégia de missão" [level=3] [ref=f24e488]
+            - paragraph [ref=f24e489]: "Definição da estratégia de missões: percurso, ordem de execução e posicionamento das missões no tapete, com apoio das ferramentas de decisão aprendidas na liga."
+        - listitem [ref=f24e490]:
+          - generic [aria-hidden] [ref=f24e492]: "08"
+          - generic [ref=f24e493]:
+            - generic [ref=f24e494]:
+              - generic [ref=f24e495]: 07/09/2026
+              - generic [ref=f24e496]: Projeto de Pesquisa
+            - heading "O novo foco específico" [level=3] [ref=f24e497]
+            - paragraph [ref=f24e498]:
+              - text: "O problema ganhou contorno: o"
+              - strong [ref=f24e499]: estresse térmico das colmeias
+              - text: pela falta de sombra natural quando as árvores perdem as folhas no semiárido — um gargalo pontual e prático, atacável por um protótipo.
+        - listitem [ref=f24e500]:
+          - generic [aria-hidden] [ref=f24e502]: "09"
+          - generic [ref=f24e503]:
+            - generic [ref=f24e504]: Projeto de Pesquisa
+            - heading "Contato com os especialistas" [level=3] [ref=f24e506]
+            - paragraph [ref=f24e507]:
+              - text: "Abertura das conversas com apicultores e especialistas:"
+              - strong [ref=f24e508]: José Carlos de Carvalho Arraes
+              - text: ","
+              - strong [ref=f24e509]: Darcet Costa Souza
+              - text: ","
+              - strong [ref=f24e510]: Jonildo Monteiro Luz
+              - text: e
+              - strong [ref=f24e511]: Isabel Francisca da Luz Guaraná
+              - text: .
+        - listitem [ref=f24e512]:
+          - generic [aria-hidden] [ref=f24e514]: "10"
+          - generic [ref=f24e515]:
+            - generic [ref=f24e516]:
+              - generic [ref=f24e517]: 07/10 e 18/10/2026
+              - generic [ref=f24e518]: Projeto de Pesquisa
+            - heading "Simplificação da solução" [level=3] [ref=f24e519]
+            - paragraph [ref=f24e520]:
+              - text: Orientações de
+              - strong [ref=f24e521]: Darcet Costa Souza
+              - text: "(UFPI) mudaram o protótipo: corte do monitor elétrico no apiário por segurança e viabilidade, fim da sombra retrátil e direção para uma"
+              - strong [ref=f24e522]: estrutura fixa e prática
+              - text: — os rumos da solução final.
+        - listitem [ref=f24e523]:
+          - generic [aria-hidden] [ref=f24e525]: "11"
+          - generic [ref=f24e526]:
+            - generic [ref=f24e527]:
+              - generic [ref=f24e528]: 13/10/2026
+              - generic [ref=f24e529]: Desempenho do Robô
+            - heading "Chegada do tapete" [level=3] [ref=f24e530]
+            - paragraph [ref=f24e531]: O tapete oficial de missões chegou — e foi direto para a mesa de testes, com a equipe reunida para os primeiros percursos reais da temporada.
+            - generic [ref=f24e532]:
+              - figure [ref=f24e533]:
+                - link [ref=f24e534] [cursor=pointer]:
+                  - /url: assets/img/temporada-dia11-caixas.webp
+                  - img "Integrantes da equipe ao redor de uma mesa com caixas de papelão, organizando a chegada do tapete" [ref=f24e535]
+              - figure [ref=f24e536]:
+                - link [ref=f24e537] [cursor=pointer]:
+                  - /url: assets/img/temporada-dia11-grupo.webp
+                  - img "Integrantes da equipe em volta da mesa com o tapete de missões, em foto de grupo durante os testes" [ref=f24e538]
+        - listitem [ref=f24e539]:
+          - generic [aria-hidden] [ref=f24e541]: "12"
+          - generic [ref=f24e542]:
+            - generic [ref=f24e543]:
+              - generic [ref=f24e544]: 15/10/2026
+              - generic [ref=f24e545]: Projeto de Pesquisa
+            - heading "Visita à apicultura de Jonildo" [level=3] [ref=f24e546]
+            - paragraph [ref=f24e547]:
+              - text: "Dia de campo no apiário:"
+              - strong [ref=f24e548]: Jonildo Monteiro Luz
+              - text: validou o uso do sombrite para amenizar o calor, aportou a visão prática de quem cria abelhas e
+              - strong [ref=f24e549]: aprovou a alternativa fixa
+              - text: no lugar da sombra retrátil. As fotos da visita estão no trabalho de campo do projeto.
+        - listitem [ref=f24e550]:
+          - generic [aria-hidden] [ref=f24e552]: "13"
+          - generic [ref=f24e553]:
+            - generic [ref=f24e554]: Desempenho do Robô
+            - heading "Programação com PID" [level=3] [ref=f24e556]
+            - paragraph [ref=f24e557]:
+              - text: Construção da
+              - strong [ref=f24e558]: estrutura PID
+              - text: "na programação: leitura constante dos sensores, cálculo do erro e ajuste automático da velocidade dos motores para precisão no trajeto."
+        - listitem [ref=f24e559]:
+          - generic [aria-hidden] [ref=f24e561]: "14"
+          - generic [ref=f24e562]:
+            - generic [ref=f24e563]: Desempenho do Robô
+            - heading "O funcionamento do PID" [level=3] [ref=f24e565]
+            - paragraph [ref=f24e566]: "Registro do funcionamento do PID na programação: estudo dos blocos, do fluxo de correção e do comportamento real do robô nos testes."
+        - listitem [ref=f24e567]:
+          - generic [aria-hidden] [ref=f24e569]: "15"
+          - generic [ref=f24e570]:
+            - generic [ref=f24e571]: Desempenho do Robô
+            - heading "Nossa inovação" [level=3] [ref=f24e573]
+            - paragraph [ref=f24e574]:
+              - text: Equipado com controle PID, o robô executa
+              - strong [ref=f24e575]: giros perfeitos e suaves
+              - text: . A tecnologia garante máxima precisão e estabilidade na execução de trajetórias complexas, com total controle.
+        - listitem [ref=f24e576]:
+          - generic [aria-hidden] [ref=f24e578]: "16"
+          - generic [ref=f24e579]:
+            - generic [ref=f24e580]: Projeto de Pesquisa
+            - heading "A solução final do projeto" [level=3] [ref=f24e582]
+            - paragraph [ref=f24e583]:
+              - text: "O capítulo que fecha a pesquisa: uma"
+              - strong [ref=f24e584]: cobertura de sombrite com sistema de água
+              - text: ", garantindo o controle térmico direto da caixa da colmeia."
+    - generic [ref=f24e586]:
+      - 'heading "Core Values: como vivemos os valores da FLL" [level=2] [ref=f24e587]'
+      - paragraph [ref=f24e588]: "Os Core Values são o coração da FIRST LEGO League. Não os tratamos como uma lista: cada valor abaixo tem um exemplo real do nosso processo nesta temporada."
+      - list [ref=f24e589]:
+        - listitem [ref=f24e590]:
+          - heading "Trabalho em equipe" [level=3] [ref=f24e591]
+          - paragraph [ref=f24e592]: Montagem, programação, testes e planejamento das missões foram compartilhados, com ideias discutidas e decisões tomadas em conjunto.
+        - listitem [ref=f24e593]:
+          - heading "Inclusão" [level=3] [ref=f24e594]
+          - paragraph [ref=f24e595]: Cada integrante participou das pesquisas, dos registros e da apresentação, cada um contribuindo do seu jeito, com a função que assumiu.
+        - listitem [ref=f24e596]:
+          - heading "Descoberta" [level=3] [ref=f24e597]
+          - paragraph [ref=f24e598]: Aprendemos ciência com a Embrapa e com as universidades, e aprendemos a realidade do apiário na visita de campo a Picos.
+        - listitem [ref=f24e599]:
+          - heading "Inovação" [level=3] [ref=f24e600]
+          - paragraph [ref=f24e601]: Unimos sombreamento e água em uma mesma estrutura, combinando funções e adaptando a solução às necessidades do semiárido.
+        - listitem [ref=f24e602]:
+          - heading "Impacto" [level=3] [ref=f24e603]
+          - paragraph [ref=f24e604]: A solução nasceu de um problema observado perto de nós e foi desenhada para os apicultores da nossa região.
+        - listitem [ref=f24e605]:
+          - heading "Diversão" [level=3] [ref=f24e606]
+          - paragraph [ref=f24e607]: Cinco versões do robô depois, cada evolução virou motivo de celebração, e as missões ganharam nomes como Casinha de João e Sorte.
+    - generic [ref=f24e609]:
+      - heading "Galeria" [level=2] [ref=f24e610]
+      - paragraph [ref=f24e611]: O robô, os protótipos, os registros da temporada e os banners oficiais. Clique em uma foto para ver em tamanho grande.
+      - generic [ref=f24e612]:
+        - figure "Modelo final visto de cima, com o hub SPIKE central." [ref=f24e613]:
+          - link [ref=f24e614] [cursor=pointer]:
+            - /url: assets/img/robo-final-1.webp
+            - img "Robô final visto de cima sobre piso de concreto, com o hub SPIKE branco central e laterais pretas e amarelas" [ref=f24e615]
+        - figure "O robô final na mão da equipe, de frente." [ref=f24e617]:
+          - link [ref=f24e618] [cursor=pointer]:
+            - /url: assets/img/robo-final-4.webp
+            - img "Integrante segurando o robô final pela base, visto de frente, com rodas grandes pretas e luzes dos sensores acesas" [ref=f24e619]
+        - figure "Protótipo em construção sobre o tapete de missões." [ref=f24e621]:
+          - link [ref=f24e622] [cursor=pointer]:
+            - /url: assets/img/robo-proto-1.webp
+            - img "Protótipo do robô em construção, visto de lado sobre o tapete de missão, com peças azuis e brancas e uma roda preta grande" [ref=f24e623]
+        - figure "Vista lateral com a lateral amarela perfurada." [ref=f24e625]:
+          - link [ref=f24e626] [cursor=pointer]:
+            - /url: assets/img/robo-final-2.webp
+            - img "Robô final visto de lado sobre piso de concreto, com parede de azulejos ao fundo e lateral em placa amarela perfurada" [ref=f24e627]
+        - figure "O robô em outro ângulo, mostrando a tração dianteira." [ref=f24e629]:
+          - link [ref=f24e630] [cursor=pointer]:
+            - /url: assets/img/robo-final-3.webp
+            - img "Robô final visto em ângulo sobre piso de concreto, mostrando a estrutura preta com detalhes amarelos e rodas na base" [ref=f24e631]
+        - figure "Evolução da estrutura antes das laterais." [ref=f24e633]:
+          - link [ref=f24e634] [cursor=pointer]:
+            - /url: assets/img/robo-proto-2.webp
+            - img "Protótipo do robô visto de cima sobre mesa branca com desenhos, ainda sem as laterais, com hub central e peças azuis" [ref=f24e635]
+        - figure "Abertura da temporada, 11/08/2026." [ref=f24e637]:
+          - link [ref=f24e638] [cursor=pointer]:
+            - /url: assets/img/temporada-dia01.webp
+            - img "Integrantes da equipe reunidos em sala de aula com computadores, de camisetas do SESI, durante o planejamento da temporada" [ref=f24e639]
+        - figure "O robô sobre a mesa de projeto, 24/08/2026." [ref=f24e641]:
+          - link [ref=f24e642] [cursor=pointer]:
+            - /url: assets/img/temporada-dia03-robo.webp
+            - img "Robô amarelo e preto sobre a mesa de trabalho, ao lado de troféus da FIRST LEGO League" [ref=f24e643]
+        - figure "Detalhe do conjunto de rodas do robô inicial." [ref=f24e645]:
+          - link [ref=f24e646] [cursor=pointer]:
+            - /url: assets/img/temporada-dia03-roda.webp
+            - img "Close da roda azul com peças pretas de LEGO sobre fundo branco, detalhe da estrutura do robô" [ref=f24e647]
+        - figure "A chegada do tapete oficial, 13/10/2026." [ref=f24e649]:
+          - link [ref=f24e650] [cursor=pointer]:
+            - /url: assets/img/temporada-dia11-caixas.webp
+            - img "Integrantes da equipe ao redor de uma mesa com caixas de papelão, organizando a chegada do tapete" [ref=f24e651]
+        - figure "Primeiros testes no tapete de missões." [ref=f24e653]:
+          - link [ref=f24e654] [cursor=pointer]:
+            - /url: assets/img/temporada-dia11-grupo.webp
+            - img "Integrantes da equipe em volta da mesa com o tapete de missões, em foto de grupo durante os testes" [ref=f24e655]
+        - figure "O tapete de missões em uso nos testes." [ref=f24e657]:
+          - link [ref=f24e658] [cursor=pointer]:
+            - /url: assets/img/temporada-dia11-tapete.webp
+            - img "Mesa com o tapete de competições da FIRST LEGO League montado, com o robô da equipe e integrantes ao redor" [ref=f24e659]
+        - figure "Visita ao apiário de Jonildo, 15/10/2026." [ref=f24e661]:
+          - link [ref=f24e662] [cursor=pointer]:
+            - /url: assets/img/temporada-dia12-apiario.webp
+            - img "Grupo da equipe posando ao ar livre no apiário, com caixas de colmeias azuis à frente e árvores ao fundo" [ref=f24e663]
+        - figure "O manejo das abelhas no apiário." [ref=f24e665]:
+          - link [ref=f24e666] [cursor=pointer]:
+            - /url: assets/img/temporada-dia12-jonildo.webp
+            - img "Apicultor de macacão de proteção amarelo manuseando equipamento junto às colmeias durante a visita da equipe" [ref=f24e667]
+        - figure "O banner do Projeto de Inovação." [ref=f24e669]:
+          - link [ref=f24e670] [cursor=pointer]:
+            - /url: assets/img/banner-projeto.webp
+            - img "Banner do Projeto de Inovação da equipe com fotos de colmeias, abelhas, estrutura de sombreamento e especialistas consultados" [ref=f24e671]
+        - figure "O banner do Design do Robô." [ref=f24e673]:
+          - link [ref=f24e674] [cursor=pointer]:
+            - /url: assets/img/banner-robo.webp
+            - img "Banner do Design do Robô da equipe com o mapa do tapete de missões numerado de 1 a 15, fotos dos protótipos e das crianças trabalhando" [ref=f24e675]
+    - generic [ref=f24e678]:
+      - heading "Agradecimentos e contato" [level=2] [ref=f24e679]
+      - generic [ref=f24e680]:
+        - generic [ref=f24e681]:
+          - heading "A quem agradecemos" [level=3] [ref=f24e682]
+          - list [ref=f24e683]:
+            - listitem [ref=f24e684]:
+              - strong [ref=f24e685]: Escola SESI Wilma Catão Araújo
+              - text: pelo espaço, apoio e incentivo à equipe.
+            - listitem [ref=f24e686]:
+              - strong [ref=f24e687]: Jonildo Monteiro Luz, Darcet Costa Souza, Isabel Francisca da Luz Guaraná, José Carlos de Carvalho Arraes, Carlos Fernando Rodrigues Guaraná e José Breno da Cruz
+              - text: pelas conversas, visitas e orientações que moldaram o projeto.
+            - listitem [ref=f24e688]:
+              - strong [ref=f24e689]: Embrapa e UFPI
+              - text: pela pesquisa que fundamentou nossa solução.
+            - listitem [ref=f24e690]:
+              - strong [ref=f24e691]: FIRST LEGO League
+              - text: pela temporada que nos desafia a aprender fazendo.
+          - paragraph [ref=f24e692]:
+            - strong [ref=f24e693]: "A completar:"
+            - text: patrocinadores e apoiadores da equipe ainda não constam no material enviado.
+        - generic [ref=f24e694]:
+          - heading "Fale com a equipe" [level=3] [ref=f24e695]
+          - paragraph [ref=f24e696]: Queremos trocar ideias com outras equipes, apicultores e quem se interessa por robótica e pela proteção das abelhas.
+          - list [ref=f24e697]:
+            - listitem [ref=f24e698]:
+              - generic [ref=f24e699]: E-mail
+              - link "[e-mail da equipe]" [ref=f24e700] [cursor=pointer]:
+                - /url: mailto:contato@exemplo.com
+            - listitem [ref=f24e701]:
+              - generic [ref=f24e702]: Instagram
+              - link "[@ da equipe]" [disabled] [ref=f24e703] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f24e704]:
+              - generic [ref=f24e705]: Escola
+              - generic [ref=f24e706]: SESI Wilma Catão Araújo, Picos, PI
+          - paragraph [ref=f24e707]:
+            - strong [ref=f24e708]: "A completar:"
+            - text: e-mail e redes sociais oficiais da equipe não constam no material enviado.
+  - contentinfo [ref=f24e709]:
+    - generic [ref=f24e710]:
+      - generic [ref=f24e711]: SESI LEGO Team
+      - navigation "Navegação do rodapé" [ref=f24e713]:
+        - list [ref=f24e714]:
+          - listitem [ref=f24e715]:
+            - link "Início" [ref=f24e716] [cursor=pointer]:
+              - /url: "#inicio"
+          - listitem [ref=f24e717]:
+            - link "Equipe" [ref=f24e718] [cursor=pointer]:
+              - /url: "#equipe"
+          - listitem [ref=f24e719]:
+            - link "Projeto de Pesquisa" [ref=f24e720] [cursor=pointer]:
+              - /url: "#projeto"
+          - listitem [ref=f24e721]:
+            - link "Design do Robô" [ref=f24e722] [cursor=pointer]:
+              - /url: "#robo"
+          - listitem [ref=f24e723]:
+            - link "Diário de Bordo" [ref=f24e724] [cursor=pointer]:
+              - /url: "#diario"
+          - listitem [ref=f24e725]:
+            - link "Core Values" [ref=f24e726] [cursor=pointer]:
+              - /url: "#valores"
+          - listitem [ref=f24e727]:
+            - link "Galeria" [ref=f24e728] [cursor=pointer]:
+              - /url: "#galeria"
+      - paragraph [ref=f24e729]: "Escola SESI Wilma Catão Araújo, Picos, PI. FIRST LEGO League 2026, temporada BIOGLOW. Identidade preto e amarelo: a abelha de Picos, a Capital do Mel."
+      - link "Voltar ao topo" [ref=f24e730] [cursor=pointer]:
+        - /url: "#topo"
+  - dialog "Foto ampliada" [ref=f24e731]:
+    - figure "Protótipo em construção" [ref=f24e736]:
+      - img "Protótipo do robô em construção, visto de lado sobre o tapete de missão, com peças azuis e brancas e uma roda preta grande" [ref=f24e737]
+    - button "Fechar foto ampliada" [active] [ref=f24e735] [cursor=pointer]: Fechar

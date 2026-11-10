@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ============================================================
+       SEO BÁSICO (edite o domínio quando publicar)
+       ============================================================ -->
+  <title>SESI LEGO Team | Equipe de robótica FIRST LEGO League em Picos, PI</title>
+  <meta name="description" content="Site oficial da SESI LEGO Team, equipe da Escola SESI Wilma Catão Araújo (Picos, PI) na FIRST LEGO League 2026: projeto de pesquisa sobre sombreamento de colmeias no semiárido e robô LEGO preto e amarelo com controle PID.">
+  <meta name="author" content="SESI LEGO Team">
+  <meta name="theme-color" content="#171310">
+  <link rel="canonical" href="https://sesi-lego-team.github.io/"><!-- EDITAR: URL final após publicar -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="SESI LEGO Team">
+  <meta property="og:title" content="SESI LEGO Team | FIRST LEGO League 2026">
+  <meta property="og:description" content="Robótica com espírito de colmeia: um projeto pelas abelhas do semiárido e um robô preto e amarelo construído em Picos, a Capital do Mel.">
+  <meta property="og:image" content="assets/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon (emblema oficial da equipe) -->
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <!-- Fontes auto-hospedadas (subconjunto latin cobre pt-BR) -->
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="preload" href="assets/fonts/ArchivoBlack-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Estilo principal -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Dados estruturados para buscadores -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SESI LEGO Team",
+    "description": "Equipe de robótica estudantil da Escola SESI Wilma Catão Araújo, em Picos (PI), participante da FIRST LEGO League.",
+    "url": "https://sesi-lego-team.github.io/",
+    "logo": "assets/img/emblema.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Picos",
+      "addressRegion": "PI",
+      "addressCountry": "BR"
+    },
+    "affiliation": "FIRST LEGO League",
+    "sameAs": ["https://instagram.com/sesilegoteampi_"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Barra de progresso de leitura -->
+  <div class="progresso-leitura" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       NAVEGAÇÃO
+       ============================================================ -->
+  <header class="topbar" id="topo">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a class="brand" href="#inicio">
+        <img class="brand-mark" src="assets/img/emblema.png" alt="" width="624" height="640" decoding="async">
+        <span class="brand-name">SESI <b>LEGO Team</b></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu de navegação">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#inicio" aria-current="page">Início</a></li>
+        <li><a href="#equipe">Equipe</a></li>
+        <li><a href="#projeto">Projeto</a></li>
+        <li><a href="#robo">Robô</a></li>
+        <li><a href="#diario">Diário</a></li>
+        <li><a href="#valores">Valores</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#contato" class="nav-cta">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ============================================================
+         1. HERO
+         ============================================================ -->
+    <section class="hero" id="inicio">
+      <div class="hero-favo" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-texto">
+          <p class="eyebrow">FIRST LEGO League 2026 <span class="sep">·</span> Temporada BIOGLOW</p>
+          <h1 class="display">Robótica com espírito de <em>colmeia</em></h1>
+          <p class="hero-sub">
+            De Picos, a Capital do Mel, para a FIRST LEGO League: um robô
+            preto e amarelo, um projeto pelas abelhas do semiárido e uma
+            equipe que trabalha junto.
+          </p>
+          <div class="hero-acoes">
+            <a class="btn" href="#projeto">Conheça o projeto</a>
+            <a class="btn btn-ghost" href="#robo">Veja o robô</a>
+          </div>
+        </div>
+
+        <figure class="hero-figura">
+          <div class="hex-frame">
+            <img src="assets/img/robo-final-4.webp"
+                 alt="Robô LEGO preto e amarelo da equipe segurado pelas mãos de um integrante, visto de frente, com as duas rodas pretas grandes e o hub SPIKE central"
+                 width="840" height="1120" fetchpriority="high" decoding="async">
+          </div>
+          <figcaption class="legenda">O modelo final do nosso robô, construído em preto e amarelo como uma abelha.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Faixa de números reais do processo -->
+    <section class="numeros" aria-label="Números da temporada">
+      <div class="container numeros-grid">
+        <div class="numero reveal reveal-3d"><span class="numero-valor" data-contador="5">5</span><span class="numero-rotulo">versões do robô construídas</span></div>
+        <div class="numero reveal reveal-3d"><span class="numero-valor" data-contador="15">15</span><span class="numero-rotulo">missões avaliadas na estratégia</span></div>
+        <div class="numero reveal reveal-3d"><span class="numero-valor" data-contador="4">4</span><span class="numero-rotulo">motores grandes no robô final</span></div>
+        <div class="numero reveal reveal-3d"><span class="numero-valor" data-contador="2">2</span><span class="numero-rotulo">sensores de cor para alinhamento</span></div>
+        <div class="numero reveal reveal-3d"><span class="numero-valor" data-contador="6">6</span><span class="numero-rotulo">especialistas ouvidos no projeto</span></div>
+        <div class="numero reveal reveal-3d"><span class="numero-valor" data-contador="15">15</span><span class="numero-rotulo">dias registrados no diário de bordo</span></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. SOBRE A EQUIPE
+         ============================================================ -->
+    <section class="secao" id="equipe">
+      <div class="container">
+        <h2 class="titulo-secao reveal">Uma equipe que funciona como uma colmeia</h2>
+
+        <div class="equipe-grid">
+          <div class="equipe-texto reveal">
+            <!-- EDITAR: apresentação da equipe -->
+            <p>
+              Somos a <strong>SESI LEGO Team</strong>, equipe de robótica da
+              <strong>Escola SESI Wilma Catão Araújo</strong>, em Picos, no
+              interior do Piauí. Competimos na <strong>FIRST LEGO League</strong>,
+              que desafia equipes de estudantes a resolver problemas reais com
+              ciência, tecnologia e trabalho em equipe.
+            </p>
+            <p>
+              Nossa identidade nasceu da nossa terra: o preto e o amarelo do
+              robô representam uma abelha, em referência à apicultura de Picos,
+              conhecida como a <strong>Capital do Mel</strong>. Como numa colmeia,
+              cada integrante tem uma função e as decisões são tomadas em conjunto:
+              montagem, programação, testes, pesquisa e apresentação divididos
+              entre todos.
+            </p>
+            <p>
+              Na abertura da temporada, a escola organizou as frentes
+              operacionais em duas equipes, <strong>EC Bots</strong> e
+              <strong>SESI LEGO Team</strong> — e desde então documentamos tudo:
+              as cinco versões do robô, as visitas, as entrevistas com
+              especialistas e cada ajuste de programação. Este site é o nosso
+              caderno de engenharia aberto para juízes, família e comunidade.
+            </p>
+          </div>
+
+          <aside class="ficha reveal" aria-label="Ficha da equipe">
+            <h3 class="ficha-titulo">Ficha da equipe</h3>
+            <dl class="ficha-lista">
+              <div><dt>Equipe</dt><dd>SESI LEGO Team</dd></div>
+              <div><dt>Escola</dt><dd>SESI Wilma Catão Araújo</dd></div>
+              <div><dt>Cidade</dt><dd>Picos, Piauí, Brasil</dd></div>
+              <div><dt>Liga</dt><dd>FIRST LEGO League</dd></div>
+              <div><dt>Temporada</dt><dd>2026, BIOGLOW</dd></div>
+              <div><dt>Integrantes</dt><dd>5 competidores + técnica, professor e mentor</dd></div>
+              <div><dt>Diário de bordo</dt><dd>15 dias registrados</dd></div>
+              <div><dt>Identidade</dt><dd>Abelha (preto e amarelo)</dd></div>
+            </dl>
+          </aside>
+        </div>
+
+        <!-- Membros -->
+        <h3 class="subtitulo-secao reveal">Membros e funções</h3>
+
+        <div class="membros-grupo">
+          <p class="membros-grupo-titulo reveal">Competidores</p>
+          <ul class="membros">
+            <li class="membro reveal reveal-3d">
+              <div class="membro-foto">
+                <img src="assets/img/equipe/ana-loanny.webp"
+                     alt="Ana Loanny de jaqueta azul da escola, sorrindo e fazendo sinal de positivo com a mão, em ambiente escolar"
+                     width="360" height="480" loading="lazy" decoding="async">
+              </div>
+              <h4 class="membro-nome">Ana Loanny</h4>
+              <p class="membro-funcao">Competidora</p>
+            </li>
+            <li class="membro reveal reveal-3d">
+              <div class="membro-foto">
+                <img src="assets/img/equipe/italo-gabriel.webp"
+                     alt="Ítalo Gabriel de camiseta azul e branca, sorrindo com os dois polegares para cima, em ambiente escolar"
+                     width="360" height="480" loading="lazy" decoding="async">
+              </div>
+              <h4 class="membro-nome">Ítalo Gabriel</h4>
+              <p class="membro-funcao">Competidor</p>
+            </li>
+            <li class="membro reveal reveal-3d">
+              <div class="membro-foto">
+                <img src="assets/img/equipe/cesar-henrique.webp"
+                     alt="Cesar Henrique de jaqueta azul da escola, sorrindo com os polegares para cima, em ambiente escolar"
+                     width="360" height="480" loading="lazy" decoding="async">
+              </div>
+              <h4 class="membro-nome">Cesar Henrique</h4>
+              <p class="membro-funcao">Competidor</p>
+            </li>
+            <li class="membro reveal reveal-3d">
+              <div class="membro-foto">
+                <img src="assets/img/equipe/pedro-italo.webp"
+                     alt="Pedro Ítalo de camiseta branca com mangas verde-água e o logotipo do SESI, sorrindo com o polegar para cima"
+                     width="360" height="480" loading="lazy" decoding="async">
+              </div>
+              <h4 class="membro-nome">Pedro Ítalo</h4>
+              <p class="membro-funcao">Competidor</p>
+            </li>
+            <li class="membro reveal reveal-3d">
+              <div class="membro-foto">
+                <img src="assets/img/equipe/paulo-jose.webp"
+                     alt="Paulo José de jaqueta azul com o logotipo do SESI, sorrindo com o polegar para cima, próximo a plantas"
+                     width="288" height="384" loading="lazy" decoding="async">
+              </div>
+              <h4 class="membro-nome">Paulo José</h4>
+              <p class="membro-funcao">Competidor</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="membros-grupo">
+          <p class="membros-grupo-titulo reveal">Comissão técnica e mentoria</p>
+          <ul class="membros membros-tecnica">
+            <li class="membro reveal reveal-3d">
+              <div class="membro-foto">
+                <img src="assets/img/equipe/alex.webp"
+                     alt="Alex, técnico da equipe, de camiseta preta do SESI, óculos e barba, de braços cruzados em ambiente escolar"
+                     width="360" height="480" loading="lazy" decoding="async">
+              </div>
+              <h4 class="membro-nome">Alex</h4>
+              <p class="membro-funcao">Técnico · Professor</p>
+            </li>
+            <li class="membro reveal reveal-3d">
+              <div class="membro-foto">
+                <img src="assets/img/equipe/regiane.webp"
+                     alt="Regiane, técnica da equipe, sorrindo, de blusa verde-azulada e colar"
+                     width="205" height="205" loading="lazy" decoding="async">
+              </div>
+              <h4 class="membro-nome">Regiane</h4>
+              <p class="membro-funcao">Técnica · Professora</p>
+            </li>
+            <li class="membro reveal reveal-3d">
+              <div class="membro-foto">
+                <img src="assets/img/equipe/gabriel-evencio.webp"
+                     alt="Gabriel Evêncio, mentor da equipe, de camiseta preta, olhando para a câmera diante de uma parede clara"
+                     width="360" height="640" loading="lazy" decoding="async">
+              </div>
+              <h4 class="membro-nome">Gabriel Evêncio</h4>
+              <p class="membro-funcao">Mentor</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. PROJETO DE PESQUISA (INNOVATION PROJECT)
+         ============================================================ -->
+    <section class="secao secao-alt" id="projeto">
+      <div class="container">
+        <p class="eyebrow reveal">Innovation Project</p>
+        <h2 class="titulo-secao reveal">Sombreamento inteligente de colmeias no semiárido nordestino</h2>
+        <p class="secao-intro reveal">
+          Quando as árvores do apiário perdem as folhas, as caixas das abelhas
+          ficam expostas ao sol da estiagem. Foi desse problema real, observado
+          em Picos, que nasceu o nosso projeto de pesquisa.
+        </p>
+
+        <!-- Linha do tempo do projeto -->
+        <ol class="jornada">
+
+          <li class="jornada-passo reveal">
+            <div class="passo-no">
+              <span class="hex-node" aria-hidden="true">1</span>
+            </div>
+            <div class="passo-corpo">
+              <h3 class="passo-titulo">O problema</h3>
+              <p>
+                No semiárido nordestino, dias muito quentes e longos períodos
+                sem chuva castigam as colmeias. Durante a estiagem, algumas
+                árvores da Caatinga perdem as folhas e deixam as caixas
+                expostas à radiação solar direta. As abelhas precisam manter a temperatura
+                interna entre <span class="dado">34 °C</span> e
+                <span class="dado">35 °C</span> para o desenvolvimento das
+                crias, e o calor excessivo exige mais esforço de
+                termorregulação, com movimento de asas e uso de água. Quando
+                falta sombra e falta água, a colônia sofre.
+              </p>
+              <blockquote class="pergunta-norteadora">
+                <p>
+                  Como podemos complementar a sombra natural das colmeias e
+                  oferecer uma alternativa prática para enfrentar o calor e a
+                  escassez de água durante a estiagem, mantendo a segurança
+                  das abelhas e facilitando o trabalho do apicultor?
+                </p>
+              </blockquote>
+            </div>
+          </li>
+
+          <li class="jornada-passo reveal">
+            <div class="passo-no">
+              <span class="hex-node" aria-hidden="true">2</span>
+            </div>
+            <div class="passo-corpo">
+              <h3 class="passo-titulo">Do problema amplo ao foco: o nosso pivô</h3>
+              <p>
+                Nosso primeiro ponto de partida foi a <strong>"seca verde"</strong>:
+                os impactos gerais da seca na vegetação e no alimento das
+                abelhas. Percebemos, porém, que tentar resolver um problema
+                tão amplo era inviável para um protótipo de engenharia — e
+                registramos no diário de bordo uma
+                <strong>mudança estratégica de rota</strong>.
+              </p>
+              <p>
+                Especificamos o problema para um gargalo pontual e prático:
+                o <strong>estresse térmico das colmeias</strong> pela falta de
+                sombra natural quando as árvores perdem as folhas no semiárido.
+                De um problema grande demais, chegamos a um que conseguimos
+                atacar de verdade.
+              </p>
+            </div>
+          </li>
+
+          <li class="jornada-passo reveal">
+            <div class="passo-no">
+              <span class="hex-node" aria-hidden="true">3</span>
+            </div>
+            <div class="passo-corpo">
+              <h3 class="passo-titulo">A pesquisa científica</h3>
+              <p>
+                Procuramos fontes confiáveis, como a Embrapa e universidades,
+                para entender o que realmente acontece com as colmeias no calor.
+                Dois estudos guiaram o projeto:
+              </p>
+              <ul class="lista-pesquisa">
+                <li>
+                  <strong>Alternativas de sombreamento para apiários</strong>
+                  (Embrapa Meio-Norte, 2011): pesquisa realizada em Castelo do
+                  Piauí que comparou árvores, cobertura de palha, tela sombrite
+                  e exposição direta ao sol. Os resultados destacaram a
+                  importância do sombreamento adequado para o desenvolvimento
+                  das crias.
+                </li>
+                <li>
+                  <strong>Internal water supply in Africanized beehives during
+                  the dry season in the Brazilian semiarid</strong> (2020):
+                  estudo que registrou consumo médio de
+                  <span class="dado">74,6 mL</span> de água por colmeia ao dia
+                  durante a estiagem, mostrando que a água não pode ficar de
+                  fora de nenhuma solução.
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="jornada-passo reveal">
+            <div class="passo-no">
+              <span class="hex-node" aria-hidden="true">4</span>
+            </div>
+            <div class="passo-corpo">
+              <h3 class="passo-titulo">O trabalho de campo</h3>
+              <p>
+                Visitamos o apiário de <strong>Jonildo Monteiro Luz</strong>,
+                em Picos, no <span class="dado">15/10/2026</span>, para
+                conhecer de perto a criação de abelhas. Acompanhamos o manejo
+                com o fumigador, usado para liberar fumaça e facilitar o
+                trabalho com as colmeias, e conversamos sobre as dificuldades
+                reais do apicultor na estiagem: calor e escassez de água.
+              </p>
+              <div class="passo-fotos">
+                <figure class="passo-foto">
+                  <a href="assets/img/temporada-dia12-apiario.webp" class="lightbox-link" data-legenda="A equipe na visita ao apiário de Jonildo Monteiro Luz, em Picos">
+                    <img src="assets/img/galeria/temporada-dia12-apiario.webp"
+                         alt="Grupo da equipe posando ao ar livre no apiário, com caixas de colmeias azuis à frente e árvores ao fundo"
+                         width="800" height="450" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption class="legenda">A equipe diante das colmeias no apiário de Jonildo.</figcaption>
+                </figure>
+                <figure class="passo-foto">
+                  <a href="assets/img/temporada-dia12-jonildo.webp" class="lightbox-link" data-legenda="Jonildo Monteiro Luz mostrando o manejo das abelhas durante a visita">
+                    <img src="assets/img/galeria/temporada-dia12-jonildo.webp"
+                         alt="Apicultor de macacão de proteção amarelo manuseando equipamento junto às colmeias durante a visita da equipe"
+                         width="720" height="1280" loading="lazy" decoding="async">
+                  </a>
+                  <figcaption class="legenda">O manejo das colmeias mostrado pelo apicultor.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </li>
+
+          <li class="jornada-passo reveal">
+            <div class="passo-no">
+              <span class="hex-node" aria-hidden="true">5</span>
+            </div>
+            <div class="passo-corpo">
+              <h3 class="passo-titulo">Os especialistas que ouvimos</h3>
+              <p>
+                Buscamos pessoas com experiência em biologia, engenharia
+                agronômica e apicultura para aproximar a proposta da realidade
+                dos apiários:
+              </p>
+              <ul class="especialistas">
+                <li class="reveal">
+                  <strong>Jonildo Monteiro Luz</strong>
+                  <span>apicultor em Picos, PI. Recebeu nossa visita no apiário, confirmou a viabilidade do sombrite para amenizar o calor das colmeias e aprovou a alternativa de estrutura fixa no lugar da sombra retrátil.</span>
+                </li>
+                <li class="reveal">
+                  <strong>Darcet Costa Souza</strong>
+                  <span>engenheiro agrônomo e professor de Apicultura da UFPI, Campus Ministro Petrônio Portela, em Teresina, PI. Orientou as mudanças que simplificaram a solução: sem monitor elétrico no apiário e fim da sombra retrátil, em favor de uma estrutura fixa e prática.</span>
+                </li>
+                <li class="reveal">
+                  <strong>Isabel Francisca da Luz Guaraná</strong>
+                  <span>bióloga e professora do Colégio Santa Maria, em Recife, PE. Acompanhou o desenvolvimento do projeto com conhecimentos e sugestões para o aperfeiçoamento.</span>
+                </li>
+                <li class="reveal">
+                  <strong>José Carlos de Carvalho Arraes</strong>
+                  <span>biólogo, mestre em Biodiversidade, Ambiente e Saúde, atua em ecologia vegetal. Ajudou na definição da problemática, apresentando vantagens e desvantagens das ideias propostas.</span>
+                </li>
+                <li class="reveal">
+                  <strong>Carlos Fernando Rodrigues Guaraná</strong>
+                  <span>professor universitário, biólogo e pesquisador da UFRPE, em Recife, PE. Mestre e doutor pela UFPE, atua há mais de 30 anos em microbiologia, controle biológico de pragas e conservação ambiental, com pesquisas e publicações científicas.</span>
+                </li>
+                <li class="reveal">
+                  <strong>José Breno da Cruz</strong>
+                  <span>trabalhou na Fundação Liberato, no Rio Grande do Sul, e atualmente está aposentado. Dividiu experiência técnica com a equipe.</span>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="jornada-passo reveal">
+            <div class="passo-no">
+              <span class="hex-node" aria-hidden="true">6</span>
+            </div>
+            <div class="passo-corpo">
+              <h3 class="passo-titulo">As estratégias de investigação</h3>
+              <p>
+                Organizamos o raciocínio com ferramentas que aprendemos na FLL:
+                <strong>brainstorming</strong> para reunir ideias de todos,
+                <strong>análise SWOT</strong> para mapear forças, fraquezas,
+                oportunidades e ameaças, <strong>benchmarking</strong> de
+                práticas de manejo térmico e o <strong>Lean Canvas</strong>
+                para estruturar o projeto. E usamos a
+                <strong>técnica dos 5 porquês</strong> para chegar à raiz do
+                problema:
+              </p>
+              <details class="porques">
+                <summary>Ver a cadeia completa dos 5 porquês</summary>
+                <ol class="porques-lista">
+                  <li>Por quê? Porque o sombreamento natural diminui quando algumas árvores perdem suas folhas.</li>
+                  <li>Por quê? Porque as árvores são utilizadas como fonte de sombra no apiário.</li>
+                  <li>Por quê? Porque o sombreamento é importante para reduzir a exposição térmica das colmeias.</li>
+                  <li>Por quê? Porque as abelhas precisam realizar a termorregulação da colônia, e condições térmicas excessivas podem prejudicar seu desenvolvimento.</li>
+                  <li>Por quê? Porque o microclima ao redor e dentro da colmeia influencia diretamente as condições de desenvolvimento da colônia.</li>
+                </ol>
+              </details>
+            </div>
+          </li>
+
+          <li class="jornada-passo reveal">
+            <div class="passo-no">
+              <span class="hex-node" aria-hidden="true">7</span>
+            </div>
+            <div class="passo-corpo">
+              <h3 class="passo-titulo">A solução</h3>
+              <p>
+                Criamos uma <strong>estrutura leve e modular</strong> para
+                complementar a sombra natural das colmeias. A cobertura usa
+                <strong>sombrite</strong> como sombreamento artificial, formando
+                um teto com <strong>laterais inclinadas</strong> para reduzir a
+                incidência direta do sol, melhorar as condições térmicas e
+                preservar a circulação de ar. Junto da cobertura, o projeto
+                integra um sistema de água pensado para a estiagem.
+              </p>
+              <ul class="solucao-elementos">
+                <li class="reveal"><strong>Sombrite</strong><span>cria sombra artificial e reduz a incidência direta do sol sobre as colmeias.</span></li>
+                <li class="reveal"><strong>Galão de grande capacidade</strong><span>reservatório que armazena água para os períodos de escassez.</span></li>
+                <li class="reveal"><strong>Canos</strong><span>compoem a estrutura de circulação e o direcionamento da água.</span></li>
+                <li class="reveal"><strong>Bomba de água</strong><span>movimenta a água pelo sistema durante os testes.</span></li>
+                <li class="reveal"><strong>Pedras</strong><span>pontos de apoio para as abelhas alcançarem a água com segurança, sem risco de afogamento.</span></li>
+                <li class="reveal"><strong>Estrutura de suporte</strong><span>sustenta o sombrite e os demais componentes com resistência e praticidade.</span></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="jornada-passo reveal">
+            <div class="passo-no">
+              <span class="hex-node" aria-hidden="true">8</span>
+            </div>
+            <div class="passo-corpo">
+              <h3 class="passo-titulo">Protótipo, testes e próximos passos</h3>
+              <p>
+                O protótipo reúne sombrite, canos, bomba, galão e pedras. Os
+                próximos passos são os <strong>testes seguros</strong>:
+                verificar a estabilidade do suporte, a tensão do sombrite, a
+                área de sombra em diferentes horários, o funcionamento da bomba
+                e a segurança do ponto de água, sempre sem expor uma colônia
+                ativa a riscos e com orientação de um profissional de
+                apicultura. Cada observação será registrada para comparar
+                versões e melhorar a solução.
+              </p>
+              <p>
+                Compartilhamos a proposta com os especialistas durante todo o
+                desenvolvimento e apresentamos o projeto à comunidade escolar.
+                O feedback já mudou o desenho da solução: graças às
+                orientações, abandonamos a ideia inicial de sombra retrátil e
+                de monitor elétrico no apiário.
+              </p>
+              <figure class="figura-banner reveal">
+                <a href="assets/img/banner-projeto.webp" class="lightbox-link" data-legenda="Banner oficial do Projeto de Inovação da equipe, apresentado aos juízes">
+                  <img src="assets/img/galeria/banner-projeto.webp"
+                       alt="Banner oficial do Projeto de Inovação da SESI LEGO Team, com as etapas de identificação do problema, design, solução, prototipação, comunicação e iteração, com fotos de colmeias, especialistas e materiais"
+                       width="800" height="566" loading="lazy" decoding="async">
+                </a>
+                <figcaption class="legenda">O banner oficial do nosso Projeto de Inovação, apresentado aos juízes da FLL.</figcaption>
+              </figure>
+            </div>
+          </li>
+        </ol>
+
+        <!-- ============================================================
+             MAQUETE — o protótipo como imagem navegável
+             Foto plana da maquete + marcadores numerados: ao escolher
+             uma parte, ela fica em destaque e o painel mostra o papel
+             dela segundo a pesquisa. Sem JS: foto + lista legível.
+             ============================================================ -->
+        <div class="maquete reveal" id="maquete">
+          <h3 class="subtitulo-secao">A maquete do protótipo</h3>
+          <p class="secao-intro">
+            Construímos uma maquete para mostrar a solução inteira de perto:
+            a cobertura de sombrite, o sistema de água e as áreas de cultivo
+            numa mesma estrutura. <strong>Toque nos marcadores numerados</strong>
+            para ver o papel de cada parte segundo nossa pesquisa.
+          </p>
+
+          <figure class="maquete-palco" id="maquetePalco">
+            <img class="maquete-base"
+                 src="assets/img/maquete/base.webp"
+                 alt="Maquete do protótipo da equipe: estrutura de madeira com telhado de sombrite negro, três caixas de cultivo com plantas, cano de PVC, barril reservatório azul, tanque de água com pedras na frente e base de papelão"
+                 width="1374" height="1145" loading="lazy" decoding="async" draggable="false">
+
+            <!-- recortes de cada parte, usados só para o destaque -->
+            <img class="maquete-recorte" data-parte="sombrite"
+                 src="assets/img/maquete/telhado.webp" alt=""
+                 width="1374" height="1145" loading="lazy" decoding="async" draggable="false">
+            <img class="maquete-recorte" data-parte="estrutura"
+                 src="assets/img/maquete/estrutura.webp" alt=""
+                 width="1374" height="1145" loading="lazy" decoding="async" draggable="false">
+            <img class="maquete-recorte" data-parte="caixas"
+                 src="assets/img/maquete/caixas.webp" alt=""
+                 width="1374" height="1145" loading="lazy" decoding="async" draggable="false">
+            <img class="maquete-recorte" data-parte="canos"
+                 src="assets/img/maquete/cano.webp" alt=""
+                 width="1374" height="1145" loading="lazy" decoding="async" draggable="false">
+            <img class="maquete-recorte" data-parte="galao"
+                 src="assets/img/maquete/barril.webp" alt=""
+                 width="1374" height="1145" loading="lazy" decoding="async" draggable="false">
+            <img class="maquete-recorte" data-parte="plantas"
+                 src="assets/img/maquete/plantas.webp" alt=""
+                 width="1374" height="1145" loading="lazy" decoding="async" draggable="false">
+            <img class="maquete-recorte" data-parte="bebedouro"
+                 src="assets/img/maquete/tanque.webp" alt=""
+                 width="1374" height="1145" loading="lazy" decoding="async" draggable="false">
+            <img class="maquete-recorte" data-parte="bebedouro"
+                 src="assets/img/maquete/pedras.webp" alt=""
+                 width="1374" height="1145" loading="lazy" decoding="async" draggable="false">
+
+            <button type="button" class="maquete-pino" data-parte="sombrite" aria-pressed="false"
+                    style="--x:53.7%;--y:15.1%"
+                    aria-label="Parte 1: Sombrite, o telhado negro">
+              <span class="maquete-pino-num" aria-hidden="true">1</span>
+            </button>
+            <button type="button" class="maquete-pino" data-parte="estrutura" aria-pressed="false"
+                    style="--x:15.9%;--y:57.7%"
+                    aria-label="Parte 2: Estrutura de suporte">
+              <span class="maquete-pino-num" aria-hidden="true">2</span>
+            </button>
+            <button type="button" class="maquete-pino" data-parte="caixas" aria-pressed="false"
+                    style="--x:42.1%;--y:52.2%"
+                    aria-label="Parte 3: Caixas de cultivo">
+              <span class="maquete-pino-num" aria-hidden="true">3</span>
+            </button>
+            <button type="button" class="maquete-pino" data-parte="canos" aria-pressed="false"
+                    style="--x:68.9%;--y:44.8%"
+                    aria-label="Parte 4: Canos e bomba de água">
+              <span class="maquete-pino-num" aria-hidden="true">4</span>
+            </button>
+            <button type="button" class="maquete-pino" data-parte="galao" aria-pressed="false"
+                    style="--x:79.9%;--y:39.4%"
+                    aria-label="Parte 5: Galão, o reservatório azul">
+              <span class="maquete-pino-num" aria-hidden="true">5</span>
+            </button>
+            <button type="button" class="maquete-pino" data-parte="bebedouro" aria-pressed="false"
+                    style="--x:57.1%;--y:73.3%"
+                    aria-label="Parte 6: Tanque e pedras, o ponto de água das abelhas">
+              <span class="maquete-pino-num" aria-hidden="true">6</span>
+            </button>
+            <button type="button" class="maquete-pino" data-parte="plantas" aria-pressed="false"
+                    style="--x:48.4%;--y:62.8%"
+                    aria-label="Parte 7: Plantas do cultivo">
+              <span class="maquete-pino-num" aria-hidden="true">7</span>
+            </button>
+          </figure>
+
+          <div class="maquete-painel" id="maquetePainel" aria-live="polite">
+            <p class="maquete-painel-hint">
+              Toque num marcador — na maquete ou na lista — para ler o papel de
+              cada componente segundo nossa pesquisa.
+            </p>
+          </div>
+
+          <ul class="maquete-partes">
+            <li class="maquete-parte" data-parte="sombrite">
+              <button type="button" class="maquete-parte-btn">
+                <span class="maquete-parte-num" aria-hidden="true">1</span>
+                <strong>Sombrite — o telhado negro</strong>
+              </button>
+              <span class="maquete-parte-texto">Tecido esticado no topo da estrutura: cria sombra artificial e reduz a incidência direta do sol, mantendo a circulação de ar por baixo da cobertura.</span>
+            </li>
+            <li class="maquete-parte" data-parte="estrutura">
+              <button type="button" class="maquete-parte-btn">
+                <span class="maquete-parte-num" aria-hidden="true">2</span>
+                <strong>Estrutura de suporte</strong>
+              </button>
+              <span class="maquete-parte-texto">Colunas e vigas de madeira que sustentam o sombrite e os demais componentes com resistência e praticidade.</span>
+            </li>
+            <li class="maquete-parte" data-parte="caixas">
+              <button type="button" class="maquete-parte-btn">
+                <span class="maquete-parte-num" aria-hidden="true">3</span>
+                <strong>Caixas de cultivo</strong>
+              </button>
+              <span class="maquete-parte-texto">As três caixas de madeira da maquete representam as áreas de cultivo protegidas pelo sombreamento.</span>
+            </li>
+            <li class="maquete-parte" data-parte="canos">
+              <button type="button" class="maquete-parte-btn">
+                <span class="maquete-parte-num" aria-hidden="true">4</span>
+                <strong>Canos e bomba</strong>
+              </button>
+              <span class="maquete-parte-texto">O sistema com canos e bomba permite a circulação da água, direcionando-a entre o reservatório e o restante da estrutura.</span>
+            </li>
+            <li class="maquete-parte" data-parte="galao">
+              <button type="button" class="maquete-parte-btn">
+                <span class="maquete-parte-num" aria-hidden="true">5</span>
+                <strong>Galão — o reservatório azul</strong>
+              </button>
+              <span class="maquete-parte-texto">O galão de grande capacidade funciona como reservatório, armazenando água para os períodos de escassez do semiárido.</span>
+            </li>
+            <li class="maquete-parte" data-parte="bebedouro">
+              <button type="button" class="maquete-parte-btn">
+                <span class="maquete-parte-num" aria-hidden="true">6</span>
+                <strong>Tanque e pedras — o ponto de água</strong>
+              </button>
+              <span class="maquete-parte-texto">As pedras criam pontos de apoio para as abelhas beberem com mais segurança, sem risco de afogamento.</span>
+            </li>
+            <li class="maquete-parte" data-parte="plantas">
+              <button type="button" class="maquete-parte-btn">
+                <span class="maquete-parte-num" aria-hidden="true">7</span>
+                <strong>Plantas</strong>
+              </button>
+              <span class="maquete-parte-texto">A vegetação das caixas representa o cultivo que cresce protegido pelo sombreamento da estrutura.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Referências -->
+        <details class="referencias reveal">
+          <summary>Referências bibliográficas</summary>
+          <ol class="ref-lista">
+            <li>LOPES, Maria Teresa do Rêgo et al. <em>Alternativas de sombreamento para apiários</em>. Pesquisa Agropecuária Tropical, v. 41, n. 3, p. 299-305, 2011. Disponível em: <a href="https://doi.org/10.5216/pat.v41i3.8919" target="_blank" rel="noopener">doi.org/10.5216/pat.v41i3.8919</a>.</li>
+            <li>MELQUIADES, Catiana da Conceição Vieira; BENDINI, Juliana do Nascimento; MOURA, Sinevaldo Gonçalves de. <em>Internal water supply in Africanized beehives during the dry season in the Brazilian semiarid</em>. Revista Agro@mbiente On-line, v. 14, 2020. Disponível em: <a href="https://doi.org/10.18227/1982-8470ragro.v14i0.6396" target="_blank" rel="noopener">doi.org/10.18227/1982-8470ragro.v14i0.6396</a>.</li>
+            <li>EMBRAPA. <em>Sistema de Produção de Mel</em>. 2023. Disponível em: <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1156063" target="_blank" rel="noopener">infoteca.cnptia.embrapa.br</a>.</li>
+            <li>PEREIRA, F. de M. et al. Gargalos tecnológicos e não-tecnológicos. In: VILELA, S. L. de O.; ALCOFORADO FILHO, F. G. (org.). <em>Cadeia produtiva do mel no Estado do Piauí</em>. Teresina: Embrapa Meio-Norte, 2000. cap. 2, p. 30-47.</li>
+            <li>PEREIRA, F. de M.; LOPES, M. T. do R.; CAMARGO, R. C. R. de; VILELA, S. L. de O. <em>Sistema de produção de mel</em>. Brasília, DF: Embrapa, 2023.</li>
+          </ol>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. DESIGN DO ROBÔ
+         ============================================================ -->
+    <section class="secao" id="robo">
+      <div class="container">
+        <p class="eyebrow reveal">Robot Design</p>
+        <h2 class="titulo-secao reveal">Uma abelha de LEGO programada para acertar</h2>
+
+        <div class="robo-intro reveal">
+          <div class="robo-intro-texto">
+            <p>
+              Nosso robô foi pensado para executar as missões com
+              <strong>consistência</strong>: alinhar, percorrer e agir com
+              precisão, repetidamente. O visual preto e amarelo representa a
+              abelha, símbolo da equipe, e faz referência a Picos, a Capital
+              do Mel.
+            </p>
+            <p>
+              O processo foi marcado por montagem, testes, identificação de
+              limitações e mudanças na estrutura, buscando sempre mais
+              compactação, estabilidade e precisão. Construímos
+              <strong>cinco versões</strong> até chegar ao modelo final.
+            </p>
+          </div>
+          <figure class="robo-intro-figura reveal">
+            <div class="hex-frame hex-frame-flat">
+              <img src="assets/img/robo-final-1.webp"
+                   alt="Robô LEGO visto de cima sobre piso de concreto, com o hub SPIKE branco central, laterais elevadas em peças pretas e amarelas e dois sensores de cor na frente"
+                   width="800" height="600" loading="lazy" decoding="async">
+            </div>
+            <figcaption class="legenda">O modelo final visto de cima: hub SPIKE no centro, laterais elevadas em preto e amarelo.</figcaption>
+          </figure>
+        </div>
+
+        <!-- Ficha técnica -->
+        <h3 class="subtitulo-secao reveal">Ficha técnica do modelo final</h3>
+        <div class="bento">
+          <div class="bento-celula bento-dado reveal reveal-3d">
+            <span class="dado-valor">4</span>
+            <span class="dado-rotulo">motores grandes: 2 de locomoção (portas A e E) e 2 da garra</span>
+          </div>
+          <div class="bento-celula bento-dado reveal reveal-3d">
+            <span class="dado-valor">2</span>
+            <span class="dado-rotulo">sensores de cor, usados no alinhamento antes de movimentos específicos</span>
+          </div>
+          <div class="bento-celula bento-foto reveal reveal-3d">
+            <img src="assets/img/galeria/robo-final-3.webp"
+                 alt="Robô visto em ângulo lateral sobre piso de concreto, com parede de azulejos ao fundo, mostrando a estrutura preta com placas amarelas perfuradas"
+                 width="800" height="600" loading="lazy" decoding="async">
+          </div>
+          <div class="bento-celula bento-dado reveal reveal-3d">
+            <span class="dado-valor">EV3</span>
+            <span class="dado-rotulo">rodas técnicas de borracha: menos derrapagem e mais estabilidade</span>
+          </div>
+          <div class="bento-celula bento-dado reveal reveal-3d">
+            <span class="dado-valor">PID</span>
+            <span class="dado-rotulo">controle de giro TURN ON com correção proporcional, integral e derivativa</span>
+          </div>
+          <div class="bento-celula bento-dado reveal reveal-3d">
+            <span class="dado-valor">SPIKE</span>
+            <span class="dado-rotulo">hub SPIKE Prime, programado em Word Blocks</span>
+          </div>
+          <div class="bento-celula bento-dado reveal reveal-3d">
+            <span class="dado-valor">frontal</span>
+            <span class="dado-rotulo">tração dianteira, com foco em estabilidade no percurso</span>
+          </div>
+          <div class="bento-celula bento-foto reveal reveal-3d">
+            <img src="assets/img/galeria/robo-final-2.webp"
+                 alt="Robô de lado mostrando o hub branco central e a lateral em placa amarela perfurada, com a luz do sensor acesa embaixo"
+                 width="800" height="600" loading="lazy" decoding="async">
+          </div>
+        </div>
+
+        <!-- Estratégia -->
+        <h3 class="subtitulo-secao reveal">Estratégia de missões</h3>
+        <div class="estrategia reveal">
+          <p>
+            Definimos o percurso com ferramentas de decisão: <strong>Score
+            Ponderado</strong>, matrizes <strong>Esforço x Benefício</strong> e
+            <strong>Custo x Benefício</strong> e a matriz <strong>GUT</strong>
+            (Gravidade, Urgência e Tendência), avaliando pontuação, dificuldade,
+            tempo, distância e espaço na mesa. Nossa ordem de execução das
+            missões foi:
+          </p>
+          <ol class="missoes" aria-label="Ordem das missões no percurso">
+            <li>1</li><li>2</li><li>3</li><li>5</li><li>4</li><li>8</li>
+            <li>9</li><li>15</li><li>6</li><li>11</li><li>12</li><li>14</li>
+            <li>13</li><li>7</li><li>10</li>
+          </ol>
+          <p class="missao-nota">
+            Na missão 10, o objetivo é apenas não encostar. E o posicionamento
+            das missões 13, 14 e 15 foi escolhido a dedo: a 15 aproveita a
+            frente reta do robô, a 14 fica próxima à base por exigir mais
+            precisão e a 13 se encaixa melhor na trajetória, por ser uma das
+            mais fáceis de executar para a nossa equipe.
+          </p>
+          <figure class="estrategia-tapete reveal">
+            <a href="assets/img/temporada-dia11-tapete.webp" class="lightbox-link" data-legenda="O tapete oficial de missões da FIRST LEGO League em uso nos primeiros testes da equipe">
+              <img src="assets/img/galeria/temporada-dia11-tapete.webp"
+                   alt="Mesa com o tapete de competições da FIRST LEGO League montado, com o robô da equipe e integrantes ao redor"
+                   width="640" height="480" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">O tapete oficial de missões chegou em 13/10/2026 — e foi direto para os testes.</figcaption>
+          </figure>
+        </div>
+
+        <!-- Iterações -->
+        <h3 class="subtitulo-secao reveal">As cinco versões do robô</h3>
+
+        <div class="cotejo">
+          <div class="cotejo-card reveal reveal-3d">
+            <header class="cotejo-cabeca">
+              <span class="cotejo-versao">Robô inicial</span>
+              <span class="cotejo-data">DIA 03 · 24/08/2026</span>
+            </header>
+            <ul class="cotejo-lista">
+              <li class="pro">Compacto, ágil e leve</li>
+              <li class="contra">Instável durante as missões</li>
+              <li class="contra">Espaço limitado para acessórios</li>
+            </ul>
+            <p class="cotejo-veredito">
+              Conclusão registrada no diário: inviável para a nossa estratégia
+              de missão — <strong>mudamos completamente o robô</strong>.
+            </p>
+          </div>
+          <div class="cotejo-card reveal reveal-3d">
+            <header class="cotejo-cabeca">
+              <span class="cotejo-versao">Estrutura baixa e estável</span>
+              <span class="cotejo-data">DIA 04 · 03/09/2026</span>
+            </header>
+            <ul class="cotejo-lista">
+              <li class="pro">Estabilidade máxima: centro de gravidade baixo, quase zero risco de tombar em curvas rápidas</li>
+              <li class="pro">Passagem livre por baixo de estruturas e barras baixas do tapete</li>
+              <li class="contra">Área horizontal ampla, que dificulta passagens estreitas</li>
+              <li class="contra">Alcance limitado: missões no alto pedem mecanismos complexos</li>
+            </ul>
+            <p class="cotejo-veredito">
+              Foi com essa análise de prós e contras que equilibramos tamanho,
+              estabilidade e funcionalidade no modelo final.
+            </p>
+          </div>
+        </div>
+
+        <ol class="iteracoes">
+          <li class="iteracao reveal reveal-3d">
+            <div class="iteracao-foto">
+              <img src="assets/img/galeria/robo-proto-2.webp"
+                   alt="Primeiro protótipo do robô visto de cima sobre uma mesa, ainda sem as laterais, com peças azuis e brancas, hub central e uma roda grande preta"
+                   width="800" height="1422" loading="lazy" decoding="async">
+            </div>
+            <div class="iteracao-corpo">
+              <h4 class="iteracao-versao">Primeiro protótipo</h4>
+              <p>
+                A base para experimentar a estrutura e entender como as peças
+                se comportavam nos movimentos. Nos testes, as rodas do NXT não
+                se encaixavam nas dimensões planejadas e foram substituídas
+                por rodas do SPIKE, deixando o conjunto mais compacto e
+                adequado às missões.
+              </p>
+            </div>
+          </li>
+          <li class="iteracao reveal reveal-3d">
+            <div class="iteracao-foto">
+              <img src="assets/img/galeria/robo-proto-1.webp"
+                   alt="Segundo protótipo do robô visto de lado sobre o tapete de missão, com hub branco central, peças azuis e roda preta grande"
+                   width="800" height="1422" loading="lazy" decoding="async">
+            </div>
+            <div class="iteracao-corpo">
+              <h4 class="iteracao-versao">Segundo protótipo</h4>
+              <p>
+                Estrutura organizada com os dois sensores de cor e os motores
+                de locomoção, planejados para o alinhamento antes de cada
+                movimento. Depois vieram os motores da garra, as laterais
+                elevadas em preto e amarelo e o hub SPIKE para executar a
+                programação.
+              </p>
+            </div>
+          </li>
+          <li class="iteracao reveal reveal-3d">
+            <div class="iteracao-corpo">
+              <h4 class="iteracao-versao">Terceiro protótipo</h4>
+              <p>
+                Testamos uma proposta de robô mais largo, de estrutura baixa
+                e centro de gravidade rebaixado. Nos testes, percebemos
+                problemas de equilíbrio e um conjunto grande demais para as
+                missões — e a área horizontal ampla dificultava as passagens
+                estreitas. Foi um aprendizado importante sobre equilibrar o
+                tamanho e a funcionalidade, que orientou o modelo final.
+              </p>
+            </div>
+          </li>
+          <li class="iteracao reveal reveal-3d">
+            <div class="iteracao-corpo">
+              <h4 class="iteracao-versao">Quarta versão</h4>
+              <p>
+                Reiniciamos a construção usando os aprendizados anteriores.
+                Reposicionamos o hub, trocamos as rodas novamente, desta vez
+                pelas EV3 técnicas de borracha, que derrapam menos e deram mais
+                estabilidade, e ajustamos a estrutura em busca de um percurso
+                mais consistente.
+              </p>
+            </div>
+          </li>
+          <li class="iteracao reveal reveal-3d">
+            <div class="iteracao-foto">
+              <img src="assets/img/galeria/robo-final-4.webp"
+                   alt="Robô final segurado pelas mãos de um integrante, visto de frente, com as duas rodas pretas grandes e as luzes dos sensores acesas"
+                   width="360" height="480" loading="lazy" decoding="async">
+            </div>
+            <div class="iteracao-corpo">
+              <h4 class="iteracao-versao">Modelo final</h4>
+              <p>
+                Estrutura preta e amarela com tração dianteira, quatro motores
+                grandes no conjunto, dois de locomoção e dois da garra, dois
+                sensores de cor e o hub SPIKE. A montagem equilibra espaço,
+                estabilidade e funcionalidade para alinhar e cumprir as
+                missões com consistência.
+              </p>
+            </div>
+          </li>
+        </ol>
+
+        <!-- Programação -->
+        <h3 class="subtitulo-secao reveal">Programação: giro preciso com PID</h3>
+        <div class="programacao reveal">
+          <p>
+            Programamos o hub SPIKE em <strong>Word Blocks</strong>. O núcleo
+            da programação é o <strong>TURN ON</strong>, nosso sistema de
+            controle de giro baseado em <strong>PID</strong>: ele compara o
+            comportamento esperado com o real e corrige os desvios durante o
+            movimento. Ao programar um giro de <span class="dado">90°</span>,
+            por exemplo, o sistema monitora a rotação e faz ajustes até atingir
+            exatamente o ângulo desejado, reduzindo oscilações nas missões.
+          </p>
+          <ul class="pid-termos" aria-label="Termos do controle PID">
+            <li><b>P</b> proporcional: responde ao erro atual</li>
+            <li><b>I</b> integral: considera os erros acumulados</li>
+            <li><b>D</b> derivativo: reduz as oscilações</li>
+          </ul>
+          <p>
+            O procedimento <span class="dado">PID com distância</span> é
+            reutilizado pelas rotinas de missão, com as variáveis reais do
+            nosso programa:
+          </p>
+          <ul class="chips-var" aria-label="Variáveis do programa">
+            <li>erro</li><li>erro anterior</li><li>integral</li>
+            <li>derivada</li><li>Kp</li><li>Ki</li><li>Kd</li>
+            <li>correção</li><li>ângulo alvo</li><li>guinada</li>
+            <li>motor power</li>
+          </ul>
+          <p>
+            As rotinas de missão no programa levam os nomes que demos às
+            missões: <span class="dado">Árvore</span>,
+            <span class="dado">Drone</span>, <span class="dado">Rocha</span>,
+            <span class="dado">Sorte</span>,
+            <span class="dado">Casinha de João</span> e
+            <span class="dado">Se. Explosiva</span>.
+          </p>
+          <p>
+            Os testes repetitivos concentraram-se na <strong>missão da
+            Árvore</strong>, em que enfrentamos dificuldades de posicionamento
+            e alinhamento: com ajustes na programação e nos movimentos,
+            buscamos mais precisão e eficiência até o percurso ficar
+            consistente. Os registros dessa evolução estão nos dias
+            <span class="dado">13</span>, <span class="dado">14</span> e
+            <span class="dado">15</span> do nosso diário de bordo.
+          </p>
+        </div>
+
+        <!-- Visualizador do programa real -->
+        <figure class="programa-viewer reveal">
+          <figcaption class="legenda">
+            Nosso programa completo em Word Blocks, como salvo no hub SPIKE.
+            Arraste para os lados e para baixo para explorar os blocos.
+          </figcaption>
+          <div class="code-viewer" role="region" aria-label="Programa do robô em Word Blocks. Role horizontalmente para ver o conteúdo completo." tabindex="0">
+            <img src="assets/img/programa-pid-completo.svg"
+                 alt="Captura do programa Word Blocks da equipe exibindo os blocos de eventos, os procedimentos definidos, incluindo o PID com distância, e as rotinas de missão"
+                 loading="lazy" decoding="async">
+          </div>
+        </figure>
+
+        <figure class="figura-banner reveal">
+          <a href="assets/img/banner-robo.webp" class="lightbox-link" data-legenda="Banner oficial do Design do Robô da equipe">
+            <img src="assets/img/galeria/banner-robo.webp"
+                 alt="Banner oficial do Design do Robô da SESI LEGO Team, com as seções de identificação das missões, design e planejamento, criação do TURN ON com PID, comunicação, iteração dos cinco protótipos e prototipação"
+                 width="800" height="566" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="legenda">O banner oficial do Design do Robô, apresentado aos juízes da FLL.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. DIÁRIO DE BORDO
+         ============================================================ -->
+    <section class="secao secao-alt" id="diario">
+      <div class="container">
+        <p class="eyebrow reveal">Diário de bordo</p>
+        <h2 class="titulo-secao reveal">A temporada, dia a dia</h2>
+        <p class="secao-intro reveal">
+          O nosso caderno de engenharia registrado em datas reais: decisões,
+          testes, visitas e aprendizados de cada dia de trabalho da temporada,
+          entre agosto e outubro de 2026.
+        </p>
+
+        <ol class="diario">
+          <li class="diario-dia reveal">
+            <div class="diario-no"><span class="hex-node" aria-hidden="true">01</span></div>
+            <div class="diario-corpo">
+              <header class="diario-cabeca">
+                <span class="diario-data">11/08/2026</span>
+                <span class="diario-tag" data-frente="temporada">Temporada</span>
+              </header>
+              <h3 class="diario-titulo">Abertura oficial da temporada</h3>
+              <p>
+                Alinhamento de diretrizes, planejamento estratégico e divisão
+                oficial das frentes operacionais da escola em duas equipes:
+                <strong>EC Bots</strong> e <strong>SESI LEGO Team</strong>.
+                Próximos passos registrados: mapeamento de funções, pesquisa
+                para inovação e inventário de peças.
+              </p>
+              <div class="diario-fotos">
+                <figure class="diario-foto">
+                  <a href="assets/img/temporada-dia01.webp" class="lightbox-link" data-legenda="A equipe reunida na sala de aula na abertura da temporada">
+                    <img src="assets/img/galeria/temporada-dia01.webp"
+                         alt="Integrantes da equipe reunidos em sala de aula com computadores, de camisetas do SESI, durante o planejamento"
+                         width="480" height="360" loading="lazy" decoding="async">
+                  </a>
+                </figure>
+              </div>
+            </div>
+          </li>
+
+          <li class="diario-dia reveal">
+            <div class="diario-no"><span class="hex-node" aria-hidden="true">02</span></div>
+            <div class="diario-corpo">
+              <header class="diario-cabeca">
+                <span class="diario-data">22/08/2026</span>
+                <span class="diario-tag" data-frente="projeto">Projeto de Pesquisa</span>
+              </header>
+              <h3 class="diario-titulo">Investigação teórica e de campo</h3>
+              <p>
+                Nas semanas seguintes ao pontapé inicial, o grupo mergulhou na
+                fase de investigação do problema: leitura de fontes
+                científicas, conversas e primeiros registros, com aplicação e
+                validação do que foi aprendido.
+              </p>
+            </div>
+          </li>
+
+          <li class="diario-dia reveal">
+            <div class="diario-no"><span class="hex-node" aria-hidden="true">03</span></div>
+            <div class="diario-corpo">
+              <header class="diario-cabeca">
+                <span class="diario-data">24/08/2026</span>
+                <span class="diario-tag" data-frente="robo">Design do Robô</span>
+              </header>
+              <h3 class="diario-titulo">O robô inicial</h3>
+              <p>
+                Primeira estrutura construída: compacta, ágil e leve — mas
+                instável e com espaço limitado para acessórios. O registro do
+                dia é direto: <strong>inviável para a nossa estratégia de
+                missão, então mudamos completamente o robô</strong>.
+              </p>
+              <div class="diario-fotos">
+                <figure class="diario-foto">
+                  <a href="assets/img/temporada-dia03-robo.webp" class="lightbox-link" data-legenda="O robô da temporada sobre a mesa de trabalho">
+                    <img src="assets/img/galeria/temporada-dia03-robo.webp"
+                         alt="Robô amarelo e preto sobre a mesa de trabalho, ao lado de troféus da FIRST LEGO League"
+                         width="825" height="563" loading="lazy" decoding="async">
+                  </a>
+                </figure>
+                <figure class="diario-foto">
+                  <a href="assets/img/temporada-dia03-roda.webp" class="lightbox-link" data-legenda="Detalhe da roda e do conjunto de peças do robô inicial">
+                    <img src="assets/img/galeria/temporada-dia03-roda.webp"
+                         alt="Close da roda azul com peças pretas de LEGO sobre fundo branco, detalhe da estrutura do robô"
+                         width="313" height="313" loading="lazy" decoding="async">
+                  </a>
+                </figure>
+              </div>
+            </div>
+          </li>
+
+          <li class="diario-dia reveal">
+            <div class="diario-no"><span class="hex-node" aria-hidden="true">04</span></div>
+            <div class="diario-corpo">
+              <header class="diario-cabeca">
+                <span class="diario-data">03/09/2026</span>
+                <span class="diario-tag" data-frente="robo">Design do Robô</span>
+              </header>
+              <h3 class="diario-titulo">A estrutura do robô final</h3>
+              <p>
+                Definição da filosofia da estrutura final: baixa e estável,
+                com centro de gravidade rebaixado e passagem livre por baixo
+                de barras do tapete. As contrapartidas registradas: área
+                horizontal ampla e alcance limitado nas missões altas.
+              </p>
+            </div>
+          </li>
+
+          <li class="diario-dia reveal">
+            <div class="diario-no"><span class="hex-node" aria-hidden="true">05</span></div>
+            <div class="diario-corpo">
+              <header class="diario-cabeca">
+                <span class="diario-data">07/09 a 14/09/2026</span>
+                <span class="diario-tag" data-frente="projeto">Projeto de Pesquisa</span>
+              </header>
+              <h3 class="diario-titulo">A "seca verde" e o pivô</h3>
+              <p>
+                Ponto de partida da pesquisa: os impactos gerais da seca na
+                vegetação e no alimento das abelhas. A conclusão do período
+                mudou o projeto: resolver a "seca verde" era amplo demais para
+                um protótipo de engenharia — <strong>pivô para um foco
+                específico</strong>.
+              </p>
+            </div>
+          </li>
+
+          <li class="diario-dia reveal">
+            <div class="diario-no"><span class="hex-node" aria-hidden="true">06</span></div>
+            <div class="diario-corpo">
+              <header class="diario-cabeca">
+                <span class="diario-data">11/09/2026</span>
+                <span class="diario-tag" data-frente="robo">Design do Robô</span>
+              </header>
+              <h3 class="diario-titulo">Estratégia de missão</h3>
+              <p>
+                Definição da estratégia de missões: percurso, ordem de
+                execução e posicionamento das missões no tapete, com apoio das
+                ferramentas de decisão aprendidas na liga.
+              </p>
+            </div>
+          </li>
+
+          <li class="diario-dia reveal">
+            <div class="diario-no"><span class="hex-node" aria-hidden="true">08</span></div>
+            <div class="diario-corpo">
+              <header class="diario-cabeca">
+                <span class="diario-data">07/09/2026</span>
+                <span class="diario-tag" data-frente="projeto">Projeto de Pesquisa</span>
+              </header>
+              <h3 class="diario-titulo">O novo foco específico</h3>
+              <p>
+                O problema ganhou contorno: o <strong>estresse térmico das
+                colmeias</strong> pela falta de sombra natural quando as
+                árvores perdem as folhas no semiárido — um gargalo pontual e
+                prático, atacável por um protótipo.
+              </p>
+            </div>
+          </li>
+
+          <li class="diario-dia reveal">
+            <div class="diario-no"><span class="hex-node" aria-hidden="true">09</span></div>
+            <div class="diario-corpo">
+              <header class="diario-cabeca">
+                <span class="diario-tag" data-frente="projeto">Projeto de Pesquisa</span>
+              </header>
+              <h3 class="diario-titulo">Contato com os especialistas</h3>
+              <p>
+                Abertura das conversas com apicultores e especialistas:
+                <strong>José Carlos de Carvalho Arraes</strong>,
+                <strong>Darcet Costa Souza</strong>,
+                <strong>Jonildo Monteiro Luz</strong> e
+                <strong>Isabel Francisca da Luz Guaraná</strong>.
+              </p>
+            </div>
+          </li>
+
+          <li class="diario-dia reveal">
+            <div class="diario-no"><span class="hex-node" aria-hidden="true">10</span></div>
+            <div class="diario-corpo">
+              <header class="diario-cabeca">
+                <span class="diario-data">07/10 e 18/10/2026</span>
+                <span class="diario-tag" data-frente="projeto">Projeto de Pesquisa</span>
+              </header>
+              <h3 class="diario-titulo">Simplificação da solução</h3>
+              <p>
+                Orientações de <strong>Darcet Costa Souza</strong> (UFPI)
+                mudaram o protótipo: corte do monitor elétrico no apiário por
+                segurança e viabilidade, fim da sombra retrátil e direção
+                para uma <strong>estrutura fixa e prática</strong> — os rumos
+                da solução final.
+              </p>
+            </div>
+          </li>
+
+          <li class="diario-dia reveal">
+            <div class="diario-no"><span class="hex-node" aria-hidden="true">11</span></div>
+            <div class="diario-corpo">
+              <header class="diario-cabeca">
+                <span class="diario-data">13/10/2026</span>
+                <span class="diario-tag" data-frente="desempenho">Desempenho do Robô</span>
+              </header>
+              <h3 class="diario-titulo">Chegada do tapete</h3>
+              <p>
+                O tapete oficial de missões chegou — e foi direto para a
+                mesa de testes, com a equipe reunida para os primeiros
+                percursos reais da temporada.
+              </p>
+              <div class="diario-fotos">
+                <figure class="diario-foto">
+                  <a href="assets/img/temporada-dia11-caixas.webp" class="lightbox-link" data-legenda="A equipe reunida na mesa com as caixas da chegada do tapete">
+                    <img src="assets/img/galeria/temporada-dia11-caixas.webp"
+                         alt="Integrantes da equipe ao redor de uma mesa com caixas de papelão, organizando a chegada do tapete"
+                         width="480" height="640" loading="lazy" decoding="async">
+                  </a>
+                </figure>
+                <figure class="diario-foto">
+                  <a href="assets/img/temporada-dia11-grupo.webp" class="lightbox-link" data-legenda="A equipe em volta do tapete de missões nos primeiros testes">
+                    <img src="assets/img/galeria/temporada-dia11-grupo.webp"
+                         alt="Integrantes da equipe em volta da mesa com o tapete de missões, em foto de grupo durante os testes"
+                         width="960" height="720" loading="lazy" decoding="async">
+                  </a>
+                </figure>
+              </div>
+            </div>
+          </li>
+
+          <li class="diario-dia reveal">
+            <div class="diario-no"><span class="hex-node" aria-hidden="true">12</span></div>
+            <div class="diario-corpo">
+              <header class="diario-cabeca">
+                <span class="diario-data">15/10/2026</span>
+                <span class="diario-tag" data-frente="projeto">Projeto de Pesquisa</span>
+              </header>
+              <h3 class="diario-titulo">Visita à apicultura de Jonildo</h3>
+              <p>
+                Dia de campo no apiário: <strong>Jonildo Monteiro Luz</strong>
+                validou o uso do sombrite para amenizar o calor, aportou a
+                visão prática de quem cria abelhas e <strong>aprovou a
+                alternativa fixa</strong> no lugar da sombra retrátil. As
+                fotos da visita estão no trabalho de campo do projeto.
+              </p>
+            </div>
+          </li>
+
+          <li class="diario-dia reveal">
+            <div class="diario-no"><span class="hex-node" aria-hidden="true">13</span></div>
+            <div class="diario-corpo">
+              <header class="diario-cabeca">
+                <span class="diario-tag" data-frente="desempenho">Desempenho do Robô</span>
+              </header>
+              <h3 class="diario-titulo">Programação com PID</h3>
+              <p>
+                Construção da <strong>estrutura PID</strong> na programação:
+                leitura constante dos sensores, cálculo do erro e ajuste
+                automático da velocidade dos motores para precisão no
+                trajeto.
+              </p>
+            </div>
+          </li>
+
+          <li class="diario-dia reveal">
+            <div class="diario-no"><span class="hex-node" aria-hidden="true">14</span></div>
+            <div class="diario-corpo">
+              <header class="diario-cabeca">
+                <span class="diario-tag" data-frente="desempenho">Desempenho do Robô</span>
+              </header>
+              <h3 class="diario-titulo">O funcionamento do PID</h3>
+              <p>
+                Registro do funcionamento do PID na programação: estudo dos
+                blocos, do fluxo de correção e do comportamento real do robô
+                nos testes.
+              </p>
+            </div>
+          </li>
+
+          <li class="diario-dia reveal">
+            <div class="diario-no"><span class="hex-node" aria-hidden="true">15</span></div>
+            <div class="diario-corpo">
+              <header class="diario-cabeca">
+                <span class="diario-tag" data-frente="desempenho">Desempenho do Robô</span>
+              </header>
+              <h3 class="diario-titulo">Nossa inovação</h3>
+              <p>
+                Equipado com controle PID, o robô executa <strong>giros
+                perfeitos e suaves</strong>. A tecnologia garante máxima
+                precisão e estabilidade na execução de trajetórias complexas,
+                com total controle.
+              </p>
+            </div>
+          </li>
+
+          <li class="diario-dia reveal">
+            <div class="diario-no"><span class="hex-node" aria-hidden="true">16</span></div>
+            <div class="diario-corpo">
+              <header class="diario-cabeca">
+                <span class="diario-tag" data-frente="projeto">Projeto de Pesquisa</span>
+              </header>
+              <h3 class="diario-titulo">A solução final do projeto</h3>
+              <p>
+                O capítulo que fecha a pesquisa: uma <strong>cobertura de
+                sombrite com sistema de água</strong>, garantindo o controle
+                térmico direto da caixa da colmeia.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. CORE VALUES
+         ============================================================ -->
+    <section class="secao" id="valores">
+      <div class="container">
+        <h2 class="titulo-secao reveal">Core Values: como vivemos os valores da FLL</h2>
+        <p class="secao-intro reveal">
+          Os Core Values são o coração da FIRST LEGO League. Não os tratamos
+          como uma lista: cada valor abaixo tem um exemplo real do nosso
+          processo nesta temporada.
+        </p>
+
+        <ul class="favo-valores">
+          <li class="favo-celula reveal reveal-3d">
+            <h3>Trabalho em equipe</h3>
+            <p>Montagem, programação, testes e planejamento das missões foram compartilhados, com ideias discutidas e decisões tomadas em conjunto.</p>
+          </li>
+          <li class="favo-celula reveal reveal-3d">
+            <h3>Inclusão</h3>
+            <p>Cada integrante participou das pesquisas, dos registros e da apresentação, cada um contribuindo do seu jeito, com a função que assumiu.</p>
+          </li>
+          <li class="favo-celula reveal reveal-3d">
+            <h3>Descoberta</h3>
+            <p>Aprendemos ciência com a Embrapa e com as universidades, e aprendemos a realidade do apiário na visita de campo a Picos.</p>
+          </li>
+          <li class="favo-celula reveal reveal-3d">
+            <h3>Inovação</h3>
+            <p>Unimos sombreamento e água em uma mesma estrutura, combinando funções e adaptando a solução às necessidades do semiárido.</p>
+          </li>
+          <li class="favo-celula reveal reveal-3d">
+            <h3>Impacto</h3>
+            <p>A solução nasceu de um problema observado perto de nós e foi desenhada para os apicultores da nossa região.</p>
+          </li>
+          <li class="favo-celula reveal reveal-3d">
+            <h3>Diversão</h3>
+            <p>Cinco versões do robô depois, cada evolução virou motivo de celebração, e as missões ganharam nomes como Casinha de João e Sorte.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. GALERIA
+         ============================================================ -->
+    <section class="secao secao-alt" id="galeria">
+      <div class="container">
+        <h2 class="titulo-secao reveal">Galeria</h2>
+        <p class="secao-intro reveal">
+          O robô, os protótipos, os registros da temporada e os banners
+          oficiais. Clique em uma foto para ver em tamanho grande.
+        </p>
+
+        <div class="galeria">
+          <!-- EDITAR: para trocar uma foto, substitua o arquivo em
+               assets/img/galeria (versão pequena) e o arquivo correspondente
+               em assets/img (versão grande usada no clique). -->
+          <figure class="galeria-item reveal reveal-3d">
+            <a href="assets/img/robo-final-1.webp" class="lightbox-link" data-legenda="Modelo final visto de cima">
+              <img src="assets/img/galeria/robo-final-1.webp"
+                   alt="Robô final visto de cima sobre piso de concreto, com o hub SPIKE branco central e laterais pretas e amarelas"
+                   width="800" height="600" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">Modelo final visto de cima, com o hub SPIKE central.</figcaption>
+          </figure>
+          <figure class="galeria-item reveal reveal-3d">
+            <a href="assets/img/robo-final-4.webp" class="lightbox-link" data-legenda="Modelo final na mão do integrante">
+              <img src="assets/img/galeria/robo-final-4.webp"
+                   alt="Integrante segurando o robô final pela base, visto de frente, com rodas grandes pretas e luzes dos sensores acesas"
+                   width="800" height="1067" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">O robô final na mão da equipe, de frente.</figcaption>
+          </figure>
+          <figure class="galeria-item reveal reveal-3d">
+            <a href="assets/img/robo-proto-1.webp" class="lightbox-link" data-legenda="Protótipo em construção">
+              <img src="assets/img/galeria/robo-proto-1.webp"
+                   alt="Protótipo do robô em construção, visto de lado sobre o tapete de missão, com peças azuis e brancas e uma roda preta grande"
+                   width="800" height="1422" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">Protótipo em construção sobre o tapete de missões.</figcaption>
+          </figure>
+          <figure class="galeria-item reveal reveal-3d">
+            <a href="assets/img/robo-final-2.webp" class="lightbox-link" data-legenda="Modelo final visto de lado">
+              <img src="assets/img/galeria/robo-final-2.webp"
+                   alt="Robô final visto de lado sobre piso de concreto, com parede de azulejos ao fundo e lateral em placa amarela perfurada"
+                   width="800" height="600" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">Vista lateral com a lateral amarela perfurada.</figcaption>
+          </figure>
+          <figure class="galeria-item reveal reveal-3d">
+            <a href="assets/img/robo-final-3.webp" class="lightbox-link" data-legenda="Modelo final em ângulo">
+              <img src="assets/img/galeria/robo-final-3.webp"
+                   alt="Robô final visto em ângulo sobre piso de concreto, mostrando a estrutura preta com detalhes amarelos e rodas na base"
+                   width="800" height="600" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">O robô em outro ângulo, mostrando a tração dianteira.</figcaption>
+          </figure>
+          <figure class="galeria-item reveal reveal-3d">
+            <a href="assets/img/robo-proto-2.webp" class="lightbox-link" data-legenda="Protótipo visto de cima">
+              <img src="assets/img/galeria/robo-proto-2.webp"
+                   alt="Protótipo do robô visto de cima sobre mesa branca com desenhos, ainda sem as laterais, com hub central e peças azuis"
+                   width="800" height="1422" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">Evolução da estrutura antes das laterais.</figcaption>
+          </figure>
+          <figure class="galeria-item reveal reveal-3d">
+            <a href="assets/img/temporada-dia01.webp" class="lightbox-link" data-legenda="Abertura da temporada na sala de aula">
+              <img src="assets/img/galeria/temporada-dia01.webp"
+                   alt="Integrantes da equipe reunidos em sala de aula com computadores, de camisetas do SESI, durante o planejamento da temporada"
+                   width="480" height="360" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">Abertura da temporada, 11/08/2026.</figcaption>
+          </figure>
+          <figure class="galeria-item reveal reveal-3d">
+            <a href="assets/img/temporada-dia03-robo.webp" class="lightbox-link" data-legenda="O robô sobre a mesa de trabalho">
+              <img src="assets/img/galeria/temporada-dia03-robo.webp"
+                   alt="Robô amarelo e preto sobre a mesa de trabalho, ao lado de troféus da FIRST LEGO League"
+                   width="825" height="563" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">O robô sobre a mesa de projeto, 24/08/2026.</figcaption>
+          </figure>
+          <figure class="galeria-item reveal reveal-3d">
+            <a href="assets/img/temporada-dia03-roda.webp" class="lightbox-link" data-legenda="Detalhe da roda do robô">
+              <img src="assets/img/galeria/temporada-dia03-roda.webp"
+                   alt="Close da roda azul com peças pretas de LEGO sobre fundo branco, detalhe da estrutura do robô"
+                   width="313" height="313" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">Detalhe do conjunto de rodas do robô inicial.</figcaption>
+          </figure>
+          <figure class="galeria-item reveal reveal-3d">
+            <a href="assets/img/temporada-dia11-caixas.webp" class="lightbox-link" data-legenda="A chegada do tapete">
+              <img src="assets/img/galeria/temporada-dia11-caixas.webp"
+                   alt="Integrantes da equipe ao redor de uma mesa com caixas de papelão, organizando a chegada do tapete"
+                   width="480" height="640" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">A chegada do tapete oficial, 13/10/2026.</figcaption>
+          </figure>
+          <figure class="galeria-item reveal reveal-3d">
+            <a href="assets/img/temporada-dia11-grupo.webp" class="lightbox-link" data-legenda="A equipe em volta do tapete nos testes">
+              <img src="assets/img/galeria/temporada-dia11-grupo.webp"
+                   alt="Integrantes da equipe em volta da mesa com o tapete de missões, em foto de grupo durante os testes"
+                   width="960" height="720" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">Primeiros testes no tapete de missões.</figcaption>
+          </figure>
+          <figure class="galeria-item reveal reveal-3d">
+            <a href="assets/img/temporada-dia11-tapete.webp" class="lightbox-link" data-legenda="O tapete de missões montado na mesa">
+              <img src="assets/img/galeria/temporada-dia11-tapete.webp"
+                   alt="Mesa com o tapete de competições da FIRST LEGO League montado, com o robô da equipe e integrantes ao redor"
+                   width="640" height="480" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">O tapete de missões em uso nos testes.</figcaption>
+          </figure>
+          <figure class="galeria-item reveal reveal-3d">
+            <a href="assets/img/temporada-dia12-apiario.webp" class="lightbox-link" data-legenda="A equipe no apiário de Jonildo">
+              <img src="assets/img/galeria/temporada-dia12-apiario.webp"
+                   alt="Grupo da equipe posando ao ar livre no apiário, com caixas de colmeias azuis à frente e árvores ao fundo"
+                   width="800" height="450" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">Visita ao apiário de Jonildo, 15/10/2026.</figcaption>
+          </figure>
+          <figure class="galeria-item reveal reveal-3d">
+            <a href="assets/img/temporada-dia12-jonildo.webp" class="lightbox-link" data-legenda="O manejo das colmeias mostrado por Jonildo">
+              <img src="assets/img/galeria/temporada-dia12-jonildo.webp"
+                   alt="Apicultor de macacão de proteção amarelo manuseando equipamento junto às colmeias durante a visita da equipe"
+                   width="720" height="1280" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">O manejo das abelhas no apiário.</figcaption>
+          </figure>
+          <figure class="galeria-item reveal reveal-3d">
+            <a href="assets/img/banner-projeto.webp" class="lightbox-link" data-legenda="Banner do Projeto de Inovação">
+              <img src="assets/img/galeria/banner-projeto.webp"
+                   alt="Banner do Projeto de Inovação da equipe com fotos de colmeias, abelhas, estrutura de sombreamento e especialistas consultados"
+                   width="800" height="566" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">O banner do Projeto de Inovação.</figcaption>
+          </figure>
+          <figure class="galeria-item reveal reveal-3d">
+            <a href="assets/img/banner-robo.webp" class="lightbox-link" data-legenda="Banner do Design do Robô">
+              <img src="assets/img/galeria/banner-robo.webp"
+                   alt="Banner do Design do Robô da equipe com o mapa do tapete de missões numerado de 1 a 15, fotos dos protótipos e das crianças trabalhando"
+                   width="800" height="566" loading="lazy" decoding="async">
+            </a>
+            <figcaption class="legenda">O banner do Design do Robô.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. AGRADECIMENTOS E CONTATO
+         ============================================================ -->
+    <section class="secao" id="contato">
+      <div class="container">
+        <h2 class="titulo-secao reveal">Agradecimentos e contato</h2>
+
+        <div class="contato-grid">
+          <div class="agradecimentos reveal">
+            <h3 class="subtitulo-secao">A quem agradecemos</h3>
+            <ul class="agradecimentos-lista">
+              <li>
+                <strong>Escola SESI Wilma Catão Araújo</strong>
+                <span>pelo espaço, apoio e incentivo à equipe.</span>
+              </li>
+              <li>
+                <strong>Jonildo Monteiro Luz, Darcet Costa Souza, Isabel Francisca da Luz Guaraná, José Carlos de Carvalho Arraes, Carlos Fernando Rodrigues Guaraná e José Breno da Cruz</strong>
+                <span>pelas conversas, visitas e orientações que moldaram o projeto.</span>
+              </li>
+              <li>
+                <strong>Embrapa e UFPI</strong>
+                <span>pela pesquisa que fundamentou nossa solução.</span>
+              </li>
+              <li>
+                <strong>FIRST LEGO League</strong>
+                <span>pela temporada que nos desafia a aprender fazendo.</span>
+              </li>
+            </ul>
+            <!-- ============================================================
+                 EDITAR: adicione aqui patrocinadores e apoiadores reais
+                 (empresas, projetos, órgãos) quando houver material.
+                 ============================================================ -->
+            <p class="aviso-falta">
+              <strong>A completar:</strong> patrocinadores e apoiadores da
+              equipe ainda não constam no material enviado.
+            </p>
+          </div>
+
+          <div class="contato reveal">
+            <h3 class="subtitulo-secao">Fale com a equipe</h3>
+            <!-- A equipe não possui e-mail: o contato oficial é
+                 feito somente pelo Instagram abaixo. -->
+            <p>
+              Queremos trocar ideias com outras equipes, apicultores e
+              quem se interessa por robótica e pela proteção das abelhas.
+            </p>
+            <ul class="contato-lista">
+              <li>
+                <span class="contato-rotulo">Instagram</span>
+                <a href="https://instagram.com/sesilegoteampi_" rel="me noopener">@sesilegoteampi_</a>
+              </li>
+              <li>
+                <span class="contato-rotulo">Escola</span>
+                <span>SESI Wilma Catão Araújo, Picos, PI</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       RODAPÉ
+       ============================================================ -->
+  <footer class="rodape">
+    <div class="container rodape-grid">
+      <div class="rodape-marca">
+        <img class="brand-mark" src="assets/img/emblema.png" alt="" width="624" height="640" loading="lazy" decoding="async">
+        <span class="rodape-nome">SESI <b>LEGO Team</b></span>
+      </div>
+      <nav class="rodape-nav" aria-label="Navegação do rodapé">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#equipe">Equipe</a></li>
+          <li><a href="#projeto">Projeto de Pesquisa</a></li>
+          <li><a href="#robo">Design do Robô</a></li>
+          <li><a href="#diario">Diário de Bordo</a></li>
+          <li><a href="#valores">Core Values</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+        </ul>
+      </nav>
+      <p class="rodape-info">
+        Escola SESI Wilma Catão Araújo, Picos, PI. FIRST LEGO League 2026,
+        temporada BIOGLOW. Identidade preto e amarelo: a abelha de Picos,
+        a Capital do Mel.
+        <a href="https://instagram.com/sesilegoteampi_" rel="me noopener">Instagram: @sesilegoteampi_</a>
+      </p>
+      <a class="rodape-topo" href="#topo">Voltar ao topo</a>
+    </div>
+  </footer>
+
+  <!-- Lightbox (janela ampliada da galeria) -->
+  <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
+    <figure class="lightbox-figura">
+      <img id="lightboxImg" alt="">
+      <figcaption id="lightboxCap" class="legenda"></figcaption>
+    </figure>
+    <button class="lightbox-fechar" id="lightboxFechar" aria-label="Fechar foto ampliada">Fechar</button>
+  </dialog>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
