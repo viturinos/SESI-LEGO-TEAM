@@ -94,8 +94,8 @@ if (botaoMenu && menu) {
    ------------------------------------------------------------ */
 var alvosReveal = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
 
-/* Cascata curta nas grades: cada item recebe um atraso de 55ms
-   (limitado a 6 posições) para a colmeia se montar de leve, em
+/* Cascata curta nas grades: cada item recebe um atraso de 65ms
+   (limitado a 7 posições) para a colmeia se montar de leve, em
    vez de tudo surgir de uma vez. O atraso é uma variável CSS —
    não mexe no HTML e desaparece quando o reveal termina. */
 var gruposReveal = document.querySelectorAll(
@@ -105,7 +105,7 @@ var gruposReveal = document.querySelectorAll(
 Array.prototype.forEach.call(gruposReveal, function (grupo) {
   Array.prototype.forEach.call(grupo.children, function (filho, indice) {
     if (!filho.classList.contains("reveal")) return;
-    filho.style.setProperty("--rv-delay", Math.min(indice, 6) * 55 + "ms");
+    filho.style.setProperty("--rv-delay", Math.min(indice, 7) * 65 + "ms");
   });
 });
 
@@ -120,7 +120,7 @@ if (reduzirMovimento || !("IntersectionObserver" in window)) {
         observadorReveal.unobserve(entrada.target); /* revela só uma vez */
       });
     },
-    { rootMargin: "0px 0px -8% 0px" }
+    { rootMargin: "0px 0px -10% 0px" }
   );
   alvosReveal.forEach(function (el) { observadorReveal.observe(el); });
 
@@ -287,13 +287,13 @@ var alvosContador = Array.prototype.slice.call(document.querySelectorAll("[data-
 function animarContador(el) {
   var fim = parseInt(el.getAttribute("data-contador"), 10);
   if (!isFinite(fim) || fim <= 0) return;
-  var duracao = 1100;
+  var duracao = 1500;
   var inicio = null;
 
   function passo(agora) {
     if (inicio === null) inicio = agora;
     var t = Math.min((agora - inicio) / duracao, 1);
-    var suave = 1 - Math.pow(1 - t, 3); /* easeOutCubic */
+    var suave = 1 - Math.pow(1 - t, 4); /* easeOutQuart */
     el.textContent = Math.round(fim * suave);
     if (t < 1) requestAnimationFrame(passo);
     else el.textContent = fim; /* valor exato no fim */

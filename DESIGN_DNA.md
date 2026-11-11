@@ -82,13 +82,14 @@ Cada campo segue o formato **escolha + porquê + condição de refutação**.
 ## Motion
 
 - **Personalidade (1 frase):** "Movimento de colmeia: discreto, coordenado e útil — cada elemento entra no seu momento, sem alarde."
-- **Durações:** micro 100ms; transição 220ms; momento grande 480ms.
-- **Easing único:** `cubic-bezier(0.16, 1, 0.3, 1)`.
-- **Entrance:** reveal por IntersectionObserver (uma única vez), translateY 16px + fade — implementado em `assets/js/main.js`.
-- **Hover:** botões translateY -1px + brilho do amarelo; fotos: borda amarela aparece; nav: sublinha animada.
-- **Scroll:** só reveal; sem pin/scrub/parallax (conteúdo é leitura).
-- **Microinterações:** indicador de seção ativa na nav (feedback), lightbox com fechar por Esc/clique.
-- **prefers-reduced-motion:** tudo colapsa para estático; o JS revela tudo imediatamente.
+- **Durações:** micro 140ms; transição 260ms; momento grande 560ms; reveal 640ms; cards 780ms; títulos 760ms; zoom de foto 900ms.
+- **Easing:** assinatura `cubic-bezier(0.16, 1, 0.3, 1)` para entradas com intenção; `cubic-bezier(0.33, 1, 0.68, 1)` (`--ease-suave`) para movimentos contínuos e microinterações de saída.
+- **Entrance:** reveal por IntersectionObserver (uma única vez), com três camadas: base `translateY 16px` + fade; cards `.reveal-3d` com subida de 26px, escala 0.985 e blur 5px; títulos `.titulo-secao` com máscara `clip-path`. Fotos de destaque são descobertas por uma cortina `clip-path` de 1.1s. Cascata de 65ms entre itens de uma grade (máx. 7 posições).
+- **Hover:** botões sobem 2px com sombra e afundam para `scale(0.97)` no clique; cards sobem 4px com inclinação de 1.5°; fotos dão zoom lento (1.04 em 900ms); nav: sublinha animada.
+- **Scroll:** só reveal; sem pin/scrub/parallax (conteúdo é leitura). O único movimento autoral é a entrada do hero.
+- **Microinterações:** indicador de seção ativa na nav (feedback), menu mobile em cascata de 35ms, contadores com 1.5s de contagem, lightbox com fechar por Esc/clique.
+- **Responsivo seguro:** o favo hexagonal só existe acima de 1024px; abaixo disso vira grade de cartões (2 colunas) e, a partir de 640px, coluna única — sem `clip-path`, `position` ou deslocamento, impossibilitando sobreposição.
+- **prefers-reduced-motion:** tudo colapsa para estático; o JS revela tudo imediatamente e os contadores já mostram o valor final.
 
 ## Components
 

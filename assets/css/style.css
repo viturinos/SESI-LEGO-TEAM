@@ -24,10 +24,12 @@
   --fonte-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --dur-micro: 100ms;
-  --dur-transicao: 220ms;
-  --dur-grande: 480ms;
-  --dur-reveal: 520ms;
+  --ease-suave: cubic-bezier(0.33, 1, 0.68, 1);
+  --dur-micro: 140ms;
+  --dur-transicao: 260ms;
+  --dur-grande: 560ms;
+  --dur-reveal: 640ms;
+  --dur-reveal-card: 780ms;
 
   --raio: 14px;
   --pill: 999px;
@@ -200,16 +202,22 @@ strong { color: var(--texto); font-weight: 700; }
   border-radius: var(--pill);
   border: 2px solid var(--amarelo);
   text-decoration: none;
-  transition: transform var(--dur-micro) var(--ease),
-              background var(--dur-micro) var(--ease);
+  transition: transform 180ms var(--ease),
+              background-color var(--dur-transicao) var(--ease),
+              border-color var(--dur-transicao) var(--ease),
+              box-shadow var(--dur-transicao) var(--ease);
 }
 .btn:hover {
-  background: var(--ambar);
+  background-color: var(--ambar);
   border-color: var(--ambar);
   color: var(--preto);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(255, 196, 0, 0.18);
 }
-.btn:active { transform: translateY(1px); }
+.btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 6px 16px rgba(255, 196, 0, 0.14);
+}
 
 .btn-ghost {
   background: transparent;
@@ -217,10 +225,11 @@ strong { color: var(--texto); font-weight: 700; }
   color: var(--texto);
 }
 .btn-ghost:hover {
-  background: transparent;
+  background-color: transparent;
   border-color: var(--amarelo);
   color: var(--amarelo);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(255, 196, 0, 0.1);
 }
 
 /* ---------- Barra de progresso de leitura ---------- */
@@ -256,7 +265,7 @@ strong { color: var(--texto); font-weight: 700; }
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--borda);
-  transition: transform 320ms var(--ease),
+  transition: transform 380ms var(--ease),
               background-color var(--dur-transicao) var(--ease),
               box-shadow var(--dur-transicao) var(--ease);
 }
@@ -418,7 +427,7 @@ strong { color: var(--texto); font-weight: 700; }
   width: min(100%, 430px);
   /* camada da frente: ~6% à frente do texto pela perspectiva */
   transform: translateZ(72px);
-  animation: hero-entra-3d 0.9s var(--ease) 0.18s both;
+  animation: hero-entra-3d 1.05s var(--ease) 0.2s both;
 }
 
 /* moldura hexagonal amarela (assinatura visual) */
@@ -436,48 +445,58 @@ strong { color: var(--texto); font-weight: 700; }
 }
 .hex-frame-flat { aspect-ratio: 4 / 3; }
 
-/* Entrada coreografada do hero: texto sobe em sequência enquanto a
-   moldura hexagonal "abre" do centro. Animação em CSS puro — não
-   depende do main.js. prefers-reduced-motion desliga tudo. */
+/* Entrada coreografada do hero: o texto nasce desfocado e sobe em
+   sequência, enquanto a moldura hexagonal abre do centro e a foto
+   respira de leve. É o único momento autoral de movimento do site;
+   o resto da página entra em silêncio. */
 @keyframes hero-entra {
-  from { opacity: 0; transform: translateY(26px); }
-  to { opacity: 1; transform: none; }
+  from { opacity: 0; transform: translate3d(0, 30px, 0); filter: blur(var(--hero-blur, 8px)); }
+  65% { opacity: 1; filter: blur(0); }
+  to { opacity: 1; transform: none; filter: none; }
 }
 /* entrada da foto já no plano avançado (o translateZ se mantém
    do início ao fim para a camada não "pular" de profundidade) */
 @keyframes hero-entra-3d {
-  from { opacity: 0; transform: translateY(26px) translateZ(72px); }
-  to { opacity: 1; transform: translateZ(72px); }
+  from { opacity: 0; transform: translate3d(0, 34px, 0) translateZ(72px); filter: blur(var(--hero-blur, 8px)); }
+  65% { opacity: 1; filter: blur(0); }
+  to { opacity: 1; transform: translateZ(72px); filter: none; }
 }
 @keyframes hex-abre {
   from { clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%); }
   to { clip-path: var(--hex-p); }
 }
-.hero-texto > * { animation: hero-entra 0.72s var(--ease) both; }
+@keyframes hex-abre-img {
+  from {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+    transform: scale(1.08);
+  }
+  to { clip-path: var(--hex-p); transform: scale(1); }
+}
+.hero-texto > * { animation: hero-entra 0.95s var(--ease) both; }
 .hero-texto .eyebrow { animation-delay: 0.06s; }
-.hero-texto .display { animation-delay: 0.14s; }
-.hero-texto .hero-sub { animation-delay: 0.24s; }
-.hero-texto .hero-acoes { animation-delay: 0.34s; }
+.hero-texto .display { animation-delay: 0.16s; }
+.hero-texto .hero-sub { animation-delay: 0.3s; }
+.hero-texto .hero-acoes { animation-delay: 0.44s; }
 .hero-figura .hex-frame {
-  animation: hex-abre 0.9s var(--ease) 0.18s both;
+  animation: hex-abre 1.15s var(--ease) 0.22s both;
 }
 .hero-figura .hex-frame img {
-  animation: hex-abre 0.9s var(--ease) 0.32s both;
+  animation: hex-abre-img 1.3s var(--ease) 0.34s both;
 }
 
-/* Ao rolar para o diário, a foto do robô recosta-se no cenário:
-   inclinação de até 4° (rotateX), dirigida pelo scroll. Só em
-   navegadores com animações dirigidas por rolagem; nos demais a
-   foto simplesmente rola embora, como sempre rolou. */
+/* Ao rolar para o diário, a foto do robô recosta-se no cenário com
+   um deslocamento curto no eixo Z — sem inclinação, sem parallax
+   competitivo com a leitura. Só onde há animações dirigidas por
+   rolagem; nos demais navegadores a foto rola embora, como sempre. */
 @supports (animation-timeline: view()) {
   .hero-figura {
-    animation: hero-entra-3d 0.9s var(--ease) 0.18s both,
+    animation: hero-entra-3d 1.05s var(--ease) 0.2s both,
                hero-sai linear forwards;
     animation-timeline: auto, view();
-    animation-range: normal, exit 0% exit 80%;
+    animation-range: normal, exit 0% exit 85%;
   }
 }
-@keyframes hero-sai { to { transform: translateZ(72px) rotateX(4deg); } }
+@keyframes hero-sai { to { transform: translateZ(72px) translateY(40px); } }
 
 /* Parallax sutil do favo de fundo (scroll-driven, com fallback =
    fica estático, que é o comportamento original). */
@@ -1269,33 +1288,50 @@ html.js .sem-js { display: none; }
 
 /* ---------- Core Values em favo ---------- */
 .favo-valores {
+  --favo-deslocamento: 58px;
   list-style: none;
   margin: 52px 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+  counter-reset: valor;
 }
 .favo-celula {
+  counter-increment: valor;
   clip-path: var(--hex-p);
   background: var(--superficie);
   border: 1px solid var(--borda);
-  min-height: 250px;
+  min-height: 260px;
   padding: 0 clamp(28px, 6%, 48px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  transition: background var(--dur-transicao) var(--ease);
+  transition: background-color var(--dur-transicao) var(--ease),
+              border-color var(--dur-transicao) var(--ease),
+              translate var(--dur-transicao) var(--ease);
 }
-.favo-celula:hover { background: var(--superficie-2); }
+/* índice técnico da célula: dá ritmo de leitura ao favo e mantém
+   a linguagem de caderno de engenharia */
+.favo-celula::before {
+  content: "0" counter(valor);
+  display: block;
+  margin-bottom: 9px;
+  font-family: var(--fonte-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
 .favo-celula:nth-child(2),
 .favo-celula:nth-child(5) {
   /* encaixe do favo: deslocamento via position/top, e não via
      transform — o transform pertence ao reveal (a animação de
      entrada preenche transform: none e neutralizaria o translateY) */
   position: relative;
-  top: 58px;
+  top: var(--favo-deslocamento);
 }
 .favo-celula h3 {
   font-family: var(--fonte-display);
@@ -1309,6 +1345,13 @@ html.js .sem-js { display: none; }
   color: var(--muted);
   line-height: 1.55;
   margin: 0;
+}
+@media (hover: hover) and (pointer: fine) {
+  .favo-celula:hover {
+    background-color: var(--superficie-2);
+    border-color: var(--borda-amarela);
+    translate: 0 -3px;
+  }
 }
 
 /* ---------- Galeria ---------- */
@@ -1685,26 +1728,68 @@ html:not(.js) .maquete-painel { display: none; }
 /* ---------- Animações de entrada (reveal) ----------
    Só esconde os elementos quando o JS está ativo (classe "js"
    no <html>, adicionada pelo main.js). Sem JS, tudo visível.
-   Cada elemento sobe 16px enquanto surge (22px + leve escala nos
-   cards com .reveal-3d), uma única vez, disparado pelo
+   Cada elemento sobe 16px enquanto surge; os cards com
+   .reveal-3d sobem 26px com leve escala e desfoque, e os títulos
+   de seção entram por uma máscara. Uma única vez, disparado pelo
    IntersectionObserver. As grades recebem um atraso curto em
    cascata (--rv-delay definido no main.js), sempre transform +
    opacity — nada de animação contínua atrelada à rolagem. */
 html.js .reveal { opacity: 0; }
+
+/* Entrada base: um fade com subida curta. A cascata só existe
+   onde a leitura é uma lista (grades); títulos e blocos soltos
+   entram sozinhos, sem coreografia repetida em toda seção. */
 html.js .reveal.visivel {
   opacity: 1;
   animation: revelar var(--dur-reveal) var(--ease) both;
   animation-delay: var(--rv-delay, 0ms);
 }
-html.js .reveal-3d.visivel { animation-name: revelar-3d; }
+html.js .reveal-3d.visivel {
+  animation-name: revelar-3d;
+  animation-duration: var(--dur-reveal-card);
+}
+html.js .titulo-secao.reveal.visivel {
+  animation-name: revelar-titulo;
+  animation-duration: 760ms;
+}
+
+/* Fotografias grandes: a imagem é descoberta de baixo para cima,
+   como uma cortina. Só nos blocos de destaque — na galeria, o
+   volume de imagens tornaria o efeito caro e repetitivo. */
+html.js .figura-banner.reveal img,
+html.js .robo-intro-figura.reveal img {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.1s var(--ease) 80ms;
+}
+html.js .figura-banner.reveal.visivel img,
+html.js .robo-intro-figura.reveal.visivel img {
+  clip-path: inset(0 0 0 0);
+}
 
 @keyframes revelar {
-  from { opacity: 0; transform: translateY(16px); }
+  from { opacity: 0; transform: translate3d(0, var(--rv-y, 16px), 0); }
   to { opacity: 1; transform: none; }
 }
 @keyframes revelar-3d {
-  from { opacity: 0; transform: translateY(22px) scale(0.985); }
-  to { opacity: 1; transform: none; }
+  from {
+    opacity: 0;
+    transform: translate3d(0, var(--rv-y-card, 26px), 0) scale(0.985);
+    filter: blur(var(--rv-blur, 5px));
+  }
+  60% { opacity: 1; filter: blur(0); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+@keyframes revelar-titulo {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0 0 -18% 0);
+  }
 }
 
 /* primeira camada de leitura de cada seção entra logo depois */
@@ -1722,20 +1807,22 @@ html.js .secao-intro.reveal.visivel { animation-delay: 90ms; }
   .galeria-item { perspective: 700px; }
 
   .bento-celula, .cotejo-card, .iteracao, .galeria-item {
-    transition: translate var(--dur-transicao) var(--ease),
-                rotate var(--dur-transicao) var(--ease),
-                box-shadow var(--dur-transicao) var(--ease);
+    transition: translate 320ms var(--ease),
+                rotate 320ms var(--ease),
+                border-color 320ms var(--ease),
+                box-shadow 320ms var(--ease);
   }
 
   .bento-celula:hover, .cotejo-card:hover, .iteracao:hover {
-    translate: 0 -3px;
-    rotate: x 2deg;
-    box-shadow: 0 24px 48px rgba(8, 6, 4, 0.55);
+    translate: 0 -4px;
+    rotate: x 1.5deg;
+    border-color: var(--borda-amarela);
+    box-shadow: 0 30px 60px rgba(8, 6, 4, 0.55);
   }
-  .galeria-item:hover { box-shadow: 0 24px 48px rgba(8, 6, 4, 0.55); }
+  .galeria-item:hover { box-shadow: 0 30px 60px rgba(8, 6, 4, 0.55); }
   .galeria-item a:hover {
     border-color: var(--borda-amarela);
-    transform: translateY(-3px) rotateX(2deg);
+    transform: translateY(-4px) rotateX(1.5deg);
   }
 }
 
@@ -1748,13 +1835,13 @@ html.js .secao-intro.reveal.visivel { animation-delay: 90ms; }
   .diario-foto img,
   .estrategia-tapete img,
   .figura-banner img {
-    transition: transform 650ms var(--ease);
+    transition: transform 900ms var(--ease-suave);
   }
   .galeria-item a:hover img,
   .passo-foto a:hover img,
   .diario-foto a:hover img,
   .estrategia-tapete a:hover img,
-  .figura-banner a:hover img { transform: scale(1.035); }
+  .figura-banner a:hover img { transform: scale(1.04); }
 }
 
 /* ---------- Abertura suave dos <details> ----------
@@ -1805,6 +1892,29 @@ html.js .secao-intro.reveal.visivel { animation-delay: 90ms; }
       "nav nav"
       "info info";
   }
+
+  /* O favo hexagonal só cabe com folga acima de 1024px: em telas
+     menores o encaixe de 58px aproxima demais as linhas e os
+     cartões passam a se sobrepor. Aqui a colmeia vira uma grade
+     de cartões comuns — sem clip-path, sem deslocamento e sem
+     position/top, então nenhuma célula pode invadir a vizinha,
+     independentemente da altura do texto. */
+  .favo-valores {
+    --favo-deslocamento: 0px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .favo-celula,
+  .favo-celula:nth-child(2),
+  .favo-celula:nth-child(5) {
+    position: static;
+    top: auto;
+    clip-path: none;
+    border-radius: var(--raio);
+    min-height: 0;
+    padding: 26px 28px;
+    text-align: left;
+  }
 }
 
 /* menu de navegação mobile sobe para 920px: com os rótulos curtos
@@ -1828,34 +1938,34 @@ html.js .secao-intro.reveal.visivel { animation-delay: 90ms; }
     pointer-events: none;
     transform: translateY(-10px);
     box-shadow: 0 24px 44px rgba(8, 6, 4, 0.45);
-    transition: opacity 200ms var(--ease),
-                transform 300ms var(--ease),
-                visibility 0s linear 300ms;
+    transition: opacity 200ms var(--ease-suave),
+                transform 320ms var(--ease-suave),
+                visibility 0s linear 320ms;
   }
   .nav-menu.aberto {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
     transform: none;
-    transition: opacity 240ms var(--ease),
-                transform 360ms var(--ease),
+    transition: opacity 280ms var(--ease-suave),
+                transform 460ms var(--ease-suave),
                 visibility 0s;
   }
   /* os itens entram em cascata curta junto com o painel */
   .nav-menu li {
     opacity: 0;
-    transform: translateY(-6px);
-    transition: opacity 160ms var(--ease),
-                transform 200ms var(--ease);
+    transform: translateY(-5px);
+    transition: opacity 200ms var(--ease-suave),
+                transform 300ms var(--ease-suave);
   }
   .nav-menu.aberto li { opacity: 1; transform: none; }
-  .nav-menu.aberto li:nth-child(2) { transition-delay: 30ms; }
-  .nav-menu.aberto li:nth-child(3) { transition-delay: 60ms; }
-  .nav-menu.aberto li:nth-child(4) { transition-delay: 90ms; }
-  .nav-menu.aberto li:nth-child(5) { transition-delay: 120ms; }
-  .nav-menu.aberto li:nth-child(6) { transition-delay: 150ms; }
-  .nav-menu.aberto li:nth-child(7) { transition-delay: 180ms; }
-  .nav-menu.aberto li:nth-child(8) { transition-delay: 210ms; }
+  .nav-menu.aberto li:nth-child(2) { transition-delay: 35ms; }
+  .nav-menu.aberto li:nth-child(3) { transition-delay: 70ms; }
+  .nav-menu.aberto li:nth-child(4) { transition-delay: 105ms; }
+  .nav-menu.aberto li:nth-child(5) { transition-delay: 140ms; }
+  .nav-menu.aberto li:nth-child(6) { transition-delay: 175ms; }
+  .nav-menu.aberto li:nth-child(7) { transition-delay: 210ms; }
+  .nav-menu.aberto li:nth-child(8) { transition-delay: 245ms; }
 
   .nav-menu a { padding: 12px 8px; border-radius: var(--raio); }
   .nav-menu a::after { display: none; }
@@ -1880,25 +1990,21 @@ html.js .secao-intro.reveal.visivel { animation-delay: 90ms; }
   .diario-no .hex-node { width: 40px; height: 45px; font-size: 0.82rem; }
   .diario::before { left: 19px; }
 
-  /* favo colapsa para cartões legíveis no celular.
-     O reset precisa vencer a especificidade de :nth-child(2)/(5),
-     que mantém o encaixe hexagonal do favo no desktop — sem isto,
-     as células 2 e 5 descem 58px e cobrem a célula seguinte. */
+  .galeria { columns: 2 160px; }
+  .hero-acoes .btn { width: 100%; text-align: center; }
+  .hero-figura { width: 84%; }
+}
+
+@media (max-width: 640px) {
+  /* Uma coluna: leitura confortável e, principalmente, uma
+     sequência vertical sem nenhuma possibilidade de sobreposição. */
   .favo-valores { grid-template-columns: 1fr; gap: 12px; }
   .favo-celula,
   .favo-celula:nth-child(2),
   .favo-celula:nth-child(5) {
-    clip-path: none;
-    border-radius: var(--raio);
-    min-height: 0;
     padding: 22px 24px;
-    text-align: left;
-    top: auto;
   }
-
-  .galeria { columns: 2 160px; }
-  .hero-acoes .btn { width: 100%; text-align: center; }
-  .hero-figura { width: 84%; }
+  .favo-celula h3 { font-size: 1.15rem; }
 }
 
 @media (max-width: 480px) {
