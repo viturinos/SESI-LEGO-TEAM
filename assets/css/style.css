@@ -1095,23 +1095,75 @@ strong { color: var(--texto); font-weight: 700; }
 
 /* visualizador do programa real */
 .programa-viewer { margin: 48px 0 0; }
-.code-viewer {
+
+/* barra de zoom: ampliar e diminuir ajuda a ler os blocos.
+   Sem JS ela não funciona — escondida, o visualizador segue
+   como imagem completa com rolagem. */
+.code-viewer-barra {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
   margin-top: 14px;
+}
+.code-zoom-btn,
+.code-zoom-nivel {
+  height: 40px;
+  border-radius: var(--pill);
+  font-weight: 700;
+  cursor: pointer;
+}
+.code-zoom-btn {
+  width: 40px;
+  padding: 0;
+  border: none;
+  background: var(--amarelo);
+  color: var(--preto);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+.code-zoom-btn:hover { background: var(--ambar); }
+.code-zoom-btn:active { transform: translateY(1px); }
+.code-zoom-nivel {
+  min-width: 68px;
+  padding: 0 12px;
+  background: var(--superficie);
+  color: var(--texto);
+  border: 1px solid var(--borda);
+  font-family: var(--fonte-mono);
+  font-size: 0.8rem;
+}
+.code-zoom-nivel:hover { border-color: var(--borda-amarela); }
+html:not(.js) .code-viewer-barra { display: none; }
+/* textos da legenda acompanham o que esta disponivel */
+html:not(.js) .so-js { display: none; }
+html.js .sem-js { display: none; }
+
+.code-viewer {
+  margin-top: 10px;
   border: 1px solid var(--borda);
   border-radius: var(--raio);
   background: #100d0a;
   overflow: auto;
   max-height: 520px;
   scrollbar-color: var(--amarelo) var(--superficie);
+  /* arraste com mouse para percorrer os blocos */
+  cursor: grab;
+  touch-action: pan-x pan-y; /* 1 dedo rola nativo; pinça vira zoom nosso */
+  user-select: none;
+  -webkit-user-select: none;
 }
+.code-viewer.arrastando { cursor: grabbing; }
 .code-viewer img {
-  width: 11400px;
+  /* tamanho integral do SVG (fallback sem JS); com JS a largura
+     acompanha o nível de zoom escolhido */
+  width: 11320px;
   height: auto;
   max-width: none;
-  /* reserva a altura antes do SVG carregar: evita desvio de layout
-     que empurrava as seções abaixo (diário/valores) durante o
-     scroll suave até âncoras */
-  aspect-ratio: 11400 / 6000;
+  aspect-ratio: 11320 / 5180;
+  /* o dedo toca a imagem: sem isto o navegador rouba a pinça
+     para o zoom da página inteira */
+  touch-action: pan-x pan-y;
 }
 
 /* ---------- Diário de bordo (timeline da temporada) ---------- */
@@ -1351,31 +1403,43 @@ strong { color: var(--texto); font-weight: 700; }
 .maquete-palco[data-ativa] .maquete-pino { filter: brightness(0.4); }
 .maquete-palco[data-ativa] .maquete-pino.destaque { filter: none; }
 
-/* painel do apontamento */
+/* painel do apontamento: hexágono numerado — a mesma linguagem dos
+   marcadores e da lista — seguido do título e do texto da parte */
 .maquete-painel {
   margin-top: 18px;
   min-height: 76px;
   border: 1px solid var(--borda-amarela);
-  border-left: 6px solid var(--amarelo);
   border-radius: var(--raio);
   background: var(--superficie);
   padding: 18px 22px;
 }
 .maquete-painel-hint { margin: 0; color: var(--muted); }
+.maquete-painel-cabeca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.maquete-painel-hex {
+  clip-path: var(--hex-p);
+  background: var(--amarelo);
+  color: var(--preto);
+  font-family: var(--fonte-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  width: 26px;
+  height: 28px;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+}
 .maquete-painel h4 {
-  margin: 0 0 6px;
+  margin: 0;
   font-family: var(--fonte-display);
   font-size: 1.05rem;
   color: var(--amarelo);
 }
 .maquete-painel p { margin: 0; }
-.maquete-painel .maquete-painel-num {
-  font-family: var(--fonte-mono);
-  font-size: 0.8rem;
-  color: var(--muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
 
 /* lista de partes */
 .maquete-partes {

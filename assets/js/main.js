@@ -9,6 +9,7 @@
    6. Contadores da faixa de números
    7. View Transitions no lightbox
    8. Maquete do protótipo (apontamentos das partes)
+   9. Visualizador do programa (zoom e arraste)
 
    Tudo aqui é melhoria, não dependência: se este arquivo falhar,
    a página continua legível (o CSS só esconde os elementos
@@ -327,9 +328,14 @@ if (palcoMq && painelMq) {
       /* conteúdo vem do item da lista (fonte única, visível sem JS) */
       var forte = item.querySelector("strong");
       var texto = item.querySelector(".maquete-parte-texto");
+      var num = item.querySelector(".maquete-parte-num");
       painelMq.innerHTML =
-        '<p class="maquete-painel-num">Parte da maquete</p>' +
-        "<h4>" + (forte ? forte.textContent : parte) + "</h4>" +
+        '<div class="maquete-painel-cabeca">' +
+          '<span class="maquete-painel-hex" aria-hidden="true">' +
+            (num ? num.textContent : "") +
+          "</span>" +
+          "<h4>" + (forte ? forte.textContent : parte) + "</h4>" +
+        "</div>" +
         "<p>" + (texto ? texto.textContent : "") + "</p>";
     } else {
       palcoMq.removeAttribute("data-ativa");
@@ -353,4 +359,141 @@ if (palcoMq && painelMq) {
       painelMq.scrollIntoView({ block: "nearest", behavior: reduzirMovimento ? "auto" : "smooth" });
     });
   });
+}
+
+/* ------------------------------------------------------------
+   9. Visualizador do programa (zoom e arraste)
+   O programa em Word Blocks é uma imagem muito larga. Aqui,
+   100% significa "ajustada à largura do quadro" (visão geral
+   do programa inteiro). Os botões + e − dobram e dividem o
+   zoom; a pinça com dois dedos e o Ctrl + roda do mouse
+   ajustam continuamente; arrastar com o mouse percorre os
+   blocos. O zoom troca a largura real da imagem — e não um
+   transform: scale — para o SVG se redesenhar nítido em
+   qualquer nível. Sem este script, o visualizador segue como
+   imagem completa com rolagem; só a barra some (CSS cuida).
+   ------------------------------------------------------------ */
+var palcoCode = document.getElementById("codeViewer");
+var imgCode = palcoCode ? palcoCode.querySelector("img") : null;
+var btnZoomMenos = document.getElementById("codeZoomMenos");
+var btnZoomMais = document.getElementById("codeZoomMais");
+var btnZoomNivel = document.getElementById("codeZoomNivel");
+
+if (palcoCode && imgCode && btnZoomMenos && btnZoomMais && btnZoomNivel) {
+  var ZOOM_MIN_CODE = 1;   /* 100%: ajustada à largura do quadro */
+  var ZOOM_MAX_CODE = 16;  /* 1600%: blocos legíveis até no celular */
+  var zoomCode = 1;
+
+  /* Aplica o nível de zoom mantendo a âncora — cursor ou centro
+     do gesto — sobre o mesmo ponto do programa. */
+  function aplicarZoomCode(novo, ancoraX, ancoraY) {
+    novo = Math.min(ZOOM_MAX_CODE, Math.max(ZOOM_MIN_CODE, novo));
+    if (novo === zoomCode) return;
+
+    var rectAntigo = imgCode.getBoundingClientRect();
+    /* ponto do conteúdo sob a âncora, como fração da imagem */
+    var fracaoX = (palcoCode.scrollLeft + ancoraX) / rectAntigo.width;
+    var fracaoY = (palcoCode.scrollTop + ancoraY) / rectAntigo.height;
+
+    zoomCode = novo;
+    imgCode.style.width = Math.round(palcoCode.clientWidth * zoomCode) + "px";
+    btnZoomNivel.textContent = Math.round(zoomCode * 100) + "%";
+
+    /* devolve a âncora ao mesmo ponto do conteúdo */
+    var rectNovo = imgCode.getBoundingClientRect();
+    palcoCode.scrollLeft = fracaoX * rectNovo.width - ancoraX;
+    palcoCode.scrollTop = fracaoY * rectNovo.height - ancoraY;
+  }
+
+  /* botões: zoom centrado no meio do quadro */
+  function zoomBotaoCode(fator) {
+    aplicarZoomCode(zoomCode * fator, palcoCode.clientWidth / 2, palcoCode.clientHeight / 2);
+  }
+  btnZoomMais.addEventListener("click", function () { zoomBotaoCode(2); });
+  btnZoomMenos.addEventListener("click", function () { zoomBotaoCode(0.5); });
+  /* clicar na porcentagem reajusta o programa ao quadro */
+  btnZoomNivel.addEventListener("click", function () { zoomBotaoCode(1 / zoomCode); });
+
+  /* Ctrl + roda do mouse (e pinça do trackpad): zoom no cursor */
+  palcoCode.addEventListener("wheel", function (evento) {
+    if (!evento.ctrlKey) return;
+    evento.preventDefault();
+    var rect = palcoCode.getBoundingClientRect();
+    var fator = evento.deltaY < 0 ? 1.25 : 0.8;
+    aplicarZoomCode(zoomCode * fator, evento.clientX - rect.left, evento.clientY - rect.top);
+  }, { passive: false });
+
+  /* arraste com o mouse: percorre o programa segurando o botão */
+  var arrasteCode = null;
+  palcoCode.addEventListener("pointerdown", function (evento) {
+    if (evento.pointerType !== "mouse" || evento.button !== 0) return;
+    arrasteCode = {
+      x: evento.clientX, y: evento.clientY,
+      esq: palcoCode.scrollLeft, topo: palcoCode.scrollTop
+    };
+    palcoCode.classList.add("arrastando");
+    try { palcoCode.setPointerCapture(evento.pointerId); } catch (e) { /* sem captura, segue valendo */ }
+  });
+  palcoCode.addEventListener("pointermove", function (evento) {
+    if (!arrasteCode) return;
+    palcoCode.scrollLeft = arrasteCode.esq - (evento.clientX - arrasteCode.x);
+    palcoCode.scrollTop = arrasteCode.topo - (evento.clientY - arrasteCode.y);
+  });
+  function soltarArrasteCode() {
+    if (!arrasteCode) return;
+    arrasteCode = null;
+    palcoCode.classList.remove("arrastando");
+  }
+  palcoCode.addEventListener("pointerup", soltarArrasteCode);
+  palcoCode.addEventListener("pointercancel", soltarArrasteCode);
+  palcoCode.addEventListener("lostpointercapture", soltarArrasteCode);
+
+  /* pinça com dois dedos: zoom contínuo ancorado no meio do gesto */
+  var pincaCode = null;
+  palcoCode.addEventListener("touchstart", function (evento) {
+    if (evento.touches.length !== 2) return;
+    var t1 = evento.touches[0], t2 = evento.touches[1];
+    var rect = palcoCode.getBoundingClientRect();
+    pincaCode = {
+      dist: Math.sqrt(Math.pow(t2.clientX - t1.clientX, 2) + Math.pow(t2.clientY - t1.clientY, 2)) || 1,
+      zoom: zoomCode,
+      x: (t1.clientX + t2.clientX) / 2 - rect.left,
+      y: (t1.clientY + t2.clientY) / 2 - rect.top
+    };
+    evento.preventDefault(); /* a pinça aqui é do programa, não da página */
+  }, { passive: false });
+  palcoCode.addEventListener("touchmove", function (evento) {
+    if (!pincaCode || evento.touches.length !== 2) return;
+    evento.preventDefault();
+    var t1 = evento.touches[0], t2 = evento.touches[1];
+    var dist = Math.sqrt(Math.pow(t2.clientX - t1.clientX, 2) + Math.pow(t2.clientY - t1.clientY, 2)) || 1;
+    aplicarZoomCode(pincaCode.zoom * (dist / pincaCode.dist), pincaCode.x, pincaCode.y);
+  }, { passive: false });
+  function fimPincaCode() { pincaCode = null; }
+  palcoCode.addEventListener("touchend", fimPincaCode);
+  palcoCode.addEventListener("touchcancel", fimPincaCode);
+
+  /* rotação / redimensionamento: mantém o nível e a posição
+     relativa dentro do programa */
+  var redimCodeAgendado = false;
+  window.addEventListener("resize", function () {
+    if (redimCodeAgendado) return;
+    redimCodeAgendado = true;
+    requestAnimationFrame(function () {
+      redimCodeAgendado = false;
+      var maxAntigoX = palcoCode.scrollWidth - palcoCode.clientWidth;
+      var maxAntigoY = palcoCode.scrollHeight - palcoCode.clientHeight;
+      var fx = maxAntigoX > 0 ? palcoCode.scrollLeft / maxAntigoX : 0;
+      var fy = maxAntigoY > 0 ? palcoCode.scrollTop / maxAntigoY : 0;
+      imgCode.style.width = Math.round(palcoCode.clientWidth * zoomCode) + "px";
+      palcoCode.scrollLeft = fx * (palcoCode.scrollWidth - palcoCode.clientWidth);
+      palcoCode.scrollTop = fy * (palcoCode.scrollHeight - palcoCode.clientHeight);
+    });
+  });
+
+  /* estado inicial: programa ajustado à largura do quadro (100%).
+     Com os controles ativos, o aria-label descreve os gestos de zoom. */
+  palcoCode.setAttribute("aria-label",
+    "Programa do robô em Word Blocks. Amplie com os botões ou com dois dedos e arraste para percorrer os blocos.");
+  imgCode.style.width = palcoCode.clientWidth + "px";
 }

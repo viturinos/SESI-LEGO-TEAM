@@ -966,12 +966,24 @@
         <figure class="programa-viewer reveal">
           <figcaption class="legenda">
             Nosso programa completo em Word Blocks, como salvo no hub SPIKE.
-            Arraste para os lados e para baixo para explorar os blocos.
+            <span class="sem-js">Role dentro do quadro para explorar o programa
+            inteiro.</span>
+            <span class="so-js">Amplie com os botões de zoom, com Ctrl e a roda
+            do mouse ou afastando dois dedos na tela; arraste para percorrer os
+            blocos.</span>
           </figcaption>
-          <div class="code-viewer" role="region" aria-label="Programa do robô em Word Blocks. Role horizontalmente para ver o conteúdo completo." tabindex="0">
+          <div class="code-viewer-barra" role="group" aria-label="Zoom do programa">
+            <button type="button" class="code-zoom-btn" id="codeZoomMenos"
+                    aria-label="Diminuir o zoom do programa" aria-controls="codeViewer">−</button>
+            <button type="button" class="code-zoom-nivel" id="codeZoomNivel"
+                    aria-label="Voltar o programa ao tamanho ajustado" aria-live="polite">100%</button>
+            <button type="button" class="code-zoom-btn" id="codeZoomMais"
+                    aria-label="Aumentar o zoom do programa" aria-controls="codeViewer">+</button>
+          </div>
+          <div class="code-viewer" id="codeViewer" role="region" aria-label="Programa do robô em Word Blocks. Role dentro do quadro para ver o conteúdo completo." tabindex="0">
             <img src="assets/img/programa-pid-completo.svg"
                  alt="Captura do programa Word Blocks da equipe exibindo os blocos de eventos, os procedimentos definidos, incluindo o PID com distância, e as rotinas de missão"
-                 loading="lazy" decoding="async">
+                 loading="lazy" decoding="async" draggable="false">
           </div>
         </figure>
 
@@ -1578,7 +1590,7 @@
   <!-- Lightbox (janela ampliada da galeria) -->
   <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
     <figure class="lightbox-figura">
-      <img id="lightboxImg" alt="">
+      <img id="lightboxImg" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E">
       <figcaption id="lightboxCap" class="legenda"></figcaption>
     </figure>
     <button class="lightbox-fechar" id="lightboxFechar" aria-label="Fechar foto ampliada">Fechar</button>

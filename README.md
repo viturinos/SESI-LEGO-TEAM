@@ -17,6 +17,10 @@ e um aviso amarelo "A completar".
   molduras hexagonais amarelas.
 - **Projeto de pesquisa**: problema → foco ("seca verde" na Caatinga) →
   pesquisa → trabalho de campo (apiário) → especialistas → solução.
+- **Maquete interativa**: foto da maquete real da equipe com marcadores
+  numerados — tocar num marcador (ou num item da lista) escurece a foto e
+  acende só aquela peça, e o painel explica o papel dela. Sem JavaScript,
+  vira foto + lista legível.
 - **Robô**: ficha técnica, estratégia de missões (ordem real executada
   pela equipe), as cinco versões e a programação PID (SVG do programa).
 - **Diário de bordo**: os 15 dias de trabalho em linha do tempo, com
@@ -32,7 +36,8 @@ no rodapé, no favicon e na imagem de compartilhamento (OG).
 **Jeito mais simples:** dê dois cliques em `index.html` — abre no navegador.
 
 **Jeito recomendado (imita o servidor real):** com o Python instalado, rode
-isto numa janela de comando dentro da pasta `site`:
+isto numa janela de comando dentro da pasta do projeto (a mesma deste
+README):
 
 ```
 python -m http.server 8000
@@ -54,10 +59,18 @@ E acesse `http://localhost:8000` no navegador.
    trocar uma foto, substitua o arquivo nas duas pastas mantendo o mesmo
    nome. Os arquivos são WebP (mais leves que JPEG); um conversor online
    qualquer pode gerar WebP.
-5. **Números da faixa de contadores** → no HTML, cada número tem um
+5. **Maquete interativa** → `assets/img/maquete/`: `base.webp` é a foto
+   completa; cada recorte (`telhado.webp`, `estrutura.webp`, `caixas.webp`,
+   `cano.webp`, `barril.webp`, `plantas.webp`, `tanque.webp`, `pedras.webp`)
+   é a peça que acende quando o marcador é tocado. Para trocar a maquete,
+   substitua a base e os recortes mantendo os mesmos nomes e as MESMAS
+   dimensões da base (1374 × 1145 px) — os recortes são sobrepostos pixel
+   a pixel em cima da foto. Os textos de cada parte estão na lista da
+   maquete, no `index.html`.
+6. **Números da faixa de contadores** → no HTML, cada número tem um
    atributo `data-contador` com o valor final (o texto dentro é o valor
    de segurança, mostrado sem JavaScript).
-6. **Nenhum passo de build é necessário** — salve o arquivo e recarregue
+7. **Nenhum passo de build é necessário** — salve o arquivo e recarregue
    o navegador.
 
 ## Animações e acessibilidade
@@ -72,6 +85,9 @@ perfeitamente sem JavaScript, sem CSS novo ou em navegadores antigos.
   modernos, com fallback em JavaScript.
 - **Contadores**: animam uma única vez, ao entrar na tela.
 - **Lightbox**: usa a View Transitions API quando disponível.
+- **Maquete interativa**: o realce é feito com filtro e opacidade sobre a
+  foto plana (nada de 3D); sem JavaScript ela vira foto + lista estática,
+  e com movimento reduzido as trocas acontecem sem transição.
 - **`prefers-reduced-motion`**: quem pede menos movimento na configuração
   do sistema recebe tudo estático e visível — sem animação nenhuma.
 - **Testado** de 375px a 1920px, com e sem JavaScript, e com movimento
@@ -80,20 +96,22 @@ perfeitamente sem JavaScript, sem CSS novo ou em navegadores antigos.
 ## Estrutura
 
 ```
-site/
-├── index.html          ← todo o conteúdo (nav, hero, equipe, projeto,
-│                          robô, diário, valores, galeria, contato, rodapé)
+SESI LEGO TEAM/
+├── index.html          ← todo o conteúdo (nav, hero, equipe, projeto com
+│                          maquete interativa, robô, diário, valores,
+│                          galeria, contato, rodapé)
 ├── DESIGN_DNA.md       ← guia da identidade visual (cores, tipografia, motion)
 ├── README.md
 └── assets/
     ├── css/style.css   ← todo o estilo (design tokens no topo)
     ├── js/main.js      ← menu mobile, reveals, contadores, lightbox,
-    │                      barra de progresso (todos com fallback)
+    │                      maquete, barra de progresso (todos com fallback)
     ├── fonts/          ← Archivo, Archivo Black e JetBrains Mono (woff2)
     └── img/
         ├── emblema.png, favicon.png, og-image.png   ← marca oficial
         ├── equipe/     ← fotos dos 8 integrantes (WebP)
         ├── galeria/    ← miniaturas da galeria (WebP)
+        ├── maquete/    ← base + recortes da maquete interativa (WebP)
         └──             ← fotos grandes, banners HD da temporada,
                            programa PID (SVG)
 ```
@@ -104,15 +122,16 @@ O site é estático: qualquer hospedagem gratuita serve.
 
 **GitHub Pages (recomendado)**
 1. Crie um repositório (ex. `sesi-lego-team`) no github.com.
-2. Faça upload do conteúdo desta pasta `site` (index.html na raiz do repo).
+2. Faça upload do conteúdo desta pasta (index.html na raiz do repo).
 3. Em *Settings → Pages*, escolha a branch `main` e a pasta `/ (root)`.
 4. O site sai no ar em `https://<usuário>.github.io/sesi-lego-team/`.
 5. Depois edite a tag `<link rel="canonical">` no `index.html` com a URL
    final (e os endereços do JSON-LD no `<head>`, se quiser os dados
    estruturados completos).
 
-**Netlify** — acesse app.netlify.com, arraste a pasta `site` para a área de
-deploy e pronto; o endereço `*.netlify.app` pode ser trocado por um domínio.
+**Netlify** — acesse app.netlify.com, arraste a pasta do projeto para a
+área de deploy e pronto; o endereço `*.netlify.app` pode ser trocado por
+um domínio.
 
 **Vercel** — em vercel.com, "Add New Project" e importe a pasta/repositório.
 
