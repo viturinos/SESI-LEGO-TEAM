@@ -27,6 +27,7 @@
   --dur-micro: 100ms;
   --dur-transicao: 220ms;
   --dur-grande: 480ms;
+  --dur-reveal: 520ms;
 
   --raio: 14px;
   --pill: 999px;
@@ -255,7 +256,17 @@ strong { color: var(--texto); font-weight: 700; }
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--borda);
+  transition: transform 320ms var(--ease),
+              background-color var(--dur-transicao) var(--ease),
+              box-shadow var(--dur-transicao) var(--ease);
 }
+/* topbar ganha corpo quando a página sai do topo */
+.topbar.rolada {
+  background: rgba(23, 19, 16, 0.96);
+  box-shadow: 0 12px 32px rgba(8, 6, 4, 0.38);
+}
+/* auto-hide: recolhe ao descer, volta ao subir (main.js) */
+.topbar.recolhida { transform: translateY(-100%); }
 
 .nav {
   display: flex;
@@ -1674,23 +1685,31 @@ html:not(.js) .maquete-painel { display: none; }
 /* ---------- Animações de entrada (reveal) ----------
    Só esconde os elementos quando o JS está ativo (classe "js"
    no <html>, adicionada pelo main.js). Sem JS, tudo visível.
-   É um fade curto de opacidade apenas, disparado uma única vez
-   pelo IntersectionObserver do main.js quando o elemento entra
-   na tela. Sem transform 3D e sem animação contínua atrelada ao
-   scroll: aquilo custava caro demais e travava a rolagem em
-   celulares mais fracos. */
-html.js .reveal {
-  opacity: 0;
-  transition: opacity 0.3s var(--ease);
+   Cada elemento sobe 16px enquanto surge (22px + leve escala nos
+   cards com .reveal-3d), uma única vez, disparado pelo
+   IntersectionObserver. As grades recebem um atraso curto em
+   cascata (--rv-delay definido no main.js), sempre transform +
+   opacity — nada de animação contínua atrelada à rolagem. */
+html.js .reveal { opacity: 0; }
+html.js .reveal.visivel {
+  opacity: 1;
+  animation: revelar var(--dur-reveal) var(--ease) both;
+  animation-delay: var(--rv-delay, 0ms);
 }
-html.js .reveal.visivel { opacity: 1; }
+html.js .reveal-3d.visivel { animation-name: revelar-3d; }
 
-/* Escalonamento dos membros: a colmeia se organiza célula a
-   célula, com um pequeno atraso entre uma e outra. */
-html.js .membros .membro:nth-child(2) { transition-delay: 0.07s; }
-html.js .membros .membro:nth-child(3) { transition-delay: 0.14s; }
-html.js .membros .membro:nth-child(4) { transition-delay: 0.21s; }
-html.js .membros .membro:nth-child(5) { transition-delay: 0.28s; }
+@keyframes revelar {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes revelar-3d {
+  from { opacity: 0; transform: translateY(22px) scale(0.985); }
+  to { opacity: 1; transform: none; }
+}
+
+/* primeira camada de leitura de cada seção entra logo depois */
+html.js .subtitulo-secao.reveal.visivel { animation-delay: 60ms; }
+html.js .secao-intro.reveal.visivel { animation-delay: 90ms; }
 
 /* ---------- Tilt 3D no hover (só desktop com ponteiro fino) ----------
    Ficha técnica, cinco versões, cotejo e galeria: o cartão levanta
@@ -1707,15 +1726,6 @@ html.js .membros .membro:nth-child(5) { transition-delay: 0.28s; }
                 rotate var(--dur-transicao) var(--ease),
                 box-shadow var(--dur-transicao) var(--ease);
   }
-  html.js .reveal.bento-celula,
-  html.js .reveal.cotejo-card,
-  html.js .reveal.iteracao,
-  html.js .reveal.galeria-item {
-    transition: opacity 0.3s var(--ease),
-                translate var(--dur-transicao) var(--ease),
-                rotate var(--dur-transicao) var(--ease),
-                box-shadow var(--dur-transicao) var(--ease);
-  }
 
   .bento-celula:hover, .cotejo-card:hover, .iteracao:hover {
     translate: 0 -3px;
@@ -1726,6 +1736,46 @@ html.js .membros .membro:nth-child(5) { transition-delay: 0.28s; }
   .galeria-item a:hover {
     border-color: var(--borda-amarela);
     transform: translateY(-3px) rotateX(2deg);
+  }
+}
+
+/* ---------- Zoom leve nas fotos clicáveis ----------
+   Só transform dentro do quadro com overflow: hidden — a foto
+   respira no hover sem reposicionar nada e sem custo de layout. */
+@media (hover: hover) {
+  .galeria-item img,
+  .passo-foto img,
+  .diario-foto img,
+  .estrategia-tapete img,
+  .figura-banner img {
+    transition: transform 650ms var(--ease);
+  }
+  .galeria-item a:hover img,
+  .passo-foto a:hover img,
+  .diario-foto a:hover img,
+  .estrategia-tapete a:hover img,
+  .figura-banner a:hover img { transform: scale(1.035); }
+}
+
+/* ---------- Abertura suave dos <details> ----------
+   Navegadores com interpolate-size animam a altura real do
+   conteúdo; os demais abrem direto, como antes. */
+@supports (interpolate-size: allow-keywords) {
+  :root { interpolate-size: allow-keywords; }
+  .porques::details-content,
+  .referencias::details-content {
+    block-size: 0;
+    overflow: hidden;
+    content-visibility: hidden;
+    transition:
+      block-size 320ms var(--ease),
+      content-visibility 320ms var(--ease);
+    transition-behavior: allow-discrete;
+  }
+  .porques[open]::details-content,
+  .referencias[open]::details-content {
+    block-size: auto;
+    content-visibility: visible;
   }
 }
 
@@ -1772,11 +1822,44 @@ html.js .membros .membro:nth-child(5) { transition-delay: 0.28s; }
     background: var(--preto);
     border-bottom: 1px solid var(--borda);
     padding: 12px 20px 20px;
-    display: none;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+    box-shadow: 0 24px 44px rgba(8, 6, 4, 0.45);
+    transition: opacity 200ms var(--ease),
+                transform 300ms var(--ease),
+                visibility 0s linear 300ms;
   }
-  .nav-menu.aberto { display: flex; }
+  .nav-menu.aberto {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    transition: opacity 240ms var(--ease),
+                transform 360ms var(--ease),
+                visibility 0s;
+  }
+  /* os itens entram em cascata curta junto com o painel */
+  .nav-menu li {
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 160ms var(--ease),
+                transform 200ms var(--ease);
+  }
+  .nav-menu.aberto li { opacity: 1; transform: none; }
+  .nav-menu.aberto li:nth-child(2) { transition-delay: 30ms; }
+  .nav-menu.aberto li:nth-child(3) { transition-delay: 60ms; }
+  .nav-menu.aberto li:nth-child(4) { transition-delay: 90ms; }
+  .nav-menu.aberto li:nth-child(5) { transition-delay: 120ms; }
+  .nav-menu.aberto li:nth-child(6) { transition-delay: 150ms; }
+  .nav-menu.aberto li:nth-child(7) { transition-delay: 180ms; }
+  .nav-menu.aberto li:nth-child(8) { transition-delay: 210ms; }
+
   .nav-menu a { padding: 12px 8px; border-radius: var(--raio); }
   .nav-menu a::after { display: none; }
+  .nav-menu a[aria-current] { background: rgba(255, 196, 0, 0.08); }
   .nav-cta { background: transparent; border: 1px solid var(--borda-amarela); }
 }
 
@@ -1797,15 +1880,20 @@ html.js .membros .membro:nth-child(5) { transition-delay: 0.28s; }
   .diario-no .hex-node { width: 40px; height: 45px; font-size: 0.82rem; }
   .diario::before { left: 19px; }
 
-  /* favo colapsa para cartões legíveis no celular */
-  .favo-valores { grid-template-columns: 1fr; }
-  .favo-celula {
+  /* favo colapsa para cartões legíveis no celular.
+     O reset precisa vencer a especificidade de :nth-child(2)/(5),
+     que mantém o encaixe hexagonal do favo no desktop — sem isto,
+     as células 2 e 5 descem 58px e cobrem a célula seguinte. */
+  .favo-valores { grid-template-columns: 1fr; gap: 12px; }
+  .favo-celula,
+  .favo-celula:nth-child(2),
+  .favo-celula:nth-child(5) {
     clip-path: none;
     border-radius: var(--raio);
     min-height: 0;
     padding: 22px 24px;
     text-align: left;
-    top: 0;
+    top: auto;
   }
 
   .galeria { columns: 2 160px; }
@@ -1832,6 +1920,13 @@ html.js .membros .membro:nth-child(5) { transition-delay: 0.28s; }
   }
   html.js .reveal { opacity: 1; }
   .reveal { opacity: 1; }
+  html.js .reveal.visivel,
+  html.js .reveal-3d.visivel {
+    animation: none !important;
+    animation-delay: 0ms !important;
+    opacity: 1;
+    transform: none;
+  }
   .progresso-leitura { display: none; }
 
   /* 3D e parallax desligados por completo: sem perspectiva, sem
@@ -1845,4 +1940,12 @@ html.js .membros .membro:nth-child(5) { transition-delay: 0.28s; }
   .bento-celula:hover, .cotejo-card:hover, .iteracao:hover,
   .galeria-item:hover { translate: none; rotate: none; box-shadow: none; }
   .galeria-item a:hover { transform: none; }
+  .galeria-item a:hover img,
+  .passo-foto a:hover img,
+  .diario-foto a:hover img,
+  .estrategia-tapete a:hover img,
+  .figura-banner a:hover img { transform: none; }
+
+  .porques::details-content,
+  .referencias::details-content { transition: none; }
 }

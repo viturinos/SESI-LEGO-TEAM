@@ -33,12 +33,15 @@ var temScrollTimeline = !!(window.CSS && CSS.supports && CSS.supports("animation
    ------------------------------------------------------------ */
 var botaoMenu = document.getElementById("navToggle");
 var menu = document.getElementById("navMenu");
+var topbar = document.querySelector(".topbar");
 
 function definirMenu(aberto) {
   if (!botaoMenu || !menu) return;
   menu.classList.toggle("aberto", aberto);
   botaoMenu.setAttribute("aria-expanded", aberto ? "true" : "false");
   botaoMenu.setAttribute("aria-label", aberto ? "Fechar menu de navegação" : "Abrir menu de navegação");
+  /* abrir o menu nunca pode acontecer com a topbar recolhida */
+  if (aberto && topbar) topbar.classList.remove("recolhida");
 }
 
 if (botaoMenu && menu) {
@@ -49,6 +52,26 @@ if (botaoMenu && menu) {
   /* Ao escolher um item do menu, ele fecha sozinho. */
   menu.addEventListener("click", function (evento) {
     if (evento.target.closest("a")) definirMenu(false);
+  });
+
+  /* Tocar fora do painel também fecha (o menu é um dropdown,
+     não um modal: não trava a rolagem do fundo). */
+  document.addEventListener("click", function (evento) {
+    if (!menu.classList.contains("aberto")) return;
+    if (menu.contains(evento.target) || botaoMenu.contains(evento.target)) return;
+    definirMenu(false);
+  });
+
+  /* Ao voltar para o layout desktop, o estado "aberto" não faz
+     sentido — evita reabrir o menu ao reduzir a janela de novo. */
+  var redimensionouMenu = false;
+  window.addEventListener("resize", function () {
+    if (redimensionouMenu) return;
+    redimensionouMenu = true;
+    requestAnimationFrame(function () {
+      redimensionouMenu = false;
+      if (window.innerWidth > 920 && menu.classList.contains("aberto")) definirMenu(false);
+    });
   });
 
   /* Esc também fecha (útil quando o foco está no botão). */
@@ -70,6 +93,21 @@ if (botaoMenu && menu) {
    aparece direto, sem esconder nada.
    ------------------------------------------------------------ */
 var alvosReveal = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+
+/* Cascata curta nas grades: cada item recebe um atraso de 55ms
+   (limitado a 6 posições) para a colmeia se montar de leve, em
+   vez de tudo surgir de uma vez. O atraso é uma variável CSS —
+   não mexe no HTML e desaparece quando o reveal termina. */
+var gruposReveal = document.querySelectorAll(
+  ".numeros-grid, .membros, .bento, .favo-valores, .galeria, " +
+  ".solucao-elementos, .especialistas, .cotejo, .iteracoes"
+);
+Array.prototype.forEach.call(gruposReveal, function (grupo) {
+  Array.prototype.forEach.call(grupo.children, function (filho, indice) {
+    if (!filho.classList.contains("reveal")) return;
+    filho.style.setProperty("--rv-delay", Math.min(indice, 6) * 55 + "ms");
+  });
+});
 
 if (reduzirMovimento || !("IntersectionObserver" in window)) {
   alvosReveal.forEach(function (el) { el.classList.add("visivel"); });
@@ -149,8 +187,54 @@ function marcarSecaoAtiva() {
   });
 }
 
+/* ------------------------------------------------------------
+   4. Topbar: estado ao rolar e auto-hide
+   Ao sair do topo, a barra ganha corpo. Ao descer depois do
+   hero, ela recolhe para liberar leitura no celular; volta ao
+   subir, ao abrir o menu ou quando recebe foco pelo teclado.
+   Só alterna classes — o movimento fica no CSS.
+   ------------------------------------------------------------ */
+var ultimaRolagemY = window.scrollY;
+var ancoraEmCurso = false;
+
+function atualizarTopbar() {
+  if (!topbar) return;
+  var y = window.scrollY;
+  var descendo = y > ultimaRolagemY;
+  var subindo = y < ultimaRolagemY;
+  var menuAberto = !!(menu && menu.classList.contains("aberto"));
+
+  topbar.classList.toggle("rolada", y > 24);
+
+  if (reduzirMovimento || menuAberto || ancoraEmCurso) {
+    topbar.classList.remove("recolhida");
+  } else if (y > 420 && descendo) {
+    topbar.classList.add("recolhida");
+  } else if (subindo || y <= 420) {
+    topbar.classList.remove("recolhida");
+  }
+
+  ultimaRolagemY = y;
+}
+
+if (topbar) {
+  topbar.addEventListener("focusin", function () {
+    topbar.classList.remove("recolhida");
+  });
+
+  /* Navegar por âncora é uma ação do usuário: a topbar acompanha
+     a rolagem até o destino, em vez de sumir no meio do caminho. */
+  document.addEventListener("click", function (evento) {
+    var link = evento.target.closest ? evento.target.closest('a[href^="#"]') : null;
+    if (!link) return;
+    ancoraEmCurso = true;
+    topbar.classList.remove("recolhida");
+  });
+}
+
 function aoRolar() {
   marcarSecaoAtiva();
+  atualizarTopbar();
   atualizarProgresso();
 }
 
@@ -169,6 +253,7 @@ window.addEventListener(
 );
 /* Fim da rolagem com inércia e navegação por âncora (#hash). */
 window.addEventListener("scrollend", aoRolar);
+window.addEventListener("scrollend", function () { ancoraEmCurso = false; });
 window.addEventListener("hashchange", aoRolar);
 window.addEventListener("resize", aoRolar);
 aoRolar();
