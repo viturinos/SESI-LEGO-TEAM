@@ -2,7 +2,7 @@
    SESI LEGO Team — script principal
    ------------------------------------------------------------
    1. Menu de navegação (celular)
-   2. Animações de entrada (reveal ao rolar)
+   2. Animações de entrada (reveal ao entrar na tela)
    3. Destaque do link da seção ativa (scroll-spy)
    4. Lightbox da galeria
    5. Barra de progresso de leitura (fallback)
@@ -21,10 +21,10 @@ document.documentElement.classList.add("js");
 
 var reduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* Navegadores modernos fazem reveal e barra de progresso direto no
-   CSS (animation-timeline). Detectamos o suporte para não duplicar
-   o trabalho — um sistema ou outro, nunca os dois. */
-var temViewTimeline = !!(window.CSS && CSS.supports && CSS.supports("animation-timeline: view()"));
+/* Navegadores modernos fazem a barra de progresso direto no CSS
+   (animation-timeline: scroll()). Detectamos o suporte para não
+   duplicar o trabalho — a barra avança sozinha ou pelo fallback
+   abaixo, nunca pelos dois. */
 var temScrollTimeline = !!(window.CSS && CSS.supports && CSS.supports("animation-timeline: scroll()"));
 
 /* ------------------------------------------------------------
@@ -60,35 +60,56 @@ if (botaoMenu && menu) {
 }
 
 /* ------------------------------------------------------------
-   2. Animações de entrada (reveal ao rolar)
-   Cada elemento .reveal aparece uma única vez, quando seu topo
-   entra na tela (com uma folga de 8% na parte de baixo). A
-   checagem acontece junto com a rolagem, no mesmo
-   requestAnimationFrame do scroll-spy — assim nenhum elemento
-   é "pulado" mesmo em rolagens muito rápidas.
-   Com movimento reduzido, tudo aparece direto.
+   2. Animações de entrada (reveal ao entrar na tela)
+   Cada elemento .reveal aparece uma única vez, com um fade curto
+   de opacidade, quando entra na viewport. O disparo é feito pelo
+   IntersectionObserver — nada roda a cada frame de rolagem, e é
+   isso que mantém a navegação fluida mesmo em celulares fracos.
+   Com movimento reduzido (ou sem suporte a observer), tudo
+   aparece direto, sem esconder nada.
    ------------------------------------------------------------ */
 var alvosReveal = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
 
-function revelarAoRolar() {
-  if (reduzirMovimento) return;
-  var linhaDeCorte = window.innerHeight * 0.92;
-  alvosReveal = alvosReveal.filter(function (el) {
-    if (el.getBoundingClientRect().top < linhaDeCorte) {
-      el.classList.add("visivel");
-      return false; /* já revelado: sai da lista */
-    }
-    return true;
-  });
-}
-
-if (reduzirMovimento) {
+if (reduzirMovimento || !("IntersectionObserver" in window)) {
   alvosReveal.forEach(function (el) { el.classList.add("visivel"); });
-} else if (!temViewTimeline) {
-  /* O CSS (animation-timeline: view()) cuida do reveal quando há
-     suporte; o JavaScript só entra como fallback. */
-  revelarAoRolar(); /* o que já começou visível na carga */
-  window.addEventListener("resize", revelarAoRolar);
+} else {
+  var observadorReveal = new IntersectionObserver(
+    function (entradas) {
+      entradas.forEach(function (entrada) {
+        if (!entrada.isIntersecting) return;
+        entrada.target.classList.add("visivel");
+        observadorReveal.unobserve(entrada.target); /* revela só uma vez */
+      });
+    },
+    { rootMargin: "0px 0px -8% 0px" }
+  );
+  alvosReveal.forEach(function (el) { observadorReveal.observe(el); });
+
+  /* Rede de segurança: quando a rolagem para (scrollend) ou quando
+     se pula direto por uma âncora, varre o que ainda não apareceu e
+     revela tudo que já esteja em tela ou acima dela. Custa uma
+     única leitura agrupada, só quando o scroll termina — e garante
+     que nenhum conteúdo fique escondido se o observer perder algum
+     elemento numa rolagem muito rápida. */
+  function varreduraDeSeguranca() {
+    if (reduzirMovimento) return;
+    var altura = window.innerHeight;
+    /* Lê tudo primeiro, escreve depois: alternar leitura de
+       layout com escrita de classe forçaria um reflow por
+       elemento (layout thrash). */
+    var aRevelar = [];
+    alvosReveal = alvosReveal.filter(function (el) {
+      if (el.classList.contains("visivel")) return false;
+      if (el.getBoundingClientRect().top < altura) {
+        aRevelar.push(el);
+        return false;
+      }
+      return true;
+    });
+    aRevelar.forEach(function (el) { el.classList.add("visivel"); });
+  }
+  window.addEventListener("scrollend", varreduraDeSeguranca);
+  window.addEventListener("hashchange", varreduraDeSeguranca);
 }
 
 /* ------------------------------------------------------------
@@ -129,9 +150,6 @@ function marcarSecaoAtiva() {
 
 function aoRolar() {
   marcarSecaoAtiva();
-  /* Com suporte a animation-timeline no CSS, o reveal não passa
-     pelo JavaScript — a animação roda por conta própria. */
-  if (!temViewTimeline) revelarAoRolar();
   atualizarProgresso();
 }
 

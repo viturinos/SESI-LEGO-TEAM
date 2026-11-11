@@ -1608,53 +1608,25 @@ html:not(.js) .maquete-painel { display: none; }
 @keyframes luz-sai { to { opacity: 0; transform: scale(0.94); } }
 
 /* ---------- Animações de entrada (reveal) ----------
-   Só escondem os elementos quando o JS está ativo (classe "js"
-   no <html>, adicionada pelo main.js). Sem JS, tudo visível. */
+   Só esconde os elementos quando o JS está ativo (classe "js"
+   no <html>, adicionada pelo main.js). Sem JS, tudo visível.
+   É um fade curto de opacidade apenas, disparado uma única vez
+   pelo IntersectionObserver do main.js quando o elemento entra
+   na tela. Sem transform 3D e sem animação contínua atrelada ao
+   scroll: aquilo custava caro demais e travava a rolagem em
+   celulares mais fracos. */
 html.js .reveal {
   opacity: 0;
-  transform: perspective(900px) translateY(16px) rotateX(var(--rv-rx, 0deg));
-  transform-origin: 50% 100%;
-  transition: opacity var(--dur-grande) var(--ease),
-              transform var(--dur-grande) var(--ease);
+  transition: opacity 0.3s var(--ease);
 }
-html.js .reveal.visivel { opacity: 1; transform: none; }
-/* Cartões com reveal 3D: entram girando 7° na base, como uma
-   carta deitando na mesa. A perspectiva vem dentro do próprio
-   transform, então nenhum ancestral precisa declará-la. */
-html.js .reveal-3d { --rv-rx: 7deg; }
+html.js .reveal.visivel { opacity: 1; }
 
 /* Escalonamento dos membros: a colmeia se organiza célula a
-   célula. No fallback (JS), o atraso é temporal; com animações
-   dirigidas pelo scroll, o atraso vira deslocamento da faixa de
-   entrada — o resultado visual é o mesmo desdobrar. */
-html.js .membros .membro:nth-child(2) { transition-delay: 0.08s; }
-html.js .membros .membro:nth-child(3) { transition-delay: 0.16s; }
-html.js .membros .membro:nth-child(4) { transition-delay: 0.24s; }
-html.js .membros .membro:nth-child(5) { transition-delay: 0.32s; }
-
-/* Navegadores com scroll-driven animations: o reveal passa a ser
-   dirigido pelo scroll (animation-timeline: view()), sem esperar
-   o JavaScript. O main.js detecta o suporte e, nesse caso, não
-   instala o observer — um sistema ou outro, nunca os dois.
-   Com movimento reduzido o JS marca tudo .visivel de uma vez:
-   aí desligamos a animação para que nada dependa do scroll. */
-@supports (animation-timeline: view()) {
-  html.js .reveal {
-    animation: revela linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 55%;
-  }
-  html.js .reveal.visivel {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-  html.js .membros .membro:nth-child(2) { animation-range: entry 8% entry 63%; }
-  html.js .membros .membro:nth-child(3) { animation-range: entry 16% entry 71%; }
-  html.js .membros .membro:nth-child(4) { animation-range: entry 24% entry 79%; }
-  html.js .membros .membro:nth-child(5) { animation-range: entry 32% entry 87%; }
-}
-@keyframes revela { to { opacity: 1; transform: none; } }
+   célula, com um pequeno atraso entre uma e outra. */
+html.js .membros .membro:nth-child(2) { transition-delay: 0.07s; }
+html.js .membros .membro:nth-child(3) { transition-delay: 0.14s; }
+html.js .membros .membro:nth-child(4) { transition-delay: 0.21s; }
+html.js .membros .membro:nth-child(5) { transition-delay: 0.28s; }
 
 /* ---------- Tilt 3D no hover (só desktop com ponteiro fino) ----------
    Ficha técnica, cinco versões, cotejo e galeria: o cartão levanta
@@ -1675,8 +1647,7 @@ html.js .membros .membro:nth-child(5) { transition-delay: 0.32s; }
   html.js .reveal.cotejo-card,
   html.js .reveal.iteracao,
   html.js .reveal.galeria-item {
-    transition: opacity var(--dur-grande) var(--ease),
-                transform var(--dur-grande) var(--ease),
+    transition: opacity 0.3s var(--ease),
                 translate var(--dur-transicao) var(--ease),
                 rotate var(--dur-transicao) var(--ease),
                 box-shadow var(--dur-transicao) var(--ease);
@@ -1795,8 +1766,8 @@ html.js .membros .membro:nth-child(5) { transition-delay: 0.32s; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  html.js .reveal { opacity: 1; transform: none; }
-  .reveal { opacity: 1; transform: none; }
+  html.js .reveal { opacity: 1; }
+  .reveal { opacity: 1; }
   .progresso-leitura { display: none; }
 
   /* 3D e parallax desligados por completo: sem perspectiva, sem

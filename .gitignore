@@ -1,0 +1,6 @@
+# Artefatos da automação de teste (Playwright MCP)
+.playwright-mcp/
+
+# Screenshots e arquivos temporários de verificação
+verif-*.png
+*.tmp
